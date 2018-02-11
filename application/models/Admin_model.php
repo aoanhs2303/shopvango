@@ -18,17 +18,18 @@ class Admin_model extends CI_Model {
 		return $data;
 	}
 
-	public function addCategory($name)
+	public function addCategory($name, $nhom)
 	{
-		$data = array('name' => $name);
+		$data = array('name' => $name, 'main' => $nhom);
 		$this->db->insert('danhmuc', $data);
 
 		echo json_encode($this->db->insert_id());
 	}
 
-	public function updateCategory($id, $name)
+	public function updateCategory($id, $name, $nhom)
 	{
 		$this->db->set('name', $name);
+		$this->db->set('main', $nhom);
 		$this->db->where('id', $id);
 		return $this->db->update('danhmuc');
 	}
@@ -162,9 +163,10 @@ class Admin_model extends CI_Model {
 		$this->db->limit($limit, $start);
 		$query = $this->db->get();
 		$output .= '
-		  <table class="table table-responsive danhsach table-striped" id="country_table">
+		  <table class="table table-responsive danhsach table-striped" id="product_table">
                 <tr>
                   <th width="15px">#</th>
+                  <th>HOT</th>
                   <th>Tên danh mục</th>
                   <th style="width: 25%">Hình ảnh</th>
                   <th>Danh mục</th>
@@ -182,8 +184,15 @@ class Admin_model extends CI_Model {
 		   $imgs = json_decode($row->image);
 		   $base_url = base_url();
 		   $output .= '
-		        <tr class="sanpham-'.$row->id.' ?>">
+		        <tr class="sanpham-'.$row->id.'">
                   <td class="text-primary" style="font-weight: 900">'.$count.'</td>
+                  <td>';
+                  if($row->hot) {
+					$output .= '<a href="'.$base_url.'Admin/unsetHot/'.$row->id.'"><span class="badge badge-danger">HOT</span></a>';
+                  } else {
+		          	$output .= '<a href="'.$base_url.'Admin/setHot/'.$row->id.'"><span class="badge badge-info"><i class="fa fa-square"></i> Cài đặt</span></a>';	                  	
+                  }
+                  $output .= '</td>
                   <td class="stt">'.$row->name.'</td>
                   <td class="ten" v-for="img in imgs">';
                   	for ($i=0; $i < count($imgs); $i++) { 
@@ -223,7 +232,7 @@ class Admin_model extends CI_Model {
                       </div>
                     </div>
                   </td>
-                </tr> 
+                </tr>
 		   ';
 		}
 	  	$output .= '</table>';
@@ -289,6 +298,129 @@ class Admin_model extends CI_Model {
 		$this->db->where('id', $id);
 		return $this->db->delete('sanpham');
 	}
+
+	// ============// 
+	// ! TRANG CHỦ //        
+	// ============//
+
+	public function getCategory_Van($sanpham)
+ 	{
+ 		if($sanpham == 'van') {
+ 			$this->db->where('main', '1');
+ 		}
+ 		else if ($sanpham == 'lot') {
+ 			$this->db->where('main', '2');
+ 		}
+ 		else if ($sanpham == 'khac') {
+ 			$this->db->where('main', '#');
+ 		}
+ 		$data = $this->db->get('danhmuc');
+ 		$data = $data->result_array();
+ 		return $data;
+ 	} 	
+
+	public function getCategory_VanId($sanpham)
+ 	{
+ 		$this->db->select('id');
+ 		if($sanpham == 'van') {
+ 			$this->db->where('main', '1');
+ 		}
+ 		else if ($sanpham == 'lot') {
+ 			$this->db->where('main', '2');
+ 		}
+ 		else if ($sanpham == 'khac') {
+ 			$this->db->where('main', '#');
+ 		}
+ 		$data = $this->db->get('danhmuc');
+ 		$data = $data->result_array();
+ 		return $data;
+ 	}
+
+ 	public function getProductByCateId($idcate)
+ 	{
+ 		$this->db->select('name');
+ 		$this->db->where('id', $idcate);
+ 		$name = $this->db->get('danhmuc');
+ 		$name = $name->result_array();
+ 		$name = $name[0]['name'];
+ 		$this->db->select('*');
+ 		$this->db->where('category', $name);
+
+ 		$data = $this->db->get('sanpham');
+ 		$data = $data->result_array();
+ 		
+ 		return $data;
+ 	}
+
+ 	public function getProductCate_Van()
+ 	{
+ 		$this->load->model('Admin_model');
+ 		$mangId = $this->getCategory_VanId('van');
+ 		$dulieu = array();
+ 		for ($i=0; $i < count($mangId); $i++) { 
+ 			array_push($dulieu,$this->Admin_model->getProductByCateId($mangId[$i]['id']));
+ 		}
+ 		return $dulieu;
+ 	}
+
+ 	public function getProductCate_Lot()
+ 	{
+ 		$this->load->model('Admin_model');
+ 		$mangId = $this->getCategory_VanId('lot');
+ 		$dulieu = array();
+ 		for ($i=0; $i < count($mangId); $i++) { 
+ 			array_push($dulieu,$this->Admin_model->getProductByCateId($mangId[$i]['id']));
+ 		}
+ 		return $dulieu;
+ 	}
+
+ 	public function getRelatedProduct($idsp)
+ 	{
+ 		$this->db->select('category');
+ 		$this->db->where('id', $idsp);
+ 		$cate = $this->db->get('sanpham');
+ 		$cate = $cate->result_array();
+ 		$cate = $cate[0]['category'];
+ 		
+ 		$this->db->select('*');
+ 		$this->db->where('category', $cate);
+ 		$data = $this->db->get('sanpham',6);
+ 		$data = $data->result_array();
+ 		
+ 		return $data;
+ 	}
+
+ 	public function getHotProduct()
+ 	{
+ 		$this->db->select('*');
+ 		$this->db->where('hot', 'true');
+ 		$data = $this->db->get('sanpham');
+ 		$data = $data->result_array();
+ 		return $data;
+ 	}
+
+ 	public function getHotProductSide()
+ 	{
+ 		$this->db->select('*');
+ 		$this->db->where('hot', 'true');
+ 		$data = $this->db->get('sanpham',3);
+ 		$data = $data->result_array();
+ 		return $data;
+ 	}
+
+ 	public function setHotProduct($id)
+ 	{
+		$this->db->set('hot', 'true');
+		$this->db->where('id', $id);
+		return $this->db->update('sanpham');		
+ 	}
+
+ 	public function unsetHotProduct($id)
+ 	{
+		$this->db->set('hot', '');
+		$this->db->where('id', $id);
+		return $this->db->update('sanpham');		
+ 	}
 
 }
 

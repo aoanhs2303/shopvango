@@ -1,0 +1,168 @@
+<!-- ============================================== HEADER : END ============================================== -->
+
+<div class="body-content outer-top-xs">
+  <div class='container'>
+    <div class='row'>
+      <?php echo $sidebar ?>
+      <!-- /.sidebar -->
+      <div class='col-md-9'> 
+        <!-- ========================================== SECTION – HERO ========================================= -->
+        
+        <div id="hero">
+          <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+            <div class="item" style="background-image: url(<?php echo base_url() ?>includehome/images/sliders/01.jpg);">
+              <div class="container-fluid">
+                <div class="caption bg-color vertical-center text-left">
+                  <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
+                  <div class="big-text fadeInDown-1"> VÁN ÉP </div>
+                  <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">250.000 đ</span> </div>
+                  <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
+                </div>
+                <!-- /.caption --> 
+              </div>
+              <!-- /.container-fluid --> 
+            </div>
+            <!-- /.item -->
+            
+            <div class="item" style="background-image: url(<?php echo base_url() ?>includehome/images/sliders/02.jpg);">
+              <div class="container-fluid">
+                <div class="caption bg-color vertical-center text-left">
+                  <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
+                  <div class="big-text fadeInDown-1"> VÁN ÉP </div>
+                  <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">350.000 đ</span> </div>
+                  <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
+                </div>
+                <!-- /.caption --> 
+              </div>
+              <!-- /.container-fluid --> 
+            </div>
+            <!-- /.item --> 
+            
+          </div>
+          <!-- /.owl-carousel --> 
+        </div>
+        
+     
+        <div class="clearfix filters-container m-t-10">
+          <div class="row">
+            <div class="col col-sm-12 col-md-8">
+              <div class="col col-sm-3 col-md-6 no-padding">
+                <div class="lbl-cnt"> <span class="lbl">Sắp xếp: </span>
+                  <div class="fld inline">
+                    <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
+                      <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> Độ phổ biến <span class="caret"></span> </button>
+                      <ul role="menu" class="dropdown-menu">
+                        <li role="presentation"><a href="#">Độ phổ biến</a></li>
+                        <li role="presentation"><a href="#">Giá:Từ thấp đến cao</a></li>
+                        <li role="presentation"><a href="#">Giá:Từ cao đến thấp</a></li>
+                        <li role="presentation"><a href="#">Tên:Từ A - Z</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- /.fld --> 
+                </div>
+                <!-- /.lbl-cnt --> 
+              </div>
+              <!-- /.col -->
+              <div class="col col-sm-3 col-md-4 no-padding">
+
+              </div>
+              <!-- /.col --> 
+            </div>
+            <!-- /.col -->
+<!--             <div class="col col-sm-6 col-md-4 text-right">
+              <div class="pagination-container">
+                <ul class="list-inline list-unstyled">
+                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+
+              </div>
+            </div> -->
+            <!-- /.col --> 
+          </div>
+          <!-- /.row --> 
+        </div>
+        <div class="search-result-container ">
+          <div id="myTabContent" class="tab-content category-list">
+            <div class="tab-pane active " id="grid-container">
+              <div class="category-product">
+                <div class="row">
+                <?php foreach ($products as $product) { ?>
+                  <div class="col-sm-6 col-md-4 wow fadeInUp">
+                    <div class="products">
+                      <div class="product">
+                        <div class="product-image">
+                          <?php $img = json_decode($product['image'])[0] ?>
+                          <div class="image"> <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $product['id'] ?>"><img  src="<?php echo $img ?>" alt="<?php echo $img ?>"></a> </div>
+                          <!-- /.image -->
+                          <div class="tag hot"><span>hot</span></div>
+                        </div>
+                        <!-- /.product-image -->
+                        
+                        <div class="product-info text-left">
+                          <h3 class="name"><a href="<?php echo base_url() ?>Home/sanpham/<?php echo $product['id'] ?>"><?php echo $product['name'] ?></a></h3>
+                          <div class="rating rateit-small"></div>
+                          <div class="description"></div>
+                          <div class="product-price"> <span class="price"> <?php echo number_format($product['price']) ?> ₫</span></div>
+                          <!-- /.product-price --> 
+                          
+                        </div>
+                        <!-- /.product-info -->
+                        <div class="cart clearfix animate-effect">
+                          <div class="btn-group">
+                            <a href="" class="btn btn-warning" style="background-color: #fdd922; color: #444;">Thêm <i class="fa fa-shopping-cart"></i></a>
+                            <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $product['id'] ?>" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
+                          </div>
+                          <!-- /.action --> 
+                        </div>
+                        <!-- /.cart --> 
+                      </div>
+                      <!-- /.product -->  
+                    </div>
+                    <!-- /.products --> 
+                  </div>
+                  <!-- /.item --> 
+                <?php } ?>
+                </div>
+                <!-- /.row --> 
+              </div>
+              <!-- /.category-product --> 
+              
+            </div>
+            <!-- /.tab-pane -->
+            
+          </div>
+          <!-- /.tab-content -->
+<!--           <div class="clearfix filters-container">
+            <div class="text-right">
+              <div class="pagination-container">
+                <ul class="list-inline list-unstyled">
+                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+
+              </div>
+            </div>
+          </div> -->
+          <!-- /.filters-container --> 
+          
+        </div>
+        <!-- /.search-result-container --> 
+        
+      </div>
+      <!-- /.col --> 
+    </div>
+ </div>
+  <!-- /.container --> 
+  
+</div>
+

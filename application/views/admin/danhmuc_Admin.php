@@ -60,6 +60,17 @@
                   </div>
                 </div>
               </div>
+              <div class="form-group row">
+                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Nhóm danh mục</b></label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="nhomdanhmuc" name="nhomdanhmuc">
+                      <option value="#">---Chọn danh mục---</option>
+                      <option value="1">Ván Ép</option>
+                      <option value="2">Tấm lót sàn</option>
+                      <option value="#">Khác</option>
+                  </select> 
+                </div>
+              </div>
             </div>
             <!-- /.col -->
           </div>
@@ -81,9 +92,10 @@
               <table class="table table-responsive danhsach">
                 <tr>
                   <th style="width: 10%">#</th>
-                  <th style="width: 25%">Tên danh mục</th>
+                  <th style="width: 20%">Tên danh mục</th>
                   <th style="width: 15%">Số sản phẩm</th>
-                  <th style="width: 20%">Ngày tạo</th>
+                  <th style="width: 15%">Nhóm sản phẩm</th>
+                  <th style="width: 10%">Ngày tạo</th>
                   <th style="width: 15%">Hành động</th>
                 </tr>
                 <?php $count = 0; foreach ($category as $value) { $count ++;?>
@@ -91,6 +103,27 @@
                   <td class="stt"><?php echo $count; ?>.</td>
                   <td class="ten"><?php echo $value['name'] ?></td>
                   <td>10</td>
+                  <td class="nhom">
+                    <?php switch ($value['main']) {
+                      case '1':
+                        $main = 'Ván Ép';
+                        break;
+                      case '2':
+                        $main = 'Tám lót sàn';
+                        break;
+                      case 'all_van':
+                        $main = '*';
+                        break;      
+                      case 'all_lot':
+                        $main = '*';
+                        break;                   
+                      default:
+                        $main = 'Khác';
+                        break;
+                    } ?>
+                    <?php echo $main ?>
+                      
+                  </td>
                   <td><?php echo date('d/m/Y', $value['datetime']); ?></td>
                   <td>
                     <a href="" class="btn btn-warning suaajax" data-toggle="modal" data-target="#suadanhmuc-<?php echo $value['id']; ?>"><i class="fa fa-pencil"></i></a>
@@ -107,6 +140,13 @@
                           <div class="modal-body">
                             <input type="hidden" class="DMID" value="<?php echo $value['id']; ?>">
                             <input type="text" class="form-control DMT" value="<?php echo $value['name']; ?>">
+                            <br>
+                            <select class="form-control DMN" id="nhomdanhmuc" name="nhomdanhmuc">
+                                <option value="#">---Chọn danh mục---</option>
+                                <option value="1">Ván Ép</option>
+                                <option value="2">Tấm lót sàn</option>
+                                <option value="#">Khác</option>
+                            </select> 
                           </div>
                           <div class="modal-footer">
                             <a href="<?php echo $value['id']; ?>" type="button" class="btn btn-info pull-right luuajax">Lưu thay đổi</a>
@@ -152,7 +192,10 @@
       url: 'themdanhmuc',
       type: 'POST',
       dataType: 'json',
-      data: {tendanhmuc: $('#danhmuctin').val()},
+      data: {
+        tendanhmuc: $('#danhmuctin').val(),
+        nhomdanhmuc: $('#nhomdanhmuc').val()
+      },
     })
     .always(function(res) {
       if($('#danhmuctin').val() == "") {
@@ -175,6 +218,7 @@
                   <td class="stt"><span class="badge bg-red">NEW</span></td>
                   <td class="ten">`+$('#danhmuctin').val()+`</td>
                   <td>10</td>
+                  <td>`+$('#nhomdanhmuc').val()+`</td>
                   <td>`+today+`</td>
                   <td>
                     <a href="" class="btn btn-warning suaajax" data-toggle="modal" data-target="#suadanhmuc-`+res+`"><i class="fa fa-pencil"></i></a>
@@ -191,6 +235,13 @@
                           <div class="modal-body">
                             <input type="hidden" class="DMID" value="`+res+`">
                             <input type="text" class="form-control DMT" value="`+$('#danhmuctin').val()+`">
+                            <br>
+                            <select class="form-control DMN" name="nhomdm">
+                                <option value="#">---Chọn danh mục---</option>
+                                <option value="1">Ván Ép</option>
+                                <option value="2">Tấm lót sàn</option>
+                                <option value="#">Khác</option>
+                            </select> 
                           </div>
                           <div class="modal-footer">
                             <a href="`+res+`" type="button" class="btn btn-info pull-right luuajax">Lưu thay đổi</a>
@@ -268,6 +319,7 @@
     var btnX = $(this).parent().prev().prev().children('button');
     var iddm = $(this).parent().prev().children('input.DMID').val();
     var ten = $(this).parent().prev().children('input.DMT').val();
+    var nhom = $(this).parent().prev().children('select.DMN').val();
 
     $.ajax({
       url: 'suadanhmuc',
@@ -275,12 +327,14 @@
       dataType: 'json',
       data: {
         iddm: iddm,
-        tendm: ten
+        tendm: ten,
+        nhomdm: nhom
       },
     })
     .always(function() {
       var danhmucSTT = document.querySelector('.dm-' + iddm + ' td.stt').innerHTML = `<span class="badge bg-warning">UPDATED</span>`;
       var danhmucNAME = document.querySelector('.dm-' + iddm + ' td.ten').innerHTML = ten; 
+      var danhmucNHOM = document.querySelector('.dm-' + iddm + ' td.nhom').innerHTML = nhom;
     });
     var thongbao = `<div class="alert alert-info alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="fa fa-check-circle"></i> Cập nhật thành công. 

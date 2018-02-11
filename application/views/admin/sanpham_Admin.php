@@ -10,7 +10,6 @@
 ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
   <header class="main-header">
     <!-- Logo -->
     <a href="index.html" class="logo">
@@ -48,6 +47,7 @@
     </section>
 
     <div class="thongbao"></div>
+    
     <section style="padding: 20px 20px 0px 20px">
       <div class="box box-default" style="margin-bottom: 0px">
         <div class="box-footer">
@@ -57,21 +57,22 @@
           <button @click="addSanpham = !addSanpham" v-if="!addSanpham"
               type="submit" class="btn btn-danger nutajax"><i class="fa fa-chevron-circle-left"></i>  DANH SÁCH SẢN PHẨM
           </button>
-
-          
+          <button @click="addSanphamHot = !addSanphamHot" v-if="addSanpham"
+              type="submit" class="btn btn-warning nutajax"><i class="fa fa-h-square"></i> TÙY CHỈNH SẢN PHẨM HOT
+          </button>
         </div>
       </div>      
     </section>
 
     <!-- Main content -->
     <section class="content" v-show="addSanpham">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Danh sách sản phẩm</h3>
-              <div id="pagination_link"></div>
-            </div>
-            <div class="table-responsive" id="country_table"></div>
-          </div>
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Danh sách sản phẩm</h3>
+          <div id="pagination_link"></div>
+        </div>
+        <div class="table-responsive" id="country_table"></div>
+      </div>
     </section>
 
     <section class="content" v-show="!addSanpham">
@@ -345,6 +346,7 @@ $(document).ready(function(){
     el: "#app",
     data: {
       addSanpham: true,
+      addSanphamHot: false,
       addStep: 1,
       widthProgess: 33.33,
       checked: true

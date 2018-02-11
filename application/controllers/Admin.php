@@ -37,14 +37,16 @@ class Admin extends CI_Controller {
 	public function themdanhmuc()
 	{
 		$tendanhmuc = $this->input->post('tendanhmuc');
-		$this->Admin_model->addCategory($tendanhmuc);
+		$nhomdanhmuc = $this->input->post('nhomdanhmuc');
+		$this->Admin_model->addCategory($tendanhmuc, $nhomdanhmuc);
 	}
 
 	public function suadanhmuc()
 	{
-		$tendanhmuc = $this->input->post('tendm');
-		$iddanhmuc  = $this->input->post('iddm');
-		$this->Admin_model->updateCategory($iddanhmuc,$tendanhmuc);
+		$tendanhmuc  = $this->input->post('tendm');
+		$iddanhmuc   = $this->input->post('iddm');
+		$nhomdanhmuc = $this->input->post('nhomdm');
+		$this->Admin_model->updateCategory($iddanhmuc,$tendanhmuc,$nhomdanhmuc);
 	}
 
 	public function xoadanhmuc()
@@ -336,7 +338,21 @@ class Admin extends CI_Controller {
 		$this->Admin_model->deleteProduct($idxoa);		
 	}
 
+	public function setHot($id)
+	{
+		if($this->Admin_model->setHotProduct($id)) {
+			$link = base_url() . 'Admin/sanpham';
+			redirect($link);				
+		}
+	}
 
+	public function unsetHot($id)
+	{
+		if($this->Admin_model->unsetHotProduct($id)) {
+			$link = base_url() . 'Admin/sanpham';
+			redirect($link);				
+		}
+	}
 
 
 }
