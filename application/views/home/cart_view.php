@@ -6,91 +6,7 @@
 		<div class="row ">
 			<div class="shopping-cart">
 				<div class="shopping-cart-table ">
-	<div class="table-responsive">
-		<table class="table">
-			<thead>
-				<tr>
-					<th class="cart-romove item">Xóa</th>
-					<th class="cart-description item">Hình ảnh</th>
-					<th class="cart-product-name item">Tên Sản Phẩm</th>
-					<th></th>
-					<th class="cart-qty item">Số Lượng</th>
-					<th class="cart-sub-total item">Giá</th>
-					<th class="cart-total last-item">Số Lượng x Giá</th>
-				</tr>
-			</thead><!-- /thead -->
-			<tfoot>
-				<tr>
-					<td colspan="7">
-						<div class="shopping-cart-btn">
-							<span class="">
-								<a href="#" class="btn btn-upper btn-primary outer-left-xs">Tiếp tục mua hàng</a>
-								<button class="scrolldh btn btn-upper btn-primary pull-right outer-right-xs">Đặt hàng</button>
-							</span>
-						</div><!-- /.shopping-cart-btn -->
-					</td>
-				</tr>
-			</tfoot>
-			<tbody>
-				<tr>
-					<td class="romove-item"><a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
-					<td class="cart-image">
-						<a class="entry-thumbnail" href="detail.html">
-						    <img src=<?php echo base_url() ?>includehome/images/products/p1.jpg" alt="">
-						</a>
-					</td>
-					<td class="cart-product-name-info">
-						<h4 class='cart-product-description'><a href="detail.html">Ván MDF</a></h4>
-						<div class="cart-product-info">
-						<span class="product-color">Kích thước:<span>100x200</span></span>
-						</div>
-					</td>
-					<td class="cart-product-edit"><a href="#" class="product-edit"></a></td>
-					<td class="cart-product-quantity">
-						<div class="quant-input">
-				                <div class="arrows">
-				                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
-				                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
-				                </div>
-				                <input type="text" value="2">
-			              </div>
-		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price">150.000 ₫</span></td>
-					<td class="cart-product-grand-total"><span class="cart-grand-total-price">300.000 ₫</span></td>
-				</tr>
-				<tr>
-					<td class="romove-item"><a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
-					<td class="cart-image">
-						<a class="entry-thumbnail" href="detail.html">
-						    <img src=<?php echo base_url() ?>includehome/images/products/p2.jpg" alt="">
-						</a>
-					</td>
-					<td class="cart-product-name-info">
-						<h4 class='cart-product-description'><a href="detail.html">Tám lót sàn</a></h4>
-						<div class="cart-product-info">
-						<span class="product-color">Kích thước:<span>200x300</span></span>
-						</div>
-					</td>
-					<td class="cart-product-edit"><a href="#" class="product-edit"></a></td>
-					<td class="cart-product-quantity">
-						<div class="cart-quantity">
-							<div class="quant-input">
-				                <div class="arrows">
-				                  <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
-				                  <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
-				                </div>
-				                <input type="text" value="1">
-			              </div>
-			            </div>
-		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price">250.000 ₫</span></td>
-					<td class="cart-product-grand-total"><span class="cart-grand-total-price">250.000 ₫</span></td>
-				</tr>
-				<div class="cart-grand-total pull-right" style="font-size: 18px">
-					<span style="font-weight: bold; font-size: 30px">Tổng cộng: </span> <span class="inner-left-md badge" style="background-color: #fdd922; font-size: 30px; padding: 5px; border-radius: 5px; color: #444">670.000 ₫</span>
-				</div>
-			</tbody><!-- /tbody -->
-		</table><!-- /table -->
+	<div class="table-responsive" id="cart_table">
 	</div>
 </div><!-- /.shopping-cart-table -->				
 <div class="col-md-6 col-sm-12 estimate-ship-tax">
@@ -198,3 +114,49 @@
 </div><!-- /.body-content -->
 
 <!-- ============================================================= FOOTER ============================================================= -->
+<script>
+  $(document).ready(function() {
+    $('.add_cart').click(function(){
+      product_id       = $(this).data('productid');
+      product_name     = $(this).data('productname');
+      product_price    = $(this).data('price');
+      product_quantity = $(this).data('quantity');
+      product_img      = $(this).data('productimg');
+      product_size     = $(this).data('size');
+
+      $.ajax({
+        url: "<?php echo base_url() ?>cart/add",
+        type: 'POST',
+        data: {
+          product_id: product_id,
+          product_name: product_name,
+          product_price: product_price,
+          product_quantity: product_quantity,
+          product_img: product_img,
+          product_size: product_size
+        },
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+        }
+      })      
+    });
+
+    $('#show_cart').load("<?php echo base_url(); ?>cart/load");
+    $('#cart_table').load("<?php echo base_url(); ?>cart/load_cart");
+
+    $(document).on('click', '.delete_cart', function(){
+      var row_id = $(this).attr("id");
+      $.ajax({
+        url:"<?php echo base_url(); ?>cart/remove",
+        method:"POST",
+        data:{row_id:row_id},
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+          $('#cart_table').load("<?php echo base_url(); ?>cart/load_cart");
+        }
+      });
+    });
+  });
+</script>

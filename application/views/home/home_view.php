@@ -141,7 +141,18 @@
                         <!-- /.product-info -->
                         <div class="cart clearfix animate-effect">
                           <div class="btn-group">
-                            <a href="<?php echo base_url() ?>Cart" class="btn btn-warning" style="background-color: #fdd922; color: #444;">Thêm <i class="fa fa-shopping-cart"></i></a>
+                            <button 
+                              class="add_cart btn btn-warning" 
+                              style="background-color: #fdd922; color: #444;"
+                              data-productid="<?php echo $all_ve['id'] ?>"
+                              data-productname="<?php echo $all_ve['name'] ?>"
+                              data-price="<?php echo $all_ve['price'] ?>"
+                              data-productimg="<?php echo $img ?>"
+                              data-quantity="1"
+                              data-size="<?php echo $all_ve['size'] ?>"
+                              >
+                              Thêm <i class="fa fa-shopping-cart"></i>
+                            </button>
                             <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $all_ve['id'] ?>" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
                           </div>
                           <!-- /.action --> 
@@ -193,7 +204,18 @@
                         <!-- /.product-info -->
                         <div class="cart clearfix animate-effect">
                           <div class="btn-group">
-                            <a href="<?php echo base_url() ?>Cart" class="btn btn-warning" style="background-color: #fdd922; color: #444;">Thêm <i class="fa fa-shopping-cart"></i></a>
+                            <button 
+                              class="add_cart btn btn-warning" 
+                              style="background-color: #fdd922; color: #444;"
+                              data-productid="<?php echo $thongtinve['id'] ?>"
+                              data-productname="<?php echo $thongtinve['name'] ?>"
+                              data-price="<?php echo $thongtinve['price'] ?>"
+                              data-productimg="<?php echo $img ?>"
+                              data-quantity="1"
+                              data-size="<?php echo $thongtinve['size'] ?>"
+                              >
+                              Thêm <i class="fa fa-shopping-cart"></i>
+                            </button>
                             <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $thongtinve['id'] ?>" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
                           </div>
                           <!-- /.action --> 
@@ -248,7 +270,8 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $tam_lot_sp['id'] ?>"><img  src="<?php echo base_url() ?>includehome/images/products/p1.jpg" alt=""></a> </div>
+                          <?php $img = json_decode($tam_lot_sp['image'])[0] ?>
+                          <div class="image"> <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $tam_lot_sp['id'] ?>"><img  src="<?php echo $img ?>" alt=""></a> </div>
                           <!-- /.image -->
                           
                           <div class="tag new"><span>new</span></div>
@@ -266,7 +289,18 @@
                         <!-- /.product-info -->
                         <div class="cart clearfix animate-effect">
                           <div class="btn-group">
-                            <a href="<?php echo base_url() ?>Cart" class="btn btn-warning" style="background-color: #fdd922; color: #444;">Thêm <i class="fa fa-shopping-cart"></i></a>
+                            <button 
+                              class="add_cart btn btn-warning" 
+                              style="background-color: #fdd922; color: #444;"
+                              data-productid="<?php echo $tam_lot_sp['id'] ?>"
+                              data-productname="<?php echo $tam_lot_sp['name'] ?>"
+                              data-price="<?php echo $tam_lot_sp['price'] ?>"
+                              data-productimg="<?php echo $img ?>"
+                              data-quantity="1"
+                              data-size="<?php echo $tam_lot_sp['size'] ?>"
+                              >
+                              Thêm <i class="fa fa-shopping-cart"></i>
+                            </button>
                             <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $tam_lot_sp['id'] ?>" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
                           </div>
                           <!-- /.action --> 
@@ -298,7 +332,8 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $tam_lot_item['id'] ?>"><img  src="<?php echo base_url() ?>includehome/images/products/p5.jpg" alt=""></a> </div>
+                          <?php $img = json_decode($tam_lot_sp['image'])[0] ?>
+                          <div class="image"> <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $tam_lot_item['id'] ?>"><img  src="<?php echo $img ?>" alt=""></a> </div>
                           <!-- /.image -->
                           
                           <div class="tag sale"><span>sale</span></div>
@@ -316,7 +351,18 @@
                         <!-- /.product-info -->
                         <div class="cart clearfix animate-effect">
                           <div class="btn-group">
-                            <a href="<?php echo base_url() ?>Cart" class="btn btn-warning" style="background-color: #fdd922; color: #444;">Thêm <i class="fa fa-shopping-cart"></i></a>
+                            <button 
+                              class="add_cart btn btn-warning" 
+                              style="background-color: #fdd922; color: #444;"
+                              data-productid="<?php echo $tam_lot_item['id'] ?>"
+                              data-productname="<?php echo $tam_lot_item['name'] ?>"
+                              data-price="<?php echo $tam_lot_item['price'] ?>"
+                              data-productimg="<?php echo $img ?>"
+                              data-quantity="1"
+                              data-size="<?php echo $tam_lot_item['size'] ?>"
+                              >
+                              Thêm <i class="fa fa-shopping-cart"></i>
+                            </button>
                             <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $tam_lot_item['id'] ?>" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
                           </div>
                           <!-- /.action --> 
@@ -532,9 +578,56 @@
       <!-- ============================================== CONTENT : END ============================================== --> 
     </div>
     <!-- /.row --> 
+    <div id="test_c">
 
+    </div>
   </div>
   <!-- /.container --> 
 </div>
 <!-- /#top-banner-and-menu --> 
 <!-- ============================================================= FOOTER ============================================================= -->
+
+<script>
+  $(document).ready(function() {
+    $('.add_cart').click(function(){
+      product_id       = $(this).data('productid');
+      product_name     = $(this).data('productname');
+      product_price    = $(this).data('price');
+      product_quantity = $(this).data('quantity');
+      product_img      = $(this).data('productimg');
+      product_size     = $(this).data('size');
+
+      $.ajax({
+        url: "<?php echo base_url() ?>cart/add",
+        type: 'POST',
+        data: {
+          product_id: product_id,
+          product_name: product_name,
+          product_price: product_price,
+          product_quantity: product_quantity,
+          product_img: product_img,
+          product_size: product_size
+        },
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+        }
+      })      
+    });
+
+    $('#show_cart').load("<?php echo base_url(); ?>cart/load");
+
+    $(document).on('click', '.delete_cart', function(){
+      var row_id = $(this).attr("id");
+      $.ajax({
+        url:"<?php echo base_url(); ?>cart/remove",
+        method:"POST",
+        data:{row_id:row_id},
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+        }
+      });
+    });
+  });
+</script>

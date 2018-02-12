@@ -82,7 +82,6 @@
 </footer>
 
 
-<script src="<?php echo base_url() ?>includehome/js/jquery-1.11.1.min.js"></script> 
 <script src="<?php echo base_url() ?>includehome/js/bootstrap.min.js"></script> 
 <script src="<?php echo base_url() ?>includehome/js/bootstrap-hover-dropdown.min.js"></script> 
 <script src="<?php echo base_url() ?>includehome/js/owl.carousel.min.js"></script> 

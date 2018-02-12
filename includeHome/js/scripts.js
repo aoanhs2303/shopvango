@@ -320,9 +320,8 @@ jQuery(document).ready(function($) {
         $('html, body').animate({
             scrollTop: '+=350'
         }, 500);
-
-
     });
+    console.log("scroll");
 });
 
 

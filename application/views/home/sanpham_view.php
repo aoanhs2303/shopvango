@@ -147,7 +147,18 @@
 								<div class="row mt-2">
 									<div class="col-sm-12">
 										<div class="btn-group">
-											<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> THÊM VÀO GIỎ</a>
+											<button 
+				                              class="add_cart btn btn-primary" 
+				                              data-productid="<?php echo $sp_info['id'] ?>"
+				                              data-productname="<?php echo $sp_info['name'] ?>"
+				                              data-price="<?php echo $sp_info['price'] ?>"
+				                              data-productimg="<?php echo json_decode($sp_info['image'])[0] ?>"
+				                              data-quantity="1"
+				                              data-size="<?php echo $sp_info['size'] ?>"
+				                              >
+				                              <i class="fa fa-shopping-cart inner-right-vs"></i>
+				                              THÊM VÀO GIỎ</i>
+				                            </button>
 											<a href="#" class="btn btn-warning"><i class="fa fa-money inner-right-vs"></i> MUA NGAY</a>	
 										</div>
 									</div>
@@ -335,6 +346,50 @@
 </div><!-- /.body-content -->
 
 <!-- ============================================================= FOOTER ============================================================= -->
+<script>
+  $(document).ready(function() {
+    $('.add_cart').click(function(){
+      product_id       = $(this).data('productid');
+      product_name     = $(this).data('productname');
+      product_price    = $(this).data('price');
+      product_quantity = $(this).data('quantity');
+      product_img      = $(this).data('productimg');
+      product_size     = $(this).data('size');
+
+      $.ajax({
+        url: "<?php echo base_url() ?>cart/add",
+        type: 'POST',
+        data: {
+          product_id: product_id,
+          product_name: product_name,
+          product_price: product_price,
+          product_quantity: product_quantity,
+          product_img: product_img,
+          product_size: product_size
+        },
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+        }
+      })      
+    });
+
+    $('#show_cart').load("<?php echo base_url(); ?>cart/load");
+
+    $(document).on('click', '.delete_cart', function(){
+      var row_id = $(this).attr("id");
+      $.ajax({
+        url:"<?php echo base_url(); ?>cart/remove",
+        method:"POST",
+        data:{row_id:row_id},
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+        }
+      });
+    });
+  });
+</script>
 <script>
 	new Vue({
 	
