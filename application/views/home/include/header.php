@@ -21,7 +21,8 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/animate.min.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/rateit.css">
 <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/bootstrap-select.min.css">
-
+<link rel="shortcut icon" href="<?php echo base_url() ?>includehome/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?php echo base_url() ?>includehome/images/favicon.ico" type="image/x-icon">
 <!-- Icons/Glyphs -->
 <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/font-awesome.css">
 <script src="<?php echo base_url() ?>includehome/js/vue.js"></script>

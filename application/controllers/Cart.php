@@ -56,6 +56,15 @@ class Cart extends CI_Controller {
 		echo $this->view();
 	}
 
+	function load_order() {
+		echo $this->cart_order();
+	}
+
+	function load_order_price() {
+		echo $this->cart_order_price();
+	}
+
+
 	function remove()
 	{
 		$this->load->library("cart");
@@ -120,6 +129,26 @@ class Cart extends CI_Controller {
           </div>';
 
           return $output;
+	}
+
+	public function cart_order()
+	{
+		$this->load->library("cart");
+
+		$output = '';
+		$count = 0;
+		foreach($this->cart->contents() as $items) { 
+			$count++;
+			$output .= '[#]'.$count.' - Tên: '.$items["name"].' x '.$items["qty"].' :: Kích thước: '.$items["options"]["size"].' :: Giá: '.number_format($items["price"]).' ₫, ';
+		}
+		$output .= 'Tổng:'.number_format($this->cart->total()).' vnđ.';
+        return $output;
+	}
+
+	public function cart_order_price()
+	{
+		$this->load->library("cart");
+		return $this->cart->total();
 	}
 
 	function view()

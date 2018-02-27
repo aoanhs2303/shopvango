@@ -9,21 +9,23 @@
         <!-- ========================================== SECTION – HERO ========================================= -->
         <div id="hero">
           <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-            <div class="item" style="background-image: url(<?php echo base_url() ?>includehome/images/sliders/01.jpg);">
-              <div class="container-fluid">
-                <div class="caption bg-color vertical-center text-left">
-                  <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
-                  <div class="big-text fadeInDown-1"> VÁN ÉP </div>
-                  <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">250.000 đ</span> </div>
-                  <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
-                </div>
-                <!-- /.caption --> 
+            <?php foreach ($slideanh as $value) { ?>
+            <a href="<?php echo $value['link'] ?>">
+              <div class="item" style="background-image: url(<?php echo $value['image'] ?>);">
+                <!--<div class="container-fluid">
+                  <div class="caption bg-color vertical-center text-left">
+                    <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
+                    <div class="big-text fadeInDown-1"> VÁN ÉP </div>
+                    <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">250.000 đ</span> </div>
+                    <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
+                  </div>
+                </div> -->
               </div>
-              <!-- /.container-fluid --> 
-            </div>
-            <!-- /.item -->
+            </a>
+            <?php } ?>
+
             
-            <div class="item" style="background-image: url(<?php echo base_url() ?>includehome/images/sliders/02.jpg);">
+<!--             <div class="item">
               <div class="container-fluid">
                 <div class="caption bg-color vertical-center text-left">
                   <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
@@ -31,11 +33,8 @@
                   <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">350.000 đ</span> </div>
                   <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
                 </div>
-                <!-- /.caption --> 
               </div>
-              <!-- /.container-fluid --> 
-            </div>
-            <!-- /.item --> 
+            </div> -->
             
           </div>
           <!-- /.owl-carousel --> 
@@ -464,106 +463,30 @@
         
         <!-- ============================================== BLOG SLIDER ============================================== -->
         <section class="section latest-blog outer-bottom-vs wow fadeInUp">
-          <h3 class="section-title">Tin tức - thông tin của hàng</h3>
+          <h3 class="section-title">Tin tức - Dịch vụ - Khuyến mãi</h3>
           <div class="blog-slider-container outer-top-xs">
             <div class="owl-carousel blog-slider custom-carousel">
-              <div class="item">
-                <div class="blog-post">
-                  <div class="blog-post-image">
-                    <div class="image"> <a href="blog.html"><img src="<?php echo base_url() ?>includehome/images/blog-post/post1.jpg" alt=""></a> </div>
+              <?php foreach ($dichvu as $value) { ?>
+                <div class="item">
+                  <div class="blog-post">
+                    <div class="blog-post-image">
+                      <div class="image"> <a href="<?php echo base_url() ?>Home/dichvu_chitiet/<?php echo $value['id'] ?>">
+                        <img style="height: 200px;" src="<?php echo $value['image'] ?>" alt=""></a> </div>
+                    </div>
+                    <!-- /.blog-post-image -->
+                    
+                    <div class="blog-post-info text-left">
+                      <h3 class="name"><a href="#"><?php echo $value['name'] ?></a></h3>
+                      <span class="info">Thành Công &nbsp;|&nbsp; <?php echo date('d/m/Y',$value['datetime']) ?> </span>
+                      <p class="text"><?php echo $value['summary'] ?></p>
+                      <a href="<?php echo base_url() ?>Home/dichvu_chitiet/<?php echo $value['id'] ?>" class="lnk btn btn-primary">Chi tiết</a> </div>
+                    <!-- /.blog-post-info --> 
+                    
                   </div>
-                  <!-- /.blog-post-image -->
-                  
-                  <div class="blog-post-info text-left">
-                    <h3 class="name"><a href="#">Voluptatem accusantium doloremque laudantium</a></h3>
-                    <span class="info">By Jone Doe &nbsp;|&nbsp; 21 March 2016 </span>
-                    <p class="text">Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                    <a href="#" class="lnk btn btn-primary">Read more</a> </div>
-                  <!-- /.blog-post-info --> 
-                  
+                  <!-- /.blog-post --> 
                 </div>
-                <!-- /.blog-post --> 
-              </div>
-              <!-- /.item -->
-              
-              <div class="item">
-                <div class="blog-post">
-                  <div class="blog-post-image">
-                    <div class="image"> <a href="blog.html"><img src="<?php echo base_url() ?>includehome/images/blog-post/post2.jpg" alt=""></a> </div>
-                  </div>
-                  <!-- /.blog-post-image -->
-                  
-                  <div class="blog-post-info text-left">
-                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
-                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2016 </span>
-                    <p class="text">Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                    <a href="#" class="lnk btn btn-primary">Read more</a> </div>
-                  <!-- /.blog-post-info --> 
-                  
-                </div>
-                <!-- /.blog-post --> 
-              </div>
-              <!-- /.item --> 
-              
-              <!-- /.item -->
-              
-              <div class="item">
-                <div class="blog-post">
-                  <div class="blog-post-image">
-                    <div class="image"> <a href="blog.html"><img src="<?php echo base_url() ?>includehome/images/blog-post/post1.jpg" alt=""></a> </div>
-                  </div>
-                  <!-- /.blog-post-image -->
-                  
-                  <div class="blog-post-info text-left">
-                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
-                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2016 </span>
-                    <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-                    <a href="#" class="lnk btn btn-primary">Read more</a> </div>
-                  <!-- /.blog-post-info --> 
-                  
-                </div>
-                <!-- /.blog-post --> 
-              </div>
-              <!-- /.item -->
-              
-              <div class="item">
-                <div class="blog-post">
-                  <div class="blog-post-image">
-                    <div class="image"> <a href="blog.html"><img src="<?php echo base_url() ?>includehome/images/blog-post/post2.jpg" alt=""></a> </div>
-                  </div>
-                  <!-- /.blog-post-image -->
-                  
-                  <div class="blog-post-info text-left">
-                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
-                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2016 </span>
-                    <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-                    <a href="#" class="lnk btn btn-primary">Read more</a> </div>
-                  <!-- /.blog-post-info --> 
-                  
-                </div>
-                <!-- /.blog-post --> 
-              </div>
-              <!-- /.item -->
-              
-              <div class="item">
-                <div class="blog-post">
-                  <div class="blog-post-image">
-                    <div class="image"> <a href="blog.html"><img src="<?php echo base_url() ?>includehome/images/blog-post/post1.jpg" alt=""></a> </div>
-                  </div>
-                  <!-- /.blog-post-image -->
-                  
-                  <div class="blog-post-info text-left">
-                    <h3 class="name"><a href="#">Dolorem eum fugiat quo voluptas nulla pariatur</a></h3>
-                    <span class="info">By Saraha Smith &nbsp;|&nbsp; 21 March 2016 </span>
-                    <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-                    <a href="#" class="lnk btn btn-primary">Read more</a> </div>
-                  <!-- /.blog-post-info --> 
-                  
-                </div>
-                <!-- /.blog-post --> 
-              </div>
-              <!-- /.item --> 
-              
+                <!-- /.item -->
+              <?php } ?> 
             </div>
             <!-- /.owl-carousel --> 
           </div>

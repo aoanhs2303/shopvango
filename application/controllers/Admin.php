@@ -10,9 +10,20 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$menu = $this->load->view('admin/include/menu.php', null, TRUE);
-		$data = array('menu' => $menu);
-
+		$menu        = $this->load->view('admin/include/menu.php', null, TRUE);
+		$sosanpham   = $this->Admin_model->countProduct();
+		$sodonhang   = $this->Admin_model->countOrder();
+		$doanhthu    = $this->Admin_model->doanhThu();
+		$dh_chuaxuly = $this->Admin_model->getOrderUnprocessor();
+		$sp_moi      = $this->Admin_model->get5Product();
+		$data = array(
+			'menu'        => $menu,
+			'sosp'        => $sosanpham,
+			'sodh'        => $sodonhang,
+			'doanhthu'    => $doanhthu,
+			'dh_chuaxuly' => $dh_chuaxuly,
+			'sp_moi'      => $sp_moi
+		);
 
 		$this->load->view('admin/include/header.php', null, FALSE);
 		$this->load->view('admin/main_Admin.php', $data);
@@ -354,6 +365,157 @@ class Admin extends CI_Controller {
 		}
 	}
 
+
+	// =============// 
+	// ! GIỚI THIỆU //        
+	// =============// 	
+
+	public function thongtin()
+	{
+		$menu        = $this->load->view('admin/include/menu.php', null, TRUE);
+		$all_info = $this->Admin_model->getInfomation();
+		$data        = array('menu' => $menu, 'dichvu' => $all_info); 
+		$this->load->view('admin/include/header.php', null, FALSE);
+		$this->load->view('admin/gioithieu_Admin.php', $data);
+		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+	public function themthongtin()
+	{
+		$ten     = $this->input->post('tenthongtin');
+		$noidung = $this->input->post('noidungthongtin');
+		$kieu  = $this->input->post('kieuthongtin');
+		
+		$this->Admin_model->addInfomation($ten,$noidung,$kieu);
+		redirect('Admin/thongtin');
+	}
+
+	public function suathongtin($id)
+	{
+		$menu = $this->load->view('admin/include/menu.php', null, TRUE);
+		$one_infomation = $this->Admin_model->getInfomationById($id);
+		$data = array('menu' => $menu, 'thongtin' => $one_infomation); 
+		$this->load->view('admin/include/header.php', null, FALSE);
+		$this->load->view('admin/gioithieu_edit_Admin.php', $data);
+		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+	public function do_suathongtin()
+	{
+		$id = $this->input->post('idthongtin');
+		$name = $this->input->post('tenthongtin');
+		$content = $this->input->post('noidungthongtin');
+		$type = $this->input->post('kieuthongtin');
+
+		if($this->Admin_model->updateInfomation($id,$name,$content,$type)){
+			$link = base_url() . 'Admin/thongtin';
+			redirect($link);
+		}
+
+	}
+
+	public function xoathongtin()
+	{
+		$idxoa = $this->input->post('idxoa');
+		$this->Admin_model->deleteInfomation($idxoa);		
+	}
+
+	public function slideanh()
+	{
+		$menu      = $this->load->view('admin/include/menu.php', null, TRUE);
+		$all_slide = $this->Admin_model->getSlideAnh();
+		$data      = array('menu' => $menu, 'slideanh' => $all_slide); 
+		$this->load->view('admin/include/header.php', null, FALSE);
+		$this->load->view('admin/slide_Admin.php', $data);
+		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+	public function themslideanh()
+	{
+		$link = $this->input->post('linkslide');
+
+		$config['upload_path']   = './files/slide';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']      = '100000';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('anhslide')){
+			$hinhanh = "NULL";
+		}
+		else{
+			$data = $this->upload->data();
+			$hinhanh = base_url() . 'files/slide/' . $data['file_name'];
+		}
+
+		$config['image_library']  = 'gd2';
+		$config['source_image']   = 'files/slide/'.$data['file_name']; // ko lay base_url
+		$config['create_thumb']   = FALSE;
+		$config['maintain_ratio'] = TRUE;
+		$config['master_dim']     = 'width';
+		$config['width']          = 848;
+		$config['height']         = 370;
+
+		$this->load->library('image_lib', $config);
+		$this->image_lib->initialize($config);
+
+		if($this->image_lib->resize()) {
+			$config['image_library']  = 'gd2';
+			$config['source_image']   = 'files/slide/'.$data['file_name'];
+			$config['create_thumb']   = FALSE;
+			$config['maintain_ratio'] = FALSE;
+			$config['master_dim']     = 'height';
+			$config['width']          = 848;
+			$config['height']         = 370;
+
+			$this->load->library('image_lib', $config);
+			$this->image_lib->initialize($config);
+			$this->image_lib->crop();
+		}
+
+
+		$this->Admin_model->addSlideAnh($link,$hinhanh);
+		redirect('Admin/slideanh');
+	}
+
+	public function xoaslideanh()
+	{
+		$idxoa = $this->input->post('idxoa');
+		$this->Admin_model->deleteSlideAnh($idxoa);		
+	}
+
+	// ===========// 
+	// ! ĐƠN HÀNG //        
+	// ===========// 
+
+	public function donhang()
+	{
+		$menu     = $this->load->view('admin/include/menu.php', null, TRUE);
+		$donhang  = $this->Admin_model->getOrder();
+		$doanhthu = $this->Admin_model->doanhThu();
+		$data     = array(
+			'menu'     => $menu, 
+			'donhang'  => $donhang,
+			'doanhthu' => $doanhthu
+		); 
+		$this->load->view('admin/include/header.php', null, FALSE);
+		$this->load->view('admin/donhang_Admin.php', $data);
+		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+	public function xoadonhang()
+	{
+		$idxoa = $this->input->post('idxoa');
+		$this->Admin_model->deleteOrder($idxoa);		
+	}
+
+	public function chuyenxong($id)
+	{
+		if($this->Admin_model->setDoneOrder($id)) {
+			$link = base_url() . 'Admin/donhang';
+			redirect($link);	
+		}
+	}
 
 }
 

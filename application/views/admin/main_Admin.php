@@ -48,13 +48,13 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Số hóa đơn</span>
-              <span class="info-box-number">450</span>
+              <span class="info-box-number"><?php echo $sodh; ?></span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 100%"></div>
               </div>
               <span class="progress-description">
-                  <a href="" style="color: #f1f1f1">Xem chi tiết</a>
+                  <a href="<?php echo base_url() ?>Admin/donhang" style="color: #f1f1f1">Xem chi tiết</a>
               </span>
             </div>
             <!-- /.info-box-content -->
@@ -68,13 +68,13 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Doanh thu</span>
-              <span class="info-box-number" style="font-size: 17px; padding-bottom: 6px">120.000.000 ₫</span>
+              <span class="info-box-number" style="font-size: 17px; padding-bottom: 6px"><?php echo number_format($doanhthu) ?> ₫</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 100%"></div>
               </div>
               <span class="progress-description">
-                  <a href="" style="color: #f1f1f1">Xem chi tiết</a>
+                  <a href="<?php echo base_url() ?>Admin/donhang" style="color: #f1f1f1">Xem chi tiết</a>
               </span>
             </div>
             <!-- /.info-box-content -->
@@ -88,7 +88,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Số khách</span>
-              <span class="info-box-number">1.201</span>
+              <span class="info-box-number">Processing</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 85%"></div>
@@ -108,13 +108,13 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Số sản phẩm</span>
-              <span class="info-box-number">213</span>
+              <span class="info-box-number"><?php echo $sosp; ?></span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 100%"></div>
               </div>
               <span class="progress-description">
-                  <a href="" style="color: #f1f1f1">Xem chi tiết</a>
+                  <a href="<?php echo base_url()?>Admin/sanpham" style="color: #f1f1f1">Xem chi tiết</a>
               </span>
             </div>
             <!-- /.info-box-content -->
@@ -125,118 +125,11 @@
       </div>
       <!-- /.row -->
       <div class="row">
-        <div class="col-xl-8 connectedSortable">
-          <!-- LINE CHART -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Products Yearly Sales</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="lineChart" style="height:327px"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-
-        <div class="col-xl-4 connectedSortable">
-          <!-- weather -->
-          <div class="box bg-blue text-center">
-      <div class="box-body">
-        <div class="p-5">
-          <h3 class="white">
-          <span class="font-size-30">City, </span>Country
-          </h3>
-          <p class="weather-day-date mb-30">
-          <span class="mr-5">MONDAY</span> May 11, 2017
-          </p>
-          <div class="mb-30 weather-icon">
-          <canvas class="mr-40 text-top" id="icon1" width="90" height="90"></canvas>
-          <div class="inline-block">
-            <span class="font-size-50">29°
-            <span class="font-size-40">C</span>
-            </span>
-            <p class="text-left">DAY RAIN</p>
-          </div>
-          </div>
-          <div class="row no-space">
-          <div class="col-2">
-            <div>
-            <div class="mb-10">TUE</div>
-            <i class="wi-day-sunny font-size-30 mb-10"></i>
-            <div>24°
-              <span class="font-size-12">C</span>
-            </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div>
-            <div class="mb-10">WED</div>
-            <i class="wi-day-cloudy font-size-30 mb-10"></i>
-            <div>21°
-              <span class="font-size-12">C</span>
-            </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div>
-            <div class="mb-10">THU</div>
-            <i class="wi-day-sunny font-size-30 mb-10"></i>
-            <div>25°
-              <span class="font-size-12">C</span>
-            </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div>
-            <div class="mb-10">FRI</div>
-            <i class="wi-day-cloudy-gusts font-size-30 mb-10"></i>
-            <div>20°
-              <span class="font-size-12">C</span>
-            </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div>
-            <div class="mb-10">SAT</div>
-            <i class="wi-day-lightning font-size-30 mb-10"></i>
-            <div>18°
-              <span class="font-size-12">C</span>
-            </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div>
-            <div class="mb-10">SUN</div>
-            <i class="wi-day-storm-showers font-size-30 mb-10"></i>
-            <div>14°
-              <span class="font-size-12">C</span>
-            </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.box-body -->
-      </div>
-          <!-- /.box -->
-        </div>
-
-       </div>
-      <!-- /.row -->
-      <div class="row">
                 <div class="col-xl-6">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Đơn đặt hàng mới</h3>
+              <h3 class="box-title">Đơn đặt hàng chưa xử lý</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -250,62 +143,23 @@
                 <table class="table table-responsive no-margin">
                   <thead>
                   <tr>
-                    <th>ID Đơn ĐH</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Trạng thái</th>
+                    <th>Tình trạng</th>
+                    <th>SĐT KH</th>
+                    <th>Email KH</th>
+                    <th>Ngày đặt</th>
                     <th>Giá</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <?php foreach ($dh_chuaxuly as $value) { ?>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">ODN84952</a></td>
-                    <td>Iphone 6s</td>
-                    <td><span class="label bg-purple">Xong</span></td>
-                    <td>
-                      <div>120.000 ₫</div>
-                    </td>
+                    <td><span class="label bg-purple">Mới</span></td>
+                    <td><?php echo $value['sdt'] ?></td>
+                    <td><?php echo $value['email'] ?></td>
+                    <td><?php echo date('d/m/Y',$value['datetime']) ?></td>
+                    <td><span class="label bg-red"><?php echo number_format($value['total']) ?> ₫ </span></td>
                   </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">ODN84845</a></td>
-                    <td>Apple TV</td>
-                    <td><span class="label bg-yellow">Pending</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f39c12" data-height="20">40,80,-90,80,61,-73,68</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">ODN84982</a></td>
-                    <td>Samsung TV</td>
-                    <td><span class="label bg-green">Delivered</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#41b613" data-height="20">60,50,90,-40,91,-53,83</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">ODN85452</a></td>
-                    <td>Intex Smart Watch</td>
-                    <td><span class="label bg-blue">Processing</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#389af0" data-height="20">40,80,-90,80,61,-73,68</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">ODN94992</a></td>
-                    <td>Onida AC</td>
-                    <td><span class="label bg-yellow">Pending</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f39c12" data-height="20">40,80,-90,80,61,-73,68</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">ODN98952</a></td>
-                    <td>iPhone 7 Plus</td>
-                     <td><span class="label bg-green">Delivered</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#41b613" data-height="20">60,50,90,-40,91,-53,83</div>
-                    </td>
-                  </tr>
-
+                  <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -313,7 +167,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix">
-              <a href="javascript:void(0)" class="btn btn-sm btn-default pull-right">Xem toàn bộ đơn đặt hàng</a>
+              <a href="<?php echo base_url() ?>Admin/donhang" class="btn btn-sm btn-default pull-right">Xem toàn bộ đơn đặt hàng</a>
             </div>
             <!-- /.box-footer -->
           </div>
@@ -334,63 +188,29 @@
         <!-- /.box-header -->
         <div class="box-body">
           <ul class="products-list product-list-in-box">
+          <?php foreach ($sp_moi as $value) { ?>
           <li class="item">
             <div class="product-img">
-            <img src="<?php echo base_url(); ?>includeadmin/images/default-50x50.gif" alt="Product Image">
+              <?php 
+                $img = json_decode($value['image']);
+              ?>
+              <img src="<?php echo $img[0]; ?>" alt="Product Image">
             </div>
             <div class="product-info">
-            <a href="javascript:void(0)" class="product-title">iphone 7plus
-              <span class="label label-warning pull-right" style="font-size: 16px">250.000 ₫</span></a>
-            <span class="product-description">
-                12MP Wide-angle and telephoto cameras.
+            <a href="javascript:void(0)" class="product-title"><?php echo $value['name'] ?>
+              <span class="label label-warning pull-right" style="font-size: 16px"><?php echo number_format($value['price']) ?> ₫</span></a>
+              <span class="product-description">
+                Kích thước: <?php echo $value['size'] ?>. Số lượng: <?php echo $value['quantity'] ?> 
               </span>
             </div>
           </li>
-          <!-- /.item -->
-          <li class="item">
-            <div class="product-img">
-            <img src="<?php echo base_url(); ?>includeadmin/images/default-50x50.gif" alt="Product Image">
-            </div>
-            <div class="product-info">
-            <a href="javascript:void(0)" class="product-title">Apple Tv
-              <span class="label label-info pull-right">$400</span></a>
-            <span class="product-description">
-                Library | For You | Browse | Radio
-              </span>
-            </div>
-          </li>
-          <!-- /.item -->
-          <li class="item">
-            <div class="product-img">
-            <img src="<?php echo base_url(); ?>includeadmin/images/default-50x50.gif" alt="Product Image">
-            </div>
-            <div class="product-info">
-            <a href="javascript:void(0)" class="product-title">MacBook Air<span
-              class="label label-danger pull-right">$450</span></a>
-            <span class="product-description">
-                Make big things happen. All day long.
-              </span>
-            </div>
-          </li>
-          <!-- /.item -->
-          <li class="item">
-            <div class="product-img">
-            <img src="<?php echo base_url(); ?>includeadmin/images/default-50x50.gif" alt="Product Image">
-            </div>
-            <div class="product-info">
-            <a href="javascript:void(0)" class="product-title">iPad Pro
-              <span class="label label-success pull-right">$289</span></a>
-            <span class="product-description">
-                Anything you can do, you can do better.
-              </span>
-            </div>
-          </li>
-          <!-- /.item -->
+          <?php } ?>
+
           </ul>
         </div>
         <!-- /.box-body -->
         <div class="box-footer text-center">
-          <a href="javascript:void(0)" class="uppercase">Xem toàn bộ sản phẩm</a>
+          <a href="<?php echo base_url() ?>Admin/product" class="uppercase">Xem toàn bộ sản phẩm</a>
         </div>
         <!-- /.box-footer -->
         </div>

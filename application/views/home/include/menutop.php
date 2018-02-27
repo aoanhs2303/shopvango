@@ -11,7 +11,7 @@
             <div class="nav-outer">
               <ul class="nav navbar-nav">
                 <li class="active"> <a href="<?php echo base_url() ?>Home">Home</a> </li>
-                <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu</a>
+                <li class="yamm mega-menu"> <a href="<?php echo base_url() ?>Home/gioithieu">Giới thiệu</a>
                 </li>
                 <li class="dropdown mega-menu"> 
                 <a href="category.html"  data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>
@@ -24,7 +24,7 @@
                             <ul class="links">
                             <?php foreach ($category_van as $key => $van) { ?>
                             <li>
-                              <a href="" >
+                              <a href="<?php echo base_url() ?>Home/danhmuc/<?php echo $van['id'] ?>" >
                                 <?php echo $van['name'] ?> 
                               </a>
                             </li>
@@ -38,7 +38,7 @@
                             <ul class="links">
                               <?php foreach ($category_lot as $key => $lot) { ?>
                               <li>
-                                <a href="" >
+                                <a href="<?php echo base_url() ?>Home/danhmuc/<?php echo $lot['id'] ?>" >
                                   <?php echo $lot['name'] ?> 
                                 </a>
                               </li>
@@ -52,7 +52,7 @@
                             <ul class="links">
                               <?php foreach ($category_khac as $key => $khac) { ?>
                               <li>
-                                <a href="" >
+                                <a href="<?php echo base_url() ?>Home/danhmuc/<?php echo $khac['id'] ?>" >
                                   <?php echo $khac['name'] ?> 
                                 </a>
                               </li>
@@ -67,10 +67,10 @@
                       <!-- /.yamm-content --> </li>
                   </ul>
                 </li>
-                <li class="dropdown hidden-sm"> <a href="category.html">Dịch vụ<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
-                <li class="dropdown hidden-sm"> <a href="category.html">Tin tức</a> </li>
-                <li class="dropdown"> <a href="contact.html">Liên hệ</a> </li>
-                <li class="dropdown"> <a href="contact.html">Hướng dẫn mua hàng</a> </li>
+                <li class="dropdown hidden-sm"> <a href="<?php echo base_url() ?>Home/dichvu">Dịch vụ<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
+                <!-- <li class="dropdown hidden-sm"> <a href="category.html">Tin tức</a> </li> -->
+                <li class="dropdown"> <a href="<?php echo base_url(); ?>Home/bando">Bản đồ</a> </li>
+                <li class="dropdown"> <a href="<?php echo base_url(); ?>Home/huongdanmuahang">Hướng dẫn mua hàng</a> </li>
                 <li class="dropdown  navbar-right special-menu"> <a href="#">Mua ngay</a> </li>
               </ul>
               <!-- /.navbar-nav -->

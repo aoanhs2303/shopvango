@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
-    <title>Admin</title>
+    <link rel="shortcut icon" href="<?php echo base_url() ?>includeadmin/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url() ?>includeadmin/images/favicon.ico" type="image/x-icon">
+    <title>Admin Thành công</title>
 
   <!-- Bootstrap 4.0-->
   <link rel="stylesheet" href="<?php echo base_url(); ?>includeadmin/assets/vendor_components/bootstrap/dist/css/bootstrap.css">

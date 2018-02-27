@@ -10,6 +10,33 @@ class Admin_model extends CI_Model {
 		
 	}
 
+	// ==============// 
+	// ! ADMIN INDEX //        
+	// =============//
+	public function countProduct()
+	{
+		$query = $this->db->get("sanpham");
+		return $query->num_rows();
+	}
+
+	public function countOrder()
+	{
+		$query = $this->db->get("donhang");
+		return $query->num_rows();
+	}
+
+	public function doanhThu()
+	{
+		$this->db->select('sum(total) as total');
+		$data = $this->db->get('donhang');
+		$data = $data->result_array();
+		return $data[0]['total'];
+	}
+
+	// ===========// 
+	// ! DANH MỤC //        
+	// ===========//
+
 	public function getCategory()
 	{
 		$this->db->select('*');
@@ -188,9 +215,9 @@ class Admin_model extends CI_Model {
                   <td class="text-primary" style="font-weight: 900">'.$count.'</td>
                   <td>';
                   if($row->hot) {
-					$output .= '<a href="'.$base_url.'Admin/unsetHot/'.$row->id.'"><span class="badge badge-danger">HOT</span></a>';
+					$output .= '<a href="'.$base_url.'Admin/unsetHot/'.$row->id.'"><span class="label bg-red">HOT</span></a>';
                   } else {
-		          	$output .= '<a href="'.$base_url.'Admin/setHot/'.$row->id.'"><span class="badge badge-info"><i class="fa fa-square"></i> Cài đặt</span></a>';	                  	
+		          	$output .= '<a href="'.$base_url.'Admin/setHot/'.$row->id.'"><span class="label bg-blue"><i class="fa fa-square"></i> Cài đặt</span></a>';	                  	
                   }
                   $output .= '</td>
                   <td class="stt">'.$row->name.'</td>
@@ -243,6 +270,7 @@ class Admin_model extends CI_Model {
 	public function getProduct()
 	{
 		$this->db->select('*');
+		$this->db->order_by('id', 'desc');
 		$data = $this->db->get('sanpham');
 		$data = $data->result_array();
 		return $data;
@@ -421,6 +449,160 @@ class Admin_model extends CI_Model {
 		$this->db->where('id', $id);
 		return $this->db->update('sanpham');		
  	}
+
+	// =============// 
+	// ! GIỚI THIỆU //        
+	// =============// 
+
+	public function getInfomation()
+	{
+		$this->db->select('*');
+		$data = $this->db->get('cuahang');
+		$data = $data->result_array();
+		return $data;
+	}
+
+
+	public function getInfomationById($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id', $id);
+		$data = $this->db->get('cuahang');
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function addInfomation($name,$content,$type)
+	{
+		$data = array(
+			'name'    => $name,
+			'content' => $content,
+			'type' => $type
+		);
+		$this->db->insert('cuahang', $data);
+		return $this->db->insert_id();
+	}
+
+	public function updateInfomation($id,$name,$content,$type)
+	{
+		$data = array(
+			'name'    => $name,
+			'content' => $content,
+			'type'    => $type
+		);
+		$this->db->where('id', $id);
+		return $this->db->update('cuahang', $data);		
+	}
+
+	public function deleteInfomation($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('cuahang');
+	}
+
+	public function getGioiThieu()
+	{
+		$this->db->select('*');
+		$this->db->where('type', 'gioithieu');
+		$data = $this->db->get('cuahang', 1);
+		$data = $data->result_array();
+
+		return $data;
+	}
+
+	public function getHuongDanMuaHang()
+	{
+		$this->db->select('*');
+		$this->db->where('type', 'huongdanmuahang');
+		$data = $this->db->get('cuahang', 1);
+		$data = $data->result_array();
+		return $data;
+	}
+
+	// =============// 
+	// ! SLIDE ẢNH  //        
+	// =============// 
+
+	public function addSlideAnh($link, $image)
+	{
+		$data = array('link' => $link, 'image' => $image);
+		$this->db->insert('slideanh', $data);
+		return $this->db->insert_id();
+	}
+
+	public function getSlideAnh()
+	{
+		$this->db->select('*');
+		$data = $this->db->get('slideanh');
+		$data = $data->result_array();
+
+		return $data;
+	}
+
+	public function deleteSlideAnh($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('slideanh');
+	}
+
+	// =========// 
+	// ! ORDER  //        
+	// =========// 
+
+	public function addOrder($sanpham,$name,$sdt,$email,$diachi,$price)
+	{
+		$data = array(
+			'product' => $sanpham,
+			'name'    => $name,
+			'sdt'     => $sdt,
+			'email'   => $email,
+			'address' => $diachi,
+			'total'   => $price
+		);
+		$this->db->insert('donhang', $data);
+		return $this->db->insert_id();
+	}
+
+	public function getOrder()
+	{
+		$this->db->select('*');
+		$this->db->order_by('id', 'desc');
+		$data = $this->db->get('donhang');
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function getOrderUnprocessor()
+	{
+		$this->db->select('*');
+		$this->db->order_by('id', 'desc');
+		$this->db->where('status', '');
+		$data = $this->db->get('donhang');
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function deleteOrder($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('donhang');
+	}
+
+	public function setDoneOrder($id)
+	{
+		$this->db->set('status', 'done');
+		$this->db->where('id', $id);
+		return $this->db->update('donhang');	
+	}
+
+	public function get5Product()
+	{
+		$this->db->select('*');
+		$this->db->order_by('id', 'desc');
+		$data = $this->db->get('sanpham', 5);
+		$data = $data->result_array();
+		return $data;
+	}
 
 }
 

@@ -26,7 +26,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="<?php echo base_url() ?>Admin" class="logo">
       <!-- <span class="logo-lg"><b>Fox</b>Admin</span> -->
       <img src="<?php echo base_url(); ?>includeadmin/images/logo.png" alt="" class="img-fluid" style="height: 50px; margin-top: -3px">
     </a>
