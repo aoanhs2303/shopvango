@@ -1,11 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+include("Function.php");
+
 class Admin extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Admin_model');
+		Confirm_Login();
 	}
 
 	public function index()
@@ -29,6 +32,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/main_Admin.php', $data);
 		$this->load->view('admin/include/footer.php', null, FALSE);
 	}
+
 
 	// ===========// 
 	// ! dANH MỤC //        
@@ -420,6 +424,10 @@ class Admin extends CI_Controller {
 		$this->Admin_model->deleteInfomation($idxoa);		
 	}
 
+	// ============// 
+	// ! SLIDE ẢNH //        
+	// ============// 
+
 	public function slideanh()
 	{
 		$menu      = $this->load->view('admin/include/menu.php', null, TRUE);
@@ -482,6 +490,75 @@ class Admin extends CI_Controller {
 	{
 		$idxoa = $this->input->post('idxoa');
 		$this->Admin_model->deleteSlideAnh($idxoa);		
+	}
+
+	// ============================// 
+	// ! BANNER QUẢNG CÁO 410 x 170//        
+	// ============================// 
+
+	public function banner()
+	{
+		$menu      = $this->load->view('admin/include/menu.php', null, TRUE);
+		$all_banner = $this->Admin_model->getBanner();
+		$data      = array('menu' => $menu, 'banner' => $all_banner); 
+		$this->load->view('admin/include/header.php', null, FALSE);
+		$this->load->view('admin/banner_Admin.php', $data);
+		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+
+	public function thembanner()
+	{
+		$link = $this->input->post('linkbanner');
+
+		$config['upload_path']   = './files/slide';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']      = '100000';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('anhbanner')){
+			$hinhanh = "NULL";
+		}
+		else{
+			$data = $this->upload->data();
+			$hinhanh = base_url() . 'files/slide/' . $data['file_name'];
+		}
+
+		$config['image_library']  = 'gd2';
+		$config['source_image']   = 'files/slide/'.$data['file_name']; // ko lay base_url
+		$config['create_thumb']   = FALSE;
+		$config['maintain_ratio'] = TRUE;
+		$config['master_dim']     = 'width';
+		$config['width']          = 410;
+		$config['height']         = 170;
+
+		$this->load->library('image_lib', $config);
+		$this->image_lib->initialize($config);
+
+		if($this->image_lib->resize()) {
+			$config['image_library']  = 'gd2';
+			$config['source_image']   = 'files/slide/'.$data['file_name'];
+			$config['create_thumb']   = FALSE;
+			$config['maintain_ratio'] = FALSE;
+			$config['master_dim']     = 'height';
+			$config['width']          = 410;
+			$config['height']         = 170;
+
+			$this->load->library('image_lib', $config);
+			$this->image_lib->initialize($config);
+			$this->image_lib->crop();
+		}
+
+
+		$this->Admin_model->addBanner($link,$hinhanh);
+		redirect('Admin/banner');
+	}
+
+	public function xoabanner()
+	{
+		$idxoa = $this->input->post('idxoa');
+		$this->Admin_model->deleteBanner($idxoa);		
 	}
 
 	// ===========// 

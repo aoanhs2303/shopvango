@@ -29,15 +29,9 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-
       <h1>
-        DỊCH VỤ
+        BANNER QUẢNG CÁO
       </h1>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="general.html#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="general.html#">Forms</a></li>
-        <li class="breadcrumb-item active">General Elements</li>
-      </ol>
     </section>
 
     <!-- Main content -->
@@ -47,55 +41,43 @@
      </div>
 
     <!-- /****sẽ chia ra 3 phần học vue js sẽ làm***/ -->
-    <form action="themdichvu" method="post" enctype="multipart/form-data">
+    <form action="thembanner" method="post" enctype="multipart/form-data">
       <div class="box box-default">
         <div class="box-header with-border">
           <h3 class="box-title">Tổng quan</h3>
-          <button type="submit" class="btn btn-warning btn-lg pull-right nutajax" style="font-size: 20px"><i class="fa fa-plus-square"></i> Thêm</button>
+          
         </div>
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
             <div class="col-12">
               <div class="form-group row">
-                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Tên dịch vụ</b> <span class="text-danger">*</span></label>
+                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Ảnh</b> <span class="text-danger">*</span></label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" name="tendichvu" placeholder="Nhập tên dịch vụ">
-                  <div class="form-control-feedback validateDM" style="display: none">
-                    <small style="color: orangered">Không được để trống mục này.</small>
+                  <input class="form-control" type="file" name="anhbanner">
+                  <div class="form-control-feedback validateDM">
+                    <small style="color: orangered">Nên chọn ảnh có độ phân giải 410 x 170px.</small>
                   </div>
                 </div>
-              </div>
+              </div> 
+            </div>
+            <div class="col-12">
               <div class="form-group row">
-                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Hình ảnh</b> <span class="text-danger">*</span></label>
+                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Đường dẫn</b> <span class="text-danger">*</span></label>
                 <div class="col-sm-10">
-                  <input type="file" class="form-control" name="hinhdichvu">
+                  <input class="form-control" type="text" name="linkbanner">
+                  <div class="form-control-feedback validateDM">
+                    <small style="color: orangered">Khi click vào ảnh sẽ truy cập đường dẫn này.</small>
+                  </div>
                 </div>
-              </div>      
-              <div class="form-group row">
-                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Tóm tắt</b> <span class="text-danger">*</span></label>
-                <div class="col-sm-10">
-                  <input class="form-control" type="text" name="tomtatdichvu" placeholder="Nhập tóm tắt của dịch vụ">
-                </div>
-              </div>        
-              <div class="form-group row">
-                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Mô tả dịch vụ</b> <span class="text-danger">*</span></label>
-                <div class="col-sm-10">
-                  <textarea name="noidungdichvu" id="addnoidung">
-                      Mô tả dịch vụ trên.
-                  </textarea>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Từ khóa tìm kiếm</b> <span class="text-danger">*</span></label>
-                <div class="col-sm-10">
-                  <input class="form-control" type="text" name="tukhoadichvu" placeholder="Nhập từ khóa">
-                </div>
-              </div>
+              </div> 
             </div>
             <!-- /.col -->
           </div>
           <!-- /.row -->
+        </div>
+        <div class="box-footer">
+          <button type="submit" class="btn btn-warning btn-lg pull-right nutajax" style="font-size: 20px  "><i class="fa fa-plus-square"></i> Thêm</button>
         </div>
         <!-- /.box-body -->
       </div>
@@ -103,31 +85,26 @@
 
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Danh sách dịch vụ</h3>
-
+        <h3 class="box-title">Danh sách ảnh banner</h3>
       </div>
       <!-- /.box-header -->
       <div class="box-body no-padding">
         <table class="table table-responsive danhsach">
           <tr>
             <th>#</th>
-            <th>Tên dịch vụ</th>
-            <th>Hình ảnh</th>
-            <th>Từ khóa SEO</th>
-            <th width="30%">Nội dung</th>
+            <th>Đường dẫn</th>
+            <th width="60%">Hình ảnh</th>
             <th>Ngày tạo</th>
-            <th width="9%">Hành động</th>
+            <th width="15%">Hành động</th>
           </tr>
-          <?php $count = 0; foreach ($dichvu as $value) { $count++; ?>
+          <?php $count = 0; foreach ($banner as $value) { $count++; ?>
            <tr class="dichvu-<?php echo $value['id']; ?>">
               <td class="stt"><?php echo $count; ?>.</td>
-              <th><?php echo $value['name'] ?></th>
-              <td><img src="<?php echo $value['image'] ?>" alt="" style="width: 100px; height: 80px"></td>
-              <td class="ten"><?php echo $value['keyword'] ?></td>
-              <td><?php echo $value['summary'] ?></td>
+              <th><?php echo $value['link'] ?></th>
+              <th><img class="img-fluid rounded" src="<?php echo $value['image'] ?>" alt="<?php echo $value['image'] ?>"></th>         
               <td><?php echo date('d/m/Y', $value['datetime']) ?></td>
               <td>
-                <a href="<?php echo base_url(); ?>Admin/suadichvu/<?php echo $value['id']; ?>" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a href="<?php echo base_url(); ?>Home/" target="_blank" class="btn btn-primary"><i class="fa fa-angle-double-right"></i></a>
                 <a href="" class="btn btn-danger xoaajax" data-toggle="modal" data-target="#myModalDel-<?php echo $value['id']; ?>"><i class="fa fa-times"></i></a>
                   <div class="modal fade" id="myModalDel-<?php echo $value['id']; ?>">
                   <div class="modal-dialog" role="document">
@@ -139,8 +116,9 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <h5>Bạn có muốn xóa dịch vụ: <?php echo $value['name'] ?></h5>
-                        <img src="<?php echo $value['image'] ?>" alt="" style="height: 150px">
+                        <h5>Bạn có muốn xóa Slide: 
+                          <img src="<?php echo $value['image'] ?>" alt="<?php echo $value['image'] ?>" style="height: 150px;">
+                        </h5>
                       </div>
                       <div class="modal-footer">
                         <a href="<?php echo $value['id']; ?>" type="button" class="btn btn-danger pull-right xoaajax">Xóa</a>
@@ -169,7 +147,7 @@
       var idxoa = this.getAttribute('href');
 
       $.ajax({
-        url: 'xoadichvu',
+        url: 'xoabanner',
         type: 'POST',
         dataType: 'json',
         data: {idxoa: idxoa},

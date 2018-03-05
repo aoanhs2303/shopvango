@@ -545,6 +545,32 @@ class Admin_model extends CI_Model {
 		return $this->db->delete('slideanh');
 	}
 
+	// ==============// 
+	// ! BANNER ẢNH  //        
+	// ==============// 
+
+	public function addBanner($link, $image)
+	{
+		$data = array('link' => $link, 'image' => $image);
+		$this->db->insert('banner', $data);
+		return $this->db->insert_id();
+	}
+
+	public function getBanner()
+	{
+		$this->db->select('*');
+		$data = $this->db->get('banner');
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function deleteBanner($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('banner');
+	}
+
+
 	// =========// 
 	// ! ORDER  //        
 	// =========// 
@@ -603,6 +629,24 @@ class Admin_model extends CI_Model {
 		$data = $data->result_array();
 		return $data;
 	}
+
+	public function authenticationAdmin($user, $pass)
+	{
+		$this->db->select('*');
+		$px = md5($pass);
+		$dieukien = array('username	' => $user, 'password' => $pass);
+		$this->db->where($dieukien);
+		$data = $this->db->get('admin');
+
+		$data = $data->result_array();
+
+		if(count($data) == 1) {
+			return $data;
+		} else {
+			return null;
+		}
+	}
+
 
 }
 

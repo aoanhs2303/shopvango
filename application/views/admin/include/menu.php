@@ -138,6 +138,6 @@
     <!-- item-->
     <a href="index.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="fa fa-envelope"></i></a>
     <!-- item-->
-    <a href="index.html" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="fa fa-power-off"></i></a>
+    <a href="<?php echo base_url() ?>login/logout" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="fa fa-power-off"></i></a>
   </div>
   </aside>

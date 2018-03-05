@@ -17,7 +17,7 @@
       </a>
 
       <div class="navbar-custom-menu pr-2">
-        <a href="index.html#" class="btn btn-block btn-danger">Sign out</a>
+        <a href="<?php echo base_url() ?>login/logout" class="btn btn-block btn-danger">Đăng xuất</a>
       </div>
     </nav>
   </header>

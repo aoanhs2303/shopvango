@@ -26,6 +26,7 @@ class Home extends CI_Controller {
 		$hot_product   = array_chunk($hot_product, 2);
 		$dichvu        = $this->Admin_model->getService();
 		$slideanh      = $this->Admin_model->getSlideAnh();
+		$banner        = $this->Admin_model->getBanner();
 		$data_main = array(
 			'sidebar'      => $sidebar,
 			'category_van' => $category_van,
@@ -34,7 +35,8 @@ class Home extends CI_Controller {
 			'tamlot'       => $tamlot_all,
 			'hot'          => $hot_product,
 			'dichvu'       => $dichvu,
-			'slideanh'     => $slideanh
+			'slideanh'     => $slideanh,
+			'banner'       => $banner
 		);
 
 		$data_menu = array(

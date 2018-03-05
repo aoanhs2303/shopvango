@@ -392,19 +392,14 @@
         <!-- ============================================== WIDE PRODUCTS ============================================== -->
         <div class="wide-banners wow fadeInUp outer-bottom-xs">
           <div class="row">
-            <div class="col-md-7 col-sm-7">
-              <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="<?php echo base_url() ?>includehome/images/banners/home-banner1.jpg" alt=""> </div>
+            <?php foreach ($banner as $value) { ?>
+              <div class="col-md-6 col-sm-6">
+                <div class="wide-banner cnt-strip">
+                  <a href="<?php echo $value['link'] ?>"><div class="image"> <img class="img-responsive" src="<?php echo $value['image'] ?>" alt=""> </div></a>
+                </div>
+                <!-- /.wide-banner --> 
               </div>
-              <!-- /.wide-banner --> 
-            </div>
-            <!-- /.col -->
-            <div class="col-md-5 col-sm-5">
-              <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="<?php echo base_url() ?>includehome/images/banners/home-banner2.jpg" alt=""> </div>
-              </div>
-              <!-- /.wide-banner --> 
-            </div>
+            <?php } ?>
             <!-- /.col --> 
           </div>
           <!-- /.row --> 
