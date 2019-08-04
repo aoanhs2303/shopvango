@@ -94,9 +94,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>Admin/thongtin"><i class="fa fa-circle-o"></i> Thông tin chung</a></li>
-            <li><a href="pages/widgets/widgets.html"><i class="fa fa-circle-o"></i> Số Điện Thoại</a></li>
-            <li><a href="pages/widgets/weather.html"><i class="fa fa-circle-o"></i> Địa chỉ</a></li>
-            <li><a href="pages/widgets/weather.html"><i class="fa fa-circle-o"></i> Email</a></li>
+            <li><a href="<?php echo base_url() ?>Admin/contact"><i class="fa fa-circle-o"></i> SĐT, Email, Địa chỉ</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -109,8 +107,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>Admin/donhang"><i class="fa fa-circle-o"></i> Đơn hàng</a></li>
-            <li><a href="<?php echo base_url() ?>Admin/slidechinh"><i class="fa fa-circle-o"></i> Ảnh slide</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Chọn sản phẩm HOT</a></li>
+            <li><a href="<?php echo base_url() ?>Admin/slideanh"><i class="fa fa-circle-o"></i> Ảnh slide</a></li>
+            <li><a href="<?php echo base_url() ?>Admin/banner"><i class="fa fa-circle-o"></i> Ảnh banner</a></li>
           </ul>
         </li>
         <li>

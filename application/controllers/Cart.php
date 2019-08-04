@@ -10,8 +10,13 @@ class Cart extends CI_Controller {
 
 	public function index()
 	{
+	    $contact_sdt     = $this->Admin_model->getContact('sdt');
+		$contact_email   = $this->Admin_model->getContact('email');
+		$contact_address = $this->Admin_model->getContact('address');
 		$data_main = array(
-
+            'sdt'          => $contact_sdt,
+			'email'        => $contact_email,
+			'address'      => $contact_address
 		);
 
 		$category_van  = $this->Admin_model->getCategory_Van('van');

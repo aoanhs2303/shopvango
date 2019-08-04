@@ -151,13 +151,13 @@
               <div class="form-group row">
                 <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Giá</b> <span class="text-danger">*</span></label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" name="giasanpham" placeholder="Ví dụ: 350.000 ₫" id="danhmuctin">
+                  <input class="form-control" type="number" name="giasanpham" placeholder="Ví dụ: 350.000 ₫" id="danhmuctin">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Số lượng</b> <span class="text-danger">*</span></label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" name="soluongsanpham" placeholder="Ví dụ: 21" id="danhmuctin">
+                  <input class="form-control" type="number" name="soluongsanpham" placeholder="Ví dụ: 21" id="danhmuctin">
                 </div>
               </div>
 
@@ -165,6 +165,13 @@
                 <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Kích thước</b> <span class="text-danger">*</span></label>
                 <div class="col-sm-10">
                   <input class="form-control" type="text" name="kichthuocsanpham" placeholder="Ví dụ: 200 x 300 m" id="danhmuctin">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Bề dày</b> <span class="text-danger">*</span></label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" name="bedaysanpham" placeholder="Ví dụ: 10mm" id="danhmuctin">
                 </div>
               </div>
 

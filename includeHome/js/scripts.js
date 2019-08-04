@@ -147,7 +147,6 @@ jQuery(owlElementID + ".owl-one-item").owlCarousel({
 
 
 jQuery('.home-owl-carousel').each(function(){
-
     var owl = $(this);
     var  itemPerLine = owl.data('item');
     if(!itemPerLine){
@@ -156,6 +155,7 @@ jQuery('.home-owl-carousel').each(function(){
     owl.owlCarousel({
         items : itemPerLine,
         itemsTablet:[768,2],
+        itemsMobile : [479,2],
         navigation : true,
         pagination : false,
 
@@ -293,7 +293,8 @@ jQuery(function(){
         pagination: true,
         rewindNav: true,
         itemsTablet : [768, 4],
-        itemsDesktop : [1199,3]
+        itemsDesktop : [1199,3],
+        itemsMobile : [479,4],
     });
 
     jQuery('#owl-single-product2-thumbnails').owlCarousel({

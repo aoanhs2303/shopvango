@@ -308,9 +308,10 @@ class Admin extends CI_Controller {
 		$quantity = $this->input->post('soluongsanpham');
 		$state	  = $this->input->post('trangthaisanpham');
 		$size     = $this->input->post('kichthuocsanpham');
+		$thick    = $this->input->post('bedaysanpham');
 		$image = json_encode($this->input->post('hinhsanpham'));
 
-		if($this->Admin_model->addProduct($name,$category,$content,$keyword,$price,$quantity,$state,$size,$image)) {
+		if($this->Admin_model->addProduct($name,$category,$content,$keyword,$price,$quantity,$state,$size,$thick,$image)) {
 			$link = base_url() . 'Admin/sanpham';
 			redirect($link);
 		}
@@ -338,10 +339,11 @@ class Admin extends CI_Controller {
 		$price    = $this->input->post('giasanpham');
 		$quantity = $this->input->post('soluongsanpham');
 		$size     = $this->input->post('kichthuocsanpham');
+		$thick    = $this->input->post('bedaysanpham');
 		$state    = ($this->input->post('trangthaisanpham') == 'on') ? 'true' : 'false';
 		$image 	  = json_encode($this->input->post('anhsanpham'));
 
-		if($this->Admin_model->updateProduct($id,$name,$category,$content,$keyword,$price,$quantity,$size,$state,$image)) {
+		if($this->Admin_model->updateProduct($id,$name,$category,$content,$keyword,$price,$quantity,$size,$thick,$state,$image)) {
 			$link = base_url() . 'Admin/sanpham';
 			redirect($link);			
 		}
@@ -593,6 +595,53 @@ class Admin extends CI_Controller {
 			redirect($link);	
 		}
 	}
+
+
+	// ======================// 
+	// ! EMAIL, SDT, ĐỈA CHỈ //        
+	// ======================// 
+
+	public function contact()
+	{
+		$menu    = $this->load->view('admin/include/menu.php', null, TRUE);
+		$sdt     = $this->Admin_model->getContact('sdt');
+		$email   = $this->Admin_model->getContact('email');
+		$address = $this->Admin_model->getContact('address');
+		
+		$data = array(
+			'menu'    => $menu, 
+			'all_sdt'     => $sdt,
+			'email'   => $email,
+			'address' => $address
+		); 
+		$this->load->view('admin/include/header.php', null, FALSE);
+		$this->load->view('admin/contact_Admin.php', $data);
+		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+	public function suacontact_email()
+	{
+		$id = $this->input->post('id');
+		$email = $this->input->post('email');
+		$this->Admin_model->updateContact($id,$email);
+
+	}
+
+	public function suacontact_address()
+	{
+		$id      = $this->input->post('id');
+		$address = $this->input->post('address');
+		$this->Admin_model->updateContact($id,$address);
+	}
+
+	public function suacontact_sdt()
+	{
+		$id  = $this->input->post('id');
+		$sdt = $this->input->post('sdt');
+		$this->Admin_model->updateContact($id,$sdt);
+	}
+
+
 
 }
 

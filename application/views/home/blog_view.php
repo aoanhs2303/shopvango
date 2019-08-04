@@ -33,4 +33,20 @@
 	</div>
 </div>
 <!-- ============================================================= FOOTER ============================================================= -->
-
+<script>
+  $(document).ready(function() {
+    $('#show_cart').load("<?php echo base_url(); ?>cart/load");
+    $(document).on('click', '.delete_cart', function(){
+      var row_id = $(this).attr("id");
+      $.ajax({
+        url:"<?php echo base_url(); ?>cart/remove",
+        method:"POST",
+        data:{row_id:row_id},
+        success:function(data)
+        {
+          $('#show_cart').html(data);
+        }
+      });
+    });
+  });
+</script>

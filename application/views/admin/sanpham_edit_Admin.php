@@ -90,10 +90,14 @@
                 <div class="col-sm-10">
                   <select class="form-control" id="addDanhMuc" name="danhmucsanpham">
                       <option value="0">---Chọn danh mục---</option>
-                      <?php foreach ($danhmuc as $dm) { ?>
+                      <?php foreach ($danhmuc as $dm) { 
+                        if($value['category'] == $dm['name']) { ?>
+                          <option selected value="<?php echo $dm['name'] ?>"><?php echo $dm['name'] ?></option>
+                      <?php } else {
+                      ?>
                         <option value="<?php echo $dm['name'] ?>"><?php echo $dm['name'] ?></option>
-                      <?php } ?>
-                  </select> 
+                      <?php } } ?>
+                  </select>
                 </div>
               </div>
               <div class="form-group row">
@@ -148,6 +152,14 @@
                   <input class="form-control" type="text" name="kichthuocsanpham" placeholder="Ví dụ: 200 x 300 m" id="danhmuctin" value="<?php echo $value['size'] ?>">
                 </div>
               </div>
+
+              <div class="form-group row">
+                <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Bề dày</b> <span class="text-danger">*</span></label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" name="bedaysanpham" placeholder="Ví dụ: 30mm" id="danhmuctin" value="<?php echo $value['thick'] ?>">
+                </div>
+              </div>
+
 
               <div class="form-group row">
                 <label for="danhmuctin" class="col-sm-2 col-form-label"><b>Trạng thái</b> <span class="text-danger">*</span></label>

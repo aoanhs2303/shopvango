@@ -49,6 +49,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+/*Menu*/
+$route['gioi-thieu.html'] = 'home/gioithieu';
+$route['dich-vu.html'] = 'home/dichvu';
+$route['lien-he.html'] = 'home/bando';
+$route['huong-dan-mua-hang.html'] = 'home/huongdanmuahang';
+$route['dat-hang-thanh-cong.html'] = 'home/dathangthanhcong';
+$route['tin-tuc.html'] = 'home/tintuc';
+$route['thu-vien-3d.html'] = 'home/thuvien3d';
+$route['catalogue.html'] = 'home/catalogue';
+
+/*Danh mục*/
+$route['(:any)-(:num).html'] = 'home/danhmuc/$2';
+
+/*Sản phẩm*/
+$route['(:any)-(:num).chn'] = 'home/sanpham/$2';
+
+/*Chi tiết*/
+$route['dichvu/(:any)-(:num).html'] = 'home/dichvu_chitiet/$2';
+$route['tintuc/(:any)-(:num).html'] = 'home/tintuc_chitiet/$2';
+
+

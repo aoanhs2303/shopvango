@@ -1,3 +1,4 @@
+<?php require_once('include/vn_to_str.php') ?>
 <!-- ============================================== HEADER : END ============================================== -->
 
 <div class="body-content outer-top-xs">
@@ -10,33 +11,12 @@
         
         <div id="hero">
           <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-            <div class="item" style="background-image: url(<?php echo base_url() ?>includehome/images/sliders/01.jpg);">
-              <div class="container-fluid">
-                <div class="caption bg-color vertical-center text-left">
-                  <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
-                  <div class="big-text fadeInDown-1"> VÁN ÉP </div>
-                  <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">250.000 đ</span> </div>
-                  <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
-                </div>
-                <!-- /.caption --> 
+            <?php foreach ($slideanh as $value) { ?>
+            <a href="<?php echo $value['link'] ?>">
+              <div class="item" style="background-image: url(<?php echo $value['image'] ?>);">
               </div>
-              <!-- /.container-fluid --> 
-            </div>
-            <!-- /.item -->
-            
-            <div class="item" style="background-image: url(<?php echo base_url() ?>includehome/images/sliders/02.jpg);">
-              <div class="container-fluid">
-                <div class="caption bg-color vertical-center text-left">
-                  <div class="slider-header fadeInDown-1">Sản phẩm bán chạy</div>
-                  <div class="big-text fadeInDown-1"> VÁN ÉP </div>
-                  <div class="excerpt fadeInDown-2 hidden-xs"> <span class="label" style="font-size: 20px; color: #444; background-color: #FDD922">350.000 đ</span> </div>
-                  <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Mua ngay</a> </div>
-                </div>
-                <!-- /.caption --> 
-              </div>
-              <!-- /.container-fluid --> 
-            </div>
-            <!-- /.item --> 
+            </a>
+            <?php } ?>
             
           </div>
           <!-- /.owl-carousel --> 
@@ -97,18 +77,19 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <?php $img = json_decode($product['image'])[0] ?>
-                          <div class="image"> <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $product['id'] ?>"><img  src="<?php echo $img ?>" alt="<?php echo $img ?>"></a> </div>
+                          <?php $img = json_decode($product['image']); $img = $img[0]; ?>
+                          <div class="image"> <a href="<?php echo base_url() . vn_to_str($product['name']) .'-'. $product['id']?>.chn"><img  src="<?php echo $img ?>" alt="<?php echo $img ?>"></a> </div>
                           <!-- /.image -->
-                          <div class="tag hot"><span>hot</span></div>
+                          <div class="tag sale"><span><?php echo $product['thick'] ?></span></div>
                         </div>
                         <!-- /.product-image -->
                         
                         <div class="product-info text-left">
-                          <h3 class="name"><a href="<?php echo base_url() ?>Home/sanpham/<?php echo $product['id'] ?>"><?php echo $product['name'] ?></a></h3>
+                          <h3 class="name"><a href="<?php echo base_url() . vn_to_str($product['name']) .'-'. $product['id']?>.chn"><?php echo $product['name'] ?></a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
-                          <div class="product-price"> <span class="price"> <?php echo number_format($product['price']) ?> ₫</span></div>
+                          <!--<div class="product-price"> <span class="price"> <?php echo number_format($product['price']) ?> ₫</span></div>-->
+                          <div class="product-price text-danger"><b>Giá Liên hệ</b></div>
                           <!-- /.product-price --> 
                           
                         </div>
@@ -127,7 +108,7 @@
                               >
                               Thêm <i class="fa fa-shopping-cart"></i>
                             </button>
-                            <a href="<?php echo base_url() ?>Home/sanpham/<?php echo $product['id'] ?>" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
+                            <a href="<?php echo base_url() . vn_to_str($product['name']) .'-'. $product['id']?>.chn" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
                           </div>
                           <!-- /.action --> 
                         </div>
@@ -148,23 +129,6 @@
             <!-- /.tab-pane -->
             
           </div>
-          <!-- /.tab-content -->
-<!--           <div class="clearfix filters-container">
-            <div class="text-right">
-              <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-
-              </div>
-            </div>
-          </div> -->
-          <!-- /.filters-container --> 
           
         </div>
         <!-- /.search-result-container --> 

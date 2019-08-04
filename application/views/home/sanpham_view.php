@@ -96,6 +96,21 @@
 									</div>
 								</div><!-- /.row -->	
 							</div><!-- /.stock-container -->
+							<div class="stock-container info-container m-t-10">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="stock-box">
+											<span class="label">Bề dày :</span>
+										</div>	
+									</div>
+									<div class="col-sm-9">
+										<div class="stock-box">
+											<span class="value"><?php echo $sp_info['thick'] ?></span>
+										</div>	
+									</div>
+								</div><!-- /.row -->	
+							</div><!-- /.stock-container -->
+
 
 							<div class="stock-container info-container m-t-10">
 								<div class="row">
@@ -114,11 +129,10 @@
 
 							<div class="price-container info-container m-t-20">
 								<div class="row">
-									
-
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price"><?php echo number_format($sp_info['price']) ?> ₫</span>
+											<!--<span class="price"><?php echo number_format($sp_info['price']) ?> ₫</span>-->
+											<span class="price">Giá liên hệ</span>
 										</div>
 									</div>
 
@@ -152,7 +166,8 @@
 				                              data-productid="<?php echo $sp_info['id'] ?>"
 				                              data-productname="<?php echo $sp_info['name'] ?>"
 				                              data-price="<?php echo $sp_info['price'] ?>"
-				                              data-productimg="<?php echo json_decode($sp_info['image'])[0] ?>"
+				                              <?php $img = json_decode($sp_info['image']); $img = $img[0] ?>
+				                              data-productimg="<?php echo $img; ?>"
 				                              data-quantity="1"
 				                              data-size="<?php echo $sp_info['size'] ?>"
 				                              >
@@ -301,18 +316,20 @@
 				<div class="product">		
 				<div class="product-image">
 					<div class="image">
-						<?php $img = json_decode($lien_quan['image'])[0] ?>
-						<a href="<?php echo base_url() ?>Home/sanpham/<?php echo $lien_quan['id'] ?>"><img  src="<?php echo $img ?>" alt=""></a>
+						<?php $img = json_decode($lien_quan['image']); $img = $img[0]; ?>
+						
+						<a href="<?php echo base_url() . vn_to_str($lien_quan['name']) .'-'. $lien_quan['id']?>.chn"><img  src="<?php echo $img ?>" alt=""></a>
 					</div><!-- /.image -->			
-					<div class="tag sale"><span>sale</span></div>            		   
+					<div class="tag sale"><span><?php echo $lien_quan['thick'] ?></span></div>            		   
 				</div><!-- /.product-image -->
 				<div class="product-info text-left">
-					<h3 class="name"><a href="<?php echo base_url() ?>Home/sanpham/<?php echo $lien_quan['id'] ?>"><?php echo $lien_quan['name'] ?></a></h3>
+					<h3 class="name"><a href="<?php echo base_url() . vn_to_str($lien_quan['name']) .'-'. $lien_quan['id']?>.chn"><?php echo $lien_quan['name'] ?></a></h3>
 					<div class="rating rateit-small"></div>
 					<div class="description"></div>
 
 					<div class="product-price">	
-						<span class="price"><?php echo number_format($lien_quan['price']) ?></span>		
+						<!--<span class="price"><?php echo number_format($lien_quan['price']) ?></span>		-->
+						<span class="price">Giá liên hệ</span>
 					</div><!-- /.product-price -->
 					
 				</div><!-- /.product-info -->

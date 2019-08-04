@@ -79,6 +79,50 @@ class Admin_model extends CI_Model {
 		return $data;
 	}
 
+	public function getNews()
+	{
+		$this->db->select('*');
+		$data = $this->db->get('tintuc');
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function getTotalNews()
+	{
+		$this->db->select('*');
+		$data = $this->db->get('tintuc');
+		$data = $data->num_rows();
+		return $data;
+	}
+
+	public function getSliceNews($offset, $count)
+	{
+		$this->db->select('*');
+		$this->db->limit($count, $offset);
+		$data = $this->db->get('tintuc');
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function searchNews($tukhoa)
+	{
+		$this->db->select('*');
+		$this->db->from('tintuc');
+		$this->db->or_like('tintuc.name', $tukhoa);
+		$data = $this->db->get();
+		$data = $data->result_array();
+		return $data;
+	}
+
+	public function getNewsById($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id', $id);
+		$data = $this->db->get('tintuc');
+		$data = $data->result_array();
+		return $data;
+	}
+
 	public function getServiceById($id)
 	{
 		$this->db->select('*');
@@ -193,6 +237,7 @@ class Admin_model extends CI_Model {
 		  <table class="table table-responsive danhsach table-striped" id="product_table">
                 <tr>
                   <th width="15px">#</th>
+                  <th>ID</th>
                   <th>HOT</th>
                   <th>Tên danh mục</th>
                   <th style="width: 25%">Hình ảnh</th>
@@ -200,6 +245,7 @@ class Admin_model extends CI_Model {
                   <th>Giá</th>
                   <th>Số lượng</th>
                   <th>Kích thước</th>
+                  <th>Bề dày</th>
                   <th>Trạng thái</th>
                   <th style="width: 10%">Hành động</th>
                 </tr>
@@ -213,6 +259,7 @@ class Admin_model extends CI_Model {
 		   $output .= '
 		        <tr class="sanpham-'.$row->id.'">
                   <td class="text-primary" style="font-weight: 900">'.$count.'</td>
+                  <td>'.$row->id.'</td>
                   <td>';
                   if($row->hot) {
 					$output .= '<a href="'.$base_url.'Admin/unsetHot/'.$row->id.'"><span class="label bg-red">HOT</span></a>';
@@ -229,7 +276,8 @@ class Admin_model extends CI_Model {
                   <td>'.$row->category.'</td>
                   <td>'.$row->price.' ₫</td>
                   <td>'.$row->quantity.'</td>
-                  <td>'.$row->size.'</td>';
+                  <td>'.$row->size.'</td>
+                  <td>'.$row->thick.'</td>';
                   if ($row->status == 'true') {
                   	$output .= '<td><span class="badge badge-success">Kích hoạt</span></td>';
                   } else {
@@ -285,7 +333,7 @@ class Admin_model extends CI_Model {
 		return $data;
 	}
 
-	public function addProduct($name,$category,$content,$keyword,$price,$quantity,$state,$size,$image) 
+	public function addProduct($name,$category,$content,$keyword,$price,$quantity,$state,$size,$thick,$image) 
 	{
 		if($state == 'on') 
 			$state = 'true';
@@ -299,12 +347,13 @@ class Admin_model extends CI_Model {
 			'quantity' => $quantity,
 			'status'   => $state,
 			'size'     => $size,
+			'thick'    => $thick,
 			'image'    => $image
 		);
 		return $this->db->insert('sanpham', $data);
 	}
 
-	public function updateProduct($id,$name,$category,$content,$keyword,$price,$quantity,$size,$state,$image)
+	public function updateProduct($id,$name,$category,$content,$keyword,$price,$quantity,$size,$thick,$state,$image)
 	{
 		$data = array(
 			'name'     => $name,
@@ -314,6 +363,7 @@ class Admin_model extends CI_Model {
 			'price'    => $price,
 			'quantity' => $quantity,
 			'size'     => $size,
+			'thick'	   => $thick,
 			'status'   => $state,
 			'image'    => $image
 		);
@@ -646,6 +696,57 @@ class Admin_model extends CI_Model {
 			return null;
 		}
 	}
+
+	public function searchHome($tukhoa)
+	{
+		$this->db->select('*');
+		$this->db->from('sanpham');
+		$this->db->or_like('sanpham.name', $tukhoa);
+		$this->db->or_like('sanpham.category', $tukhoa);
+		$this->db->or_like('sanpham.keyword', $tukhoa);
+		$data = $this->db->get();
+		$data = $data->result_array();
+		return $data;
+	}
+
+	// ================================// 
+	// ! SỐ ĐIỆN THOẠI, EMAIL, ĐỊA CHỈ //        
+	// ================================// 
+
+	public function getContact($type)
+	{
+		switch ($type) {
+			case 'sdt':
+				$this->db->select('*');
+				$this->db->where('type', $type);
+				$value = $this->db->get('contact');
+				$value = $value->result_array();
+				break;
+			case 'email':
+				$this->db->select('*');
+				$this->db->where('type', $type);
+				$value = $this->db->get('contact');
+				$value = $value->result_array();
+				// $value = $value[0]['value'];
+				break;
+			default:
+				$this->db->select('*');
+				$this->db->where('type', $type);
+				$value = $this->db->get('contact');
+				$value = $value->result_array();
+				// $value = $value[0]['value'];
+				break;
+		}
+		return $value;
+	}
+
+	public function updateContact($id,$value)
+	{
+		$this->db->set('value', $value);
+		$this->db->where('id', $id);
+		return $this->db->update('contact');
+	}
+
 
 
 }
