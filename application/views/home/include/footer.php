@@ -75,6 +75,50 @@
   </div>
 </footer>
 
+<?php
+$url = $_SERVER['REQUEST_URI'];
+$path = explode("/", $url)[2];
+
+?>
+<div id='menuContainer' style="z-index:3000; background:#4bc48f">
+  <div>
+    <div style='padding: 25px 15px; padding-bottom: 21px; background: #0f6cb2; color: #fff'>
+      <div class="logo"> <a href="<?php echo base_url() ?>"> <img style="margin-top: -7px; margin-left: 45px;" src="<?php echo base_url() ?>includehome/images/logo.png" alt="logo"> </a> </div>
+    </div>
+    <div <?php if ($path == '') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-home' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>">TRANG CHỦ</a> </li>
+    </div>
+    <div <?php if ($path == 'san-pham.html') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-cubes' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>">SẢN PHẨM</a> </li>
+    </div>
+    <div <?php if ($path == 'dich-vu.html') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-empire' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>dich-vu.html">DỊCH VỤ</a> </li>
+    </div>
+    <div <?php if ($path == 'tin-tuc.html') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-list' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>tin-tuc.html">TIN TỨC</a> </li>
+    </div>
+    <div <?php if ($path == 'catalogue.html') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-sitemap' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>catalogue.html">CATALOGUE</a> </li>
+    </div>
+    <div <?php if ($path == 'thu-vien-3d.html') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-diamond' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>thu-vien-3d.html">THƯ VIỆN 3D</a> </li>
+    </div>
+    <div <?php if ($path == 'lien-he.html') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-phone' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>lien-he.html">LIÊN HỆ</a> </li>
+    </div>
+    <div <?php if ($path == 'cart') echo "class='active navlink'";
+          else echo "class='navlink'" ?>>
+      <li><i class='fa fa-credit-card' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>cart">MUA NGAY</a> </li>
+    </div>
+  </div>
+</div>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -92,8 +136,6 @@
 </script>
 <!--End of Tawk.to Script-->
 
-
-
 <script src="<?php echo base_url() ?>includehome/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url() ?>includehome/js/bootstrap-hover-dropdown.min.js"></script>
 <script src="<?php echo base_url() ?>includehome/js/owl.carousel.min.js"></script>
@@ -106,4 +148,5 @@
 <script src="<?php echo base_url() ?>includehome/js/wow.min.js"></script>
 <script src="<?php echo base_url() ?>includehome/js/scripts.js"></script>
 </body>
+
 </html>

@@ -156,7 +156,7 @@ jQuery('.home-owl-carousel').each(function(){
         items : itemPerLine,
         itemsTablet:[768,2],
         itemsMobile : [479,2],
-        navigation : true,
+        navigation : false,
         pagination : false,
 
         navigationText: ["", ""]

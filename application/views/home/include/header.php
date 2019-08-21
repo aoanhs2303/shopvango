@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/owl.transitions.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/animate.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/rateit.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/mobileSelect.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>includehome/css/bootstrap-select.min.css">
   <link rel="shortcut icon" href="<?php echo base_url() ?>includehome/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="<?php echo base_url() ?>includehome/images/favicon.ico" type="image/x-icon">
@@ -36,16 +37,52 @@
   <script src="<?php echo base_url() ?>includehome/js/angular-1.5.min.js"></script>
   <script src="https://cdn.rawgit.com/adebisi-fa/dang-jssor/master/demo/scripts/dang-jssor-0.0.3/dang-jssor.min.js"></script>
   <script src="<?php echo base_url() ?>includehome/js/notify.js"></script>
+  <script src="<?php echo base_url() ?>includehome/js/slideout.min.js"></script>
+  <script src="<?php echo base_url() ?>includehome/js/superslide-std.min.js"></script>
+  <script src="<?php echo base_url() ?>includehome/js/mobileSelect.min.js"></script>
 </head>
+
+<script>
+  window.onload = function() {
+
+    superslideMenu = new OSREC.superslide({
+      slider: document.getElementById('menuContainer'),
+      content: document.getElementById('content'),
+      animation: 'slideLeft',
+      duration: 0.5,
+      allowDrag: true,
+      slideContent: true,
+      allowContentInteraction: true,
+      closeOnBlur: false,
+      width: '70vw',
+      height: '50vh'
+    });
+
+    // var p = superslideMenu.open();
+
+
+
+  };
+</script>
+<style>
+  .navlink {
+    padding: 20px 15px;
+  }
+  .navlink.active {
+    background: #F7C81C; color: #fff
+  }
+</style>
+
 <body class="cnt-home" ng-app="myApp" ng-cloak>
-  <!-- ============================================== HEADER ============================================== -->
+
   <header class="header-style-1">
 
-    <div class="main-header">
+    <div class="main-header" id="content">
+      <!-- <i class='fa fa-bars' style='cursor: pointer' onclick='superslideMenu.toggle()'></i> -->
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
-            <!-- ============================================================= LOGO ============================================================= -->
+            <i id="btn-v-menu" style="font-size: 35px;float: left;margin-top: 4px;margin-left: 14px;" class='fa fa-bars' style='cursor: pointer' onclick='superslideMenu.toggle()'></i>
             <div class="logo"> <a href="<?php echo base_url() ?>"> <img style="margin-top: -7px" src="<?php echo base_url() ?>includehome/images/logo.png" alt="logo"> </a> </div>
             <!-- /.logo -->
             <!-- ============================================================= LOGO : END ============================================================= -->

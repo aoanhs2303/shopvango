@@ -1,6 +1,6 @@
 ﻿<?php require_once('include/vn_to_str.php') ?>
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="body-content outer-top-xs" id="top-banner-and-menu">
+<div class="body-content outer-top-xs" id="top-banner-and-menu" ng-controller="HomeCtrl">
   <div class="container">
     <div class="row">
 
@@ -82,7 +82,7 @@
         <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
           <div class="more-info-tab clearfix ">
             <h3 class="new-product-title pull-left">Ván ép</h3>
-            <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
+            <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1" style="margin-right: 0px">
               <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">Tất cả</a></li>
               <?php foreach ($category_van as $key => $van) { ?>
                 <li>
@@ -93,9 +93,10 @@
               <?php } ?>
             </ul>
             <!-- /.nav-tabs -->
+            <div id="chonvanep">Chọn danh mục</div>
           </div>
           <div class="tab-content outer-top-xs">
-            <div class="tab-pane in active" id="all">
+            <div class="tab-pane tab-pane-van in active" id="all">
               <div class="product-slider">
                 <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
                   <?php foreach ($vanep as $key => $ve) { ?>
@@ -132,17 +133,14 @@
                       </div>
                     <?php } ?>
                   <?php } ?>
-
-
                 </div>
-                <!-- /.home-owl-carousel -->
               </div>
               <!-- /.product-slider -->
             </div>
             <!-- /.tab-pane -->
 
             <?php foreach ($vanep as $key => $ve) { ?>
-              <div class="tab-pane" id="van-<?php echo $key ?>">
+              <div class="tab-pane tab-pane-van " id="van-<?php echo $key ?>">
                 <div class="product-slider">
                   <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
                     <?php foreach ($ve as $key => $thongtinve) { ?>
@@ -214,10 +212,11 @@
                 </li>
               <?php } ?>
             </ul>
+            <div id="chontamlot">Chọn danh mục</div>
             <!-- /.nav-tabs -->
           </div>
           <div class="tab-content outer-top-xs">
-            <div class="tab-pane in active" id="all_lot">
+            <div class="tab-pane tab-pane-lot in active" id="all_lot">
               <div class="product-slider">
                 <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
                   <?php foreach ($tamlot as $tam_lot) { ?>
@@ -273,7 +272,7 @@
             <!-- /.tab-pane -->
 
             <?php foreach ($tamlot as $key => $tl) { ?>
-              <div class="tab-pane" id="lot-<?php echo $key ?>">
+              <div class="tab-pane tab-pane-lot" id="lot-<?php echo $key ?>">
                 <div class="product-slider">
                   <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
                     <?php foreach ($tl as $tam_lot_item) { ?>
@@ -502,4 +501,57 @@
       });
     });
   });
+
+
+  app.controller('HomeCtrl', function($scope, $http, $rootScope) {
+    $scope.appDomain = "http://vangoviet.com/";
+    $http({
+      url: $scope.appDomain + 'api/getCategoryVan',
+      method: "GET"
+    }).then(function(res) {
+      var categoryVan = res.data
+      var mobileSelect1 = new MobileSelect({
+        trigger: '#chonvanep',
+        title: 'Chọn danh mục sản phẩm',
+        ensureBtnText: 'Chọn',
+        cancelBtnText: 'Hủy',
+        wheels: [{data : categoryVan}],
+        keyMap: {id:'id', value:'name'},
+        position: [2],
+        transitionEnd: function(indexArr, data) {
+          //console.log(data);
+        },
+        callback: function(indexArr, data) {
+          $('.tab-pane-van').removeClass('active');
+          $('#van-' + indexArr).addClass('active');
+        }
+      });
+    });
+    
+
+    $http({
+      url: $scope.appDomain + 'api/getCategoryTamLot',
+      method: "GET"
+    }).then(function(res) {
+      var categoryVan = res.data
+      var mobileSelect1 = new MobileSelect({
+        trigger: '#chontamlot',
+        title: 'Chọn danh mục sản phẩm',
+        ensureBtnText: 'Chọn',
+        cancelBtnText: 'Hủy',
+        wheels: [{data : categoryVan}],
+        keyMap: {id:'id', value:'name'},
+        position: [2],
+        transitionEnd: function(indexArr, data) {
+          //console.log(data);
+        },
+        callback: function(indexArr, data) {
+          $('.tab-pane-lot').removeClass('active');
+          $('#lot-' + indexArr).addClass('active');
+        }
+      });
+    });
+  });
+    
+    
 </script>

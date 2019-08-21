@@ -1,7 +1,8 @@
   <!-- ============================================== NAVBAR ============================================== -->
-  <?php 
-    $url = $_SERVER['REQUEST_URI'];
-    $path = explode("/", $url)[2];
+
+  <?php
+  $url = $_SERVER['REQUEST_URI'];
+  $path = explode("/", $url)[2];
 
   ?>
   <?php require_once('vn_to_str.php') ?>
@@ -9,8 +10,8 @@
     <div class="container">
       <div class="yamm navbar navbar-default" role="navigation">
         <div class="navbar-header">
-       <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
-       <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
         <div class="nav-bg-class">
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
@@ -19,8 +20,8 @@
                 <li <?php if ($path == '') echo "class='active'" ?>> <a href="<?php echo base_url() ?>">Trang Chủ</a> </li>
                 <!-- <li class="yamm mega-menu"> <a href="<?php echo base_url() ?>gioi-thieu.html">Giới thiệu</a> -->
                 </li>
-                <li class="dropdown mega-menu"> 
-                <a href="category.html"  data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>
+                <li class="dropdown mega-menu">
+                  <a href="category.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>
                   <ul class="dropdown-menu container">
                     <li>
                       <div class="yamm-content">
@@ -28,24 +29,24 @@
                           <div class="col-xs-12 col-sm-12 col-md-3 col-menu">
                             <h2 class="title">Ván ép</h2>
                             <ul class="links">
-                            <?php foreach ($category_van as $key => $van) { ?>
-                            <li>             
-                              <a href="<?php echo base_url() . vn_to_str($van['name']) . '-' .$van['id'] ?>.html" >
-                                <?php echo $van['name'] ?> 
-                              </a>
-                            </li>
-                            <?php } ?>
+                              <?php foreach ($category_van as $key => $van) { ?>
+                                <li>
+                                  <a href="<?php echo base_url() . vn_to_str($van['name']) . '-' . $van['id'] ?>.html">
+                                    <?php echo $van['name'] ?>
+                                  </a>
+                                </li>
+                              <?php } ?>
                             </ul>
                           </div>
                           <div class="col-xs-12 col-sm-12 col-md-3 col-menu">
                             <h2 class="title">Tấm lót sàn</h2>
                             <ul class="links">
                               <?php foreach ($category_lot as $key => $lot) { ?>
-                              <li>
-                                <a href="<?php echo base_url() . vn_to_str($lot['name']) . '-' .$lot['id'] ?>.html" >
-                                  <?php echo $lot['name'] ?> 
-                                </a>
-                              </li>
+                                <li>
+                                  <a href="<?php echo base_url() . vn_to_str($lot['name']) . '-' . $lot['id'] ?>.html">
+                                    <?php echo $lot['name'] ?>
+                                  </a>
+                                </li>
                               <?php } ?>
                             </ul>
                           </div>
@@ -53,17 +54,18 @@
                             <h2 class="title">Sản phẩm khác</h2>
                             <ul class="links">
                               <?php foreach ($category_khac as $key => $khac) { ?>
-                              <li>
-                                <a href="<?php echo base_url() . vn_to_str($khac['name']) . '-' .$khac['id'] ?>.html" >
-                                  <?php echo $khac['name'] ?> 
-                                </a>
-                              </li>
+                                <li>
+                                  <a href="<?php echo base_url() . vn_to_str($khac['name']) . '-' . $khac['id'] ?>.html">
+                                    <?php echo $khac['name'] ?>
+                                  </a>
+                                </li>
                               <?php } ?>
                             </ul>
                           </div>
                         </div>
                       </div>
-                      <!-- /.yamm-content --> </li>
+                      <!-- /.yamm-content -->
+                    </li>
                   </ul>
                 </li>
                 <li <?php if ($path == 'dich-vu.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>dich-vu.html">Dịch vụ<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
@@ -77,19 +79,21 @@
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>
             </div>
-            <!-- /.nav-outer --> 
+            <!-- /.nav-outer -->
           </div>
-          <!-- /.navbar-collapse --> 
-          
+          <!-- /.navbar-collapse -->
+
         </div>
-        <!-- /.nav-bg-class --> 
+        <!-- /.nav-bg-class -->
       </div>
-      <!-- /.navbar-default --> 
+      <!-- /.navbar-default -->
     </div>
-    <!-- /.container-class --> 
-    
+    <!-- /.container-class -->
+
   </div>
-  <!-- /.header-nav --> 
-  <!-- ============================================== NAVBAR : END ============================================== --> 
+  <!-- /.header-nav -->
+  <!-- ============================================== NAVBAR : END ============================================== -->
+
+  </header>
+
   
-</header>
