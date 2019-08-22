@@ -2002,6 +2002,53 @@ display:none;
 }
 
 /*===================================================================================*/
+/*  TRANG CHU
+/*===================================================================================*/
+.info-big-slide {
+  margin-top: 0px;
+}
+.info-big-slide .info-box {
+  padding: 24px 10px;
+}
+
+.info-big-slide .col-md-6.col-sm-2.col-lg-2 {
+  height: 90px;
+  position: relative;
+  border: 3px solid #54a0ff;
+  margin: 2px 5px;
+  background-color: #FFF;
+  margin-left: 0 3px;
+}
+.info-big-slide .col-md-6.col-sm-2.col-lg-2:hover {
+  background-color: #fdd922;
+  transition: 0.4s;
+}
+
+.info-big-slide .col-md-6.col-sm-2.col-lg-2:first-child { 
+  margin-left: 70px;
+}
+.info-big-slide .col-md-6.col-sm-2.col-lg-2:last-child { 
+  margin-right: 50px;
+}
+.info-big-slide .col-md-6.col-sm-2.col-lg-2 .info-box {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 170px;
+}
+.info-big-slide .info-boxes-inner {
+  background: rgba(red, green, blue, 1)!important;
+}
+.info-big-slide h4.info-box-heading.green {
+  color: #333;
+  font-size: 15px;
+}
+.info-big-slide .info-boxes-inner {
+  background-color: #0f6cb208;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+}
+
+/*===================================================================================*/
 /*  Slider
 /*===================================================================================*/
 #owl-main {
@@ -2009,6 +2056,15 @@ display:none;
   cursor: default;
   height: 368px;
 }
+.big-slide {
+  margin-top: -18px;
+}
+.owl-main-big-slide {
+  text-align: center;
+  cursor: default;
+  height: 430px !important;
+}
+
 #owl-main .owl-controls {
   display: inline-block;
   position: relative;
@@ -2364,6 +2420,10 @@ display:none;
   background-position: center 55%;
   background-size: cover;
   height: 370px;
+}
+
+#owl-main .item.itemBigSlide { 
+  height: 520px;
 }
 #owl-main .item .caption {
   color: #636363;
@@ -4557,7 +4617,7 @@ age-container #owl-main .owl-next {
   font-size: 16px;
 }
 .body-content.outer-top-xs {
-  margin-top: 0px;
+  margin-top: 1px;
 }
 .outer-top-xs {
   margin-top: 20px;
@@ -4577,7 +4637,7 @@ age-container #owl-main .owl-next {
   #owl-main .item .caption .big-text {font-size:18px; line-height: normal}
   #owl-main .item .caption {left:0px}
   #owl-main {height:100%}
-  #owl-main .item {height:180px}
+  #owl-main .item {height:170px}
   #owl-main .item .caption .button-holder {margin:0px}
   #hero .btn-primary {padding:5px 10px; font-size:12px; line-height:normal; margin-top:8px}
   #new-products-1 {display: none;}

@@ -183,10 +183,3 @@
       </div>
       <!-- /.sidemenu-holder -->
       <!-- ============================================== SIDEBAR : END ============================================== -->
-      <script>
-        var app = angular.module('myApp', [])
-        app.controller('SidebarCtrl', function($scope, $http, $rootScope) {
-
-
-        })
-      </script>

@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /*Menu*/
+$route['san-pham.html'] = 'home/product';
 $route['gioi-thieu.html'] = 'home/gioithieu';
 $route['dich-vu.html'] = 'home/dichvu';
 $route['lien-he.html'] = 'home/bando';

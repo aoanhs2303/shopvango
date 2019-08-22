@@ -11,7 +11,7 @@
       <div class="yamm navbar navbar-default" role="navigation">
         <div class="navbar-header">
           <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
         <div class="nav-bg-class">
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
@@ -21,7 +21,7 @@
                 <!-- <li class="yamm mega-menu"> <a href="<?php echo base_url() ?>gioi-thieu.html">Giới thiệu</a> -->
                 </li>
                 <li class="dropdown mega-menu">
-                  <a href="category.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>
+                  <a href="<?php echo base_url() ?>san-pham.html" data-hover="dropdown" class="dropdown-toggle">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>
                   <ul class="dropdown-menu container">
                     <li>
                       <div class="yamm-content">
