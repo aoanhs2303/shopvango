@@ -31,7 +31,8 @@ a {
   color: #0f6cb2;
 }
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .total-price-basket .total-price {
-  color: #fff;
+  color: #333;
+  font-weight: bold;
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a:hover,
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a:focus {
@@ -52,10 +53,10 @@ a {
   color: #0f6cb2;
 }
 .header-style-1 .header-nav {
-  background: #0f6cb2;
+  background: #222;
 }
 .cnt-home .header-style-1 .header-nav .navbar .navbar-nav > li.active {
-  background: #085b9a;
+  background: #555;
 }
 .cnt-home .header-style-1 .header-nav .navbar .navbar-nav > li > a:hover,
 .cnt-home .header-style-1 .header-nav .navbar .navbar-nav > li > a:focus {
@@ -265,7 +266,7 @@ a {
 #owl-main:hover .owl-prev:hover,
 #owl-main:hover .owl-next:hover {
   background: #0f6cb2;
-  color:#fff!important
+  color:#fff!important;
 }
 #owl-main:hover .owl-prev:hover .icon,
 #owl-main:hover .owl-next:hover .icon {
@@ -365,7 +366,7 @@ a {
   color: #0f6cb2;
 }
 .contact-page .contact-info .contact-i {
-  background-color: #0f6cb2;
+  background-color: #333;
 }
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-name-info h4 a:hover,
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-name-info h4 a:focus {

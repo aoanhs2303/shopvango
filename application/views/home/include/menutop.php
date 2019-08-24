@@ -69,9 +69,9 @@
                   </ul>
                 </li>
                 <li <?php if ($path == 'dich-vu.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>dich-vu.html">Dịch vụ<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
-                <li <?php if ($path == 'tin-tuc.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>tin-tuc.html">Tin tức</a> </li>
                 <li <?php if ($path == 'catalogue.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>catalogue.html">catalogue</a>
                 <li <?php if ($path == 'thu-vien-3d.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>thu-vien-3d.html">Thư viện 3D</a>
+                <li <?php if ($path == 'tin-tuc.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>tin-tuc.html">Tin tức</a> </li>
                 <li <?php if ($path == 'huong-dan-mua-hang.html') echo "class='active'" ?>> <a href="<?php echo base_url(); ?>huong-dan-mua-hang.html">Hướng dẫn mua hàng</a> </li>
                 <li <?php if ($path == 'lien-he.html') echo "class='active'" ?>> <a href="<?php echo base_url(); ?>lien-he.html">Liên hệ</a> </li>
                 <li <?php if ($path == 'cart') echo "class='active'" ?>> <a href="<?php echo base_url() ?>cart">Mua ngay</a> </li>

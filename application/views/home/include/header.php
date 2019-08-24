@@ -30,7 +30,9 @@
   <!-- Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=vietnamese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=vietnamese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=vietnamese" rel="stylesheet">
 
   <script src="<?php echo base_url() ?>includehome/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo base_url() ?>includehome/js/jssor.slider.min.js"></script>
@@ -83,7 +85,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
             <i id="btn-v-menu" style="font-size: 35px;float: left;margin-top: 4px;margin-left: 14px;" class='fa fa-bars' style='cursor: pointer' onclick='superslideMenu.toggle()'></i>
-            <div class="logo"> <a href="<?php echo base_url() ?>"> <img style="margin-top: -7px" src="<?php echo base_url() ?>includehome/images/logo.png" alt="logo"> </a> </div>
+            <div class="logo"> <a href="<?php echo base_url() ?>"> <img style="margin-top: -5px;height: 53px;" src="<?php echo base_url() ?>includehome/images/logo.png" alt="logo"> </a> </div>
             <!-- /.logo -->
             <!-- ============================================================= LOGO : END ============================================================= -->
           </div>

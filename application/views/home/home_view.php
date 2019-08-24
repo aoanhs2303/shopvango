@@ -1,4 +1,23 @@
-﻿<?php require_once('include/vn_to_str.php') ?>
+﻿<style>
+  header {
+    background: unset;
+    position: relative;
+    z-index: 99;
+  }
+
+  .main-header {
+    background: #333333;
+    padding: 5px 0px 12px 0px;
+  }
+
+  .header-style-1 .header-nav {
+
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+  }
+</style>
+
+<?php require_once('include/vn_to_str.php') ?>
 <!-- ============================================== HEADER : END ============================================== -->
 <div class="body-content outer-top-xs" id="top-banner-and-menu" ng-controller="HomeCtrl">
 
@@ -6,10 +25,18 @@
     <div id="owl-main" class="owl-main-big-slide owl-carousel owl-inner-nav owl-ui-sm">
       <a href="#">
         <div class="item itemBigSlide" style="background-image: url(https://ancuong.com/pictures/catalog/about/hinh-banner-trang-chu/mfc.jpg);">
+          <div class="title-big-slide">
+            <h1>Giải pháp hàng đầu cho bạn</h1>
+            <h4>Cùng với những sản phẩm của Thành Công</h4>
+          </div>
         </div>
       </a>
       <a href="#">
         <div class="item itemBigSlide" style="background-image: url(https://ancuong.com/pictures/catalog/about/hinh-banner-trang-chu/laminate-2.jpg);">
+          <div class="title-big-slide">
+            <h1>Giải pháp hàng đầu cho bạn</h1>
+            <h4>Cùng với những sản phẩm của Thành Công</h4>
+          </div>
         </div>
       </a>
     </div>
@@ -22,55 +49,55 @@
         <div class="info-boxes info-big-slide wow fadeInUp">
           <div class="info-boxes-inner">
             <div class="row">
-              <div class="col-md-6 col-sm-2 col-lg-2">
+              <div class="col-md-6 col-sm-2 col-lg-2 btn-gioithieu">
                 <div class="info-box">
                   <div class="row">
                     <div class="col-xs-12">
-                      <i class="fa fa-bell-o fa-2x" style="color:#54a0ff"></i>
+                      <i class="fa fa-bell-o fa-2x" style="color:#fac463"></i>
                       <h4 class="info-box-heading green"> GIỚI THIỆU CÔNG TY</h4>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-2 col-lg-2">
+              <div class="col-md-6 col-sm-2 col-lg-2 btn-linhvuc">
                 <div class="info-box">
                   <div class="row">
                     <div class="col-xs-12">
-                      <i class="fa fa-copyright fa-2x" style="color:#54a0ff"></i>
+                      <i class="fa fa-copyright fa-2x" style="color:#fac463"></i>
                       <h4 class="info-box-heading green">LĨNH VỰC HOẠT ĐỘNG</h4>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-2 col-lg-2">
+              <div class="col-md-6 col-sm-2 col-lg-2 btn-nangluc">
                 <div class="info-box">
                   <div class="row">
                     <div class="col-xs-12">
-                      <i class="fa fa-diamond fa-2x" style="color:#54a0ff"></i>
+                      <i class="fa fa-diamond fa-2x" style="color:#fac463"></i>
                       <h4 class="info-box-heading green">NĂNG LỰC CẠNH TRANH</h4>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-2 col-lg-2">
+              <div class="col-md-6 col-sm-2 col-lg-2 btn-tamnhin">
                 <div class="info-box">
                   <div class="row">
                     <div class="col-xs-12">
-                      <i class="fa fa-paper-plane-o fa-2x" style="color:#54a0ff"></i>
+                      <i class="fa fa-paper-plane-o fa-2x" style="color:#fac463"></i>
                       <h4 class="info-box-heading green">TẦM NHÌN CHIẾN LƯỢC</h4>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-2 col-lg-2">
+              <div class="col-md-6 col-sm-2 col-lg-2 btn-sanpham">
                 <div class="info-box">
                   <div class="row">
                     <div class="col-xs-12">
-                      <i class="fa fa-cubes fa-2x" style="color:#54a0ff"></i>
+                      <i class="fa fa-cubes fa-2x" style="color:#fac463"></i>
                       <h4 class="info-box-heading green">SẢN PHẨM TIÊU BIỂU</h4>
                     </div>
                   </div>
@@ -82,289 +109,83 @@
             <!-- /.row -->
           </div>
           <!-- /.info-boxes-inner -->
-
         </div>
         <!-- /.info-boxes -->
+
+        <div class="blog-pagem outer-top-vs gioithieu">
+          <div class="blog-page">
+            <div class="blog-post wow fadeInUp" style="background-color: #FFF; padding: 10px">
+              <div class="landing-page">
+                <h1>GIỚI THIỆU CÔNG TY</h1>
+                <p class="ani-item on-show" style="animation-delay: 0ms;"><strong>Công ty Cổ phần Gỗ Thành Công</strong> là nhà sản xuất cung cấp nguyên vật liệu trang trí nội thất và vật liệu décor hàng đầu tại Việt Nam và khu vực từ năm 1994. Chúng tôi hiện là nhà sản xuất và xuất khẩu cho nhiều thương hiệu nội thất nổi tiếng tại Nhật Bản, Đông Nam Á, Mỹ và châu Âu, <strong>hiện các cổ đông nước ngoài lớn của Thành Công là Sumitomo - Nhật, DEG - Đức và Vinacapital</strong>. Các dòng vật liệu từ gỗ công nghiệp của Thành Công như ván MFC, Melamine MDF, Laminates, Acrylic, Veneer và các phụ phẩm được ứng dụng rộng rãi trong thiết kế và trang trí nội thất hiện đại cho nhà ở, chung cư, trường học, bệnh viện, siêu thị, nội thất văn phòng, trần, vách toilet, cửa đi, ván sàn v.v.</p>
+                <p class="ani-item on-show" style="animation-delay: 300ms;">Chúng tôi có gần 1000 containers gỗ tấm các loại để làm cốt nền (15,000 đến 20,000 khối) như: Ván dăm (PB), MDF, HDF và Plywood, Black HDF, OSB…. Bên cạnh những loại ván tiêu chuẩn, An Cường còn cung cấp những loại ván siêu chống ẩm hoặc những ván gỗ cao cấp cho những điều kiện sử dụng cần thiết. Toàn bộ chất lượng bề mặt gỗ của chúng tôi không bị cong vênh, bay màu hay nứt nẻ như những loại hàng gỗ công nghiệp kém chất lượng khác. Độ bền bề mặt gỗ và tấm gỗ của chúng tôi hàng chục năm, và thậm chí có những loại trên 20 năm.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-pagem outer-top-vs linhvuc">
+          <div class="blog-page">
+            <div class="blog-post wow fadeInUp" style="background-color: #FFF; padding: 10px">
+              <div class="landing-page">
+                <h1>LĨNH VỰC HOẠT ĐỘNG</h1>
+                <p class="ani-item on-show" style="animation-delay: 0ms;"><strong>Công ty Cổ phần Gỗ Thành Công</strong> là nhà sản xuất cung cấp nguyên vật liệu trang trí nội thất và vật liệu décor hàng đầu tại Việt Nam và khu vực từ năm 1994. Chúng tôi hiện là nhà sản xuất và xuất khẩu cho nhiều thương hiệu nội thất nổi tiếng tại Nhật Bản, Đông Nam Á, Mỹ và châu Âu, <strong>hiện các cổ đông nước ngoài lớn của Thành Công là Sumitomo - Nhật, DEG - Đức và Vinacapital</strong>. Các dòng vật liệu từ gỗ công nghiệp của Thành Công như ván MFC, Melamine MDF, Laminates, Acrylic, Veneer và các phụ phẩm được ứng dụng rộng rãi trong thiết kế và trang trí nội thất hiện đại cho nhà ở, chung cư, trường học, bệnh viện, siêu thị, nội thất văn phòng, trần, vách toilet, cửa đi, ván sàn v.v.</p>
+                <p class="ani-item on-show" style="animation-delay: 300ms;">Chúng tôi có gần 1000 containers gỗ tấm các loại để làm cốt nền (15,000 đến 20,000 khối) như: Ván dăm (PB), MDF, HDF và Plywood, Black HDF, OSB…. Bên cạnh những loại ván tiêu chuẩn, An Cường còn cung cấp những loại ván siêu chống ẩm hoặc những ván gỗ cao cấp cho những điều kiện sử dụng cần thiết. Toàn bộ chất lượng bề mặt gỗ của chúng tôi không bị cong vênh, bay màu hay nứt nẻ như những loại hàng gỗ công nghiệp kém chất lượng khác. Độ bền bề mặt gỗ và tấm gỗ của chúng tôi hàng chục năm, và thậm chí có những loại trên 20 năm.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-pagem outer-top-vs nangluc">
+          <div class="blog-page">
+            <div class="blog-post wow fadeInUp" style="background-color: #FFF; padding: 10px">
+              <div class="landing-page">
+                <h1>NĂNG LỰC CẠNH TRANH</h1>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="col-inner" style="padding:0px 0 0px 0px;margin:0px 0px 0 0px;">
+                      <p><span style="color: #333; font-size: 110%;"><span style="font-size: 110%; padding-right: 0px"><strong> <i style="color: #000;" class="fa fa-dot-circle-o"></i> </strong></span>Sản phẩm được sản xuất trên dây chuyền công nghệ hiện đại nhập khẩu từ Đức, cùng đội ngũ nhân công giàu kinh nghiệm đáp ứng tiêu chuẩn về mặt chất lượng và thẩm mỹ.</span><br>
+                        <span style="color: #333; font-size: 110%;"><span style="font-size: 120%; padding-right: 0px"><strong> <i style="color: #000;" class="fa fa-dot-circle-o"></i> </strong></span>Ban lãnh đạo giỏi chuyên môn, giàu kinh nghiệm xây dựng bộ máy chuyên nghiệp tối ưu hoá năng lực cạnh tranh.</span><br>
+                        <span style="color: #333; font-size: 110%;"><span style="font-size: 120%; padding-right: 0px"><strong> <i style="color: #000;" class="fa fa-dot-circle-o"></i> </strong></span>Quy trình xử lý đơn hàng nhanh chóng, chính sách bán hàng, hậu mãi linh hoạt hỗ trợ tối đa cho khách hàng.</span><br>
+                        <span style="color: #333; font-size: 110%;"><span style="font-size: 120%; padding-right: 0px"><strong> <i style="color: #000;" class="fa fa-dot-circle-o"></i> </strong></span>Chủ động nguồn cung trên thị trường, giá thành cạnh tranh, đáp ứng nhu cầu sản lượng lớn trong thời gian ngắn.</span></p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <img style="width: 100%" src="https://mocphat.com/wp-content/uploads/2018/11/melamine-1-1024x678.jpg.webp" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-pagem outer-top-vs tamnhin">
+          <div class="blog-page">
+            <div class="blog-post wow fadeInUp" style="background-color: #FFF; padding: 10px">
+              <div class="landing-page">
+                <h1>TẦM NHÌN CHIẾN LƯỢC</h1>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img style="width: 100%" src="https://ancuong.com/pictures/catalog/about/banner-nha-phan-phoi/corporate-buildings-m.jpg" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-inner" style="padding:0px 0 0px 0px;margin:0px 0px 0 0px;">
+                      <p>Công ty ván gỗ Thành Công phấn đấu không ngừng để trở thành một tổ chức kinh tế giàu mạnh của quốc gia, đem lại những giá trị tốt đẹp cho cộng đồng xã hội và nâng cao giá trị cuộc sống của các thành viên thông qua những điều kiện phát triển tốt nhất về vật chất và tinh thần.</p>
+                      <p>Trở thành một tập đoàn kinh tế mạnh đa quốc gia, bền vững lâu dài duy trì và phát triển thương hiệu giá trị thương hiệu trở nên uy tín, có sức cạnh tranh trong nước và quốc tế.</p>
+                      <p>Cam kết - Chia sẻ - Tận tâm - Sáng tạo</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ============================================== INFO BOXES : END ============================================== -->
         <!-- ============================================== SCROLL TABS ============================================== -->
-        <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
-          <div class="more-info-tab clearfix ">
-            <h3 class="new-product-title pull-left">Ván ép</h3>
-            <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1" style="margin-right: 0px">
-              <li class="active"><a data-transition-type="backSlide" href="#all" data-toggle="tab">Tất cả</a></li>
-              <?php foreach ($category_van as $key => $van) { ?>
-              <li>
-                <a data-transition-type="backSlide" href="#van-<?php echo $key; ?>" data-toggle="tab">
-                  <?php echo $van['name'] ?>
-                </a>
-              </li>
-              <?php } ?>
-            </ul>
-            <!-- /.nav-tabs -->
-            <div id="chonvanep">Chọn danh mục</div>
-          </div>
-          <div class="tab-content outer-top-xs">
-            <div class="tab-pane tab-pane-van in active" id="all">
-              <div class="product-slider">
-                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
-                  <?php foreach ($vanep as $key => $ve) { ?>
-                  <?php foreach ($ve as $key => $all_ve) { ?>
-                  <div class="item item-carousel">
-                    <div class="products">
-                      <div class="product">
-                        <div class="product-image">
-                          <?php
-                              $img = json_decode($all_ve['image']);
-                              $img = $img[0];
-                              ?>
-                          <div class="image"> <a href="<?php echo base_url() . vn_to_str($all_ve['name']) . '-' . $all_ve['id'] ?>.chn"><img src="<?php echo $img ?>" alt="<?php echo $img ?>"></a> </div>
-                          <div class="tag sale"><span><?php echo $all_ve['thick'] ?></span></div>
-                        </div>
-                        <div class="product-info text-left">
-                          <h3 class="name"><a href="<?php echo base_url() . vn_to_str($all_ve['name']) . '-' . $all_ve['id'] ?>.chn"><?php echo $all_ve['name'] ?></a></h3>
-                          <div class="rating rateit-small"></div>
-                          <div class="description"></div>
-                          <!--<div class="product-price"> <span class="price"> <?php echo number_format($all_ve['price']) ?> ₫  </span></div>-->
-                          <div class="product-price text-danger"><b>Giá Liên hệ</b></div>
-                        </div>
-                        <div class="cart clearfix animate-effect">
-                          <div class="btn-group">
-                            <button class="add_cart btn btn-warning" style="background-color: #fdd922; color: #444;" data-productid="<?php echo $all_ve['id'] ?>" data-productname="<?php echo $all_ve['name'] ?>" data-price="<?php echo $all_ve['price'] ?>" data-productimg="<?php echo $img ?>" data-quantity="1" data-size="<?php echo $all_ve['size'] ?>">
-                              Thêm <i class="fa fa-shopping-cart"></i>
-                            </button>
-                            <a href="<?php echo base_url() . vn_to_str($all_ve['name']) . '-' . $all_ve['id'] ?>.chn" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
-                          </div>
-                          <!-- /.action -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <?php } ?>
-                  <?php } ?>
-                </div>
-              </div>
-              <!-- /.product-slider -->
-            </div>
-            <!-- /.tab-pane -->
-
-            <?php foreach ($vanep as $key => $ve) { ?>
-            <div class="tab-pane tab-pane-van " id="van-<?php echo $key ?>">
-              <div class="product-slider">
-                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
-                  <?php foreach ($ve as $key => $thongtinve) { ?>
-                  <div class="item item-carousel">
-                    <div class="products">
-                      <div class="product">
-                        <div class="product-image">
-                          <?php
-                              $img = json_decode($thongtinve['image']);
-                              $img = $img[0];
-                              ?>
-                          <div class="image"> <a href="<?php echo base_url() . vn_to_str($thongtinve['name']) . '-' . $thongtinve['id'] ?>.chn"><img src="<?php echo $img ?>" alt=""></a> </div>
-                          <!-- /.image -->
-                          <div class="tag sale"><span><?php echo $thongtinve['thick'] ?></span></div>
-                        </div>
-                        <!-- /.product-image -->
-
-                        <div class="product-info text-left">
-                          <h3 class="name"><a href="<?php echo base_url() . vn_to_str($thongtinve['name']) . '-' . $thongtinve['id'] ?>.chn"><?php echo $thongtinve['name'] ?></a></h3>
-                          <div class="rating rateit-small"></div>
-                          <div class="description"></div>
-                          <!--<div class="product-price"> <span class="price"> <?php echo number_format($thongtinve['price']) ?> ₫  </span></div>-->
-                          <div class="product-price text-danger"><b>Giá Liên hệ</b></div>
-                          <!-- /.product-price -->
-
-                        </div>
-                        <!-- /.product-info -->
-                        <div class="cart clearfix animate-effect">
-                          <div class="btn-group">
-                            <button class="add_cart btn btn-warning" style="background-color: #fdd922; color: #444;" data-productid="<?php echo $thongtinve['id'] ?>" data-productname="<?php echo $thongtinve['name'] ?>" data-price="<?php echo $thongtinve['price'] ?>" data-productimg="<?php echo $img ?>" data-quantity="1" data-size="<?php echo $thongtinve['size'] ?>">
-                              Thêm <i class="fa fa-shopping-cart"></i>
-                            </button>
-                            <a href="<?php echo base_url() . vn_to_str($thongtinve['name']) . '-' . $thongtinve['id'] ?>.chn" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
-                          </div>
-                          <!-- /.action -->
-                        </div>
-                        <!-- /.cart -->
-                      </div>
-                      <!-- /.product -->
-                    </div>
-                    <!-- /.products -->
-                  </div>
-                  <?php } ?>
-
-                  <!-- /.item -->
-                </div>
-                <!-- /.home-owl-carousel -->
-              </div>
-              <!-- /.product-slider -->
-            </div>
-            <!-- /.tab-pane -->
-            <?php } ?>
-
-          </div>
-          <!-- /.tab-content -->
-        </div>
-
-        <!-- /***TẤM LÓT SÀN***/ -->
-
-        <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
-          <div class="more-info-tab clearfix ">
-            <h3 class="new-product-title pull-left">Tấm lót sàn</h3>
-            <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
-              <li class="active"><a data-transition-type="backSlide" href="#all_lot" data-toggle="tab">Tất cả</a></li>
-              <?php foreach ($category_lot as $key => $lot) { ?>
-              <li>
-                <a data-transition-type="backSlide" href="#lot-<?php echo $key ?>" data-toggle="tab"><?php echo $lot['name'] ?>
-                </a>
-              </li>
-              <?php } ?>
-            </ul>
-            <div id="chontamlot">Chọn danh mục</div>
-            <!-- /.nav-tabs -->
-          </div>
-          <div class="tab-content outer-top-xs">
-            <div class="tab-pane tab-pane-lot in active" id="all_lot">
-              <div class="product-slider">
-                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
-                  <?php foreach ($tamlot as $tam_lot) { ?>
-                  <?php foreach ($tam_lot as $tam_lot_sp) { ?>
-                  <div class="item item-carousel">
-                    <div class="products">
-                      <div class="product">
-                        <div class="product-image">
-                          <?php $img = json_decode($tam_lot_sp['image']);
-                              $img = $img[0]; ?>
-                          <div class="image"> <a href="<?php echo base_url() . vn_to_str($tam_lot_sp['name']) . '-' . $tam_lot_sp['id'] ?>.chn"><img src="<?php echo $img ?>" alt=""></a> </div>
-                          <!-- /.image -->
-
-                          <div class="tag sale"><span><?php echo $tam_lot_sp['thick'] ?></span></div>
-                        </div>
-                        <!-- /.product-image -->
-
-                        <div class="product-info text-left">
-                          <h3 class="name"><a href="<?php echo base_url() . vn_to_str($tam_lot_sp['name']) . '-' . $tam_lot_sp['id'] ?>.chn"><?php echo $tam_lot_sp['name'] ?></a></h3>
-                          <div class="rating rateit-small"></div>
-                          <div class="description"></div>
-                          <!--<div class="product-price"> <span class="price"> <?php echo number_format($tam_lot_sp['price']) ?> ₫  </span></div>-->
-                          <div class="product-price text-danger"><b>Giá Liên hệ</b></div>
-                          <!-- /.product-price -->
-
-                        </div>
-                        <!-- /.product-info -->
-                        <div class="cart clearfix animate-effect">
-                          <div class="btn-group">
-                            <button class="add_cart btn btn-warning" style="background-color: #fdd922; color: #444;" data-productid="<?php echo $tam_lot_sp['id'] ?>" data-productname="<?php echo $tam_lot_sp['name'] ?>" data-price="<?php echo $tam_lot_sp['price'] ?>" data-productimg="<?php echo $img ?>" data-quantity="1" data-size="<?php echo $tam_lot_sp['size'] ?>">
-                              Thêm <i class="fa fa-shopping-cart"></i>
-                            </button>
-                            <a href="<?php echo base_url() . vn_to_str($tam_lot_sp['name']) . '-' . $tam_lot_sp['id'] ?>.chn" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
-                          </div>
-                          <!-- /.action -->
-                        </div>
-                        <!-- /.cart -->
-                      </div>
-                      <!-- /.product -->
-
-                    </div>
-                    <!-- /.products -->
-                  </div>
-                  <?php } ?>
-                  <?php } ?>
-
-                  <!-- /.item -->
-                </div>
-                <!-- /.home-owl-carousel -->
-              </div>
-              <!-- /.product-slider -->
-            </div>
-            <!-- /.tab-pane -->
-
-            <?php foreach ($tamlot as $key => $tl) { ?>
-            <div class="tab-pane tab-pane-lot" id="lot-<?php echo $key ?>">
-              <div class="product-slider">
-                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
-                  <?php foreach ($tl as $tam_lot_item) { ?>
-                  <div class="item item-carousel">
-                    <div class="products">
-                      <div class="product">
-                        <div class="product-image">
-                          <?php $img = json_decode($tam_lot_sp['image']);
-                              $img = $img[0]; ?>
-                          <div class="image"> <a href="<?php echo base_url() . vn_to_str($tam_lot_item['name']) . '-' . $tam_lot_item['id'] ?>.chn"><img src="<?php echo $img ?>" alt=""></a> </div>
-                          <!-- /.image -->
-
-                          <div class="tag sale"><span><?php echo $tam_lot_item['thick'] ?></span></div>
-                        </div>
-                        <!-- /.product-image -->
-
-                        <div class="product-info text-left">
-                          <h3 class="name"><a href="<?php echo base_url() . vn_to_str($tam_lot_item['name']) . '-' . $tam_lot_item['id'] ?>.chn"><?php echo $tam_lot_item['name'] ?></a></h3>
-                          <div class="rating rateit-small"></div>
-                          <div class="description"></div>
-                          <!--<div class="product-price"> <span class="price"> <?php echo number_format($tam_lot_item['price']) ?> ₫  </span></div>-->
-                          <div class="product-price text-danger"><b>Giá Liên hệ</b></div>
-                          <!-- /.product-price -->
-
-                        </div>
-                        <!-- /.product-info -->
-                        <div class="cart clearfix animate-effect">
-                          <div class="btn-group">
-                            <button class="add_cart btn btn-warning" style="background-color: #fdd922; color: #444;" data-productid="<?php echo $tam_lot_item['id'] ?>" data-productname="<?php echo $tam_lot_item['name'] ?>" data-price="<?php echo $tam_lot_item['price'] ?>" data-productimg="<?php echo $img ?>" data-quantity="1" data-size="<?php echo $tam_lot_item['size'] ?>">
-                              Thêm <i class="fa fa-shopping-cart"></i>
-                            </button>
-                            <a href="<?php echo base_url() . vn_to_str($tam_lot_item['name']) . '-' . $tam_lot_item['id'] ?>.chn" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-info"><i class="fa fa-search"></i></a>
-                          </div>
-                          <!-- /.action -->
-                        </div>
-                        <!-- /.cart -->
-                      </div>
-                      <!-- /.product -->
-
-                    </div>
-                    <!-- /.products -->
-                  </div>
-                  <?php } ?>
-                </div>
-                <!-- /.home-owl-carousel -->
-              </div>
-              <!-- /.product-slider -->
-            </div>
-            <?php } ?>
-
-            <!-- /.tab-pane -->
-
-          </div>
-          <!-- /.tab-content -->
-        </div>
-
-        <!-- /.scroll-tabs -->
-        <!-- ============================================== SCROLL TABS : END ============================================== -->
-        <!-- ============================================== WIDE PRODUCTS ============================================== -->
-        <div class="wide-banners wow fadeInUp outer-bottom-xs">
-          <div class="row">
-            <?php foreach ($banner as $value) { ?>
-            <div class="col-md-6 col-sm-6">
-              <div class="wide-banner cnt-strip">
-                <a href="<?php echo $value['link'] ?>">
-                  <div class="image"> <img class="img-responsive" src="<?php echo $value['image'] ?>" alt=""> </div>
-                </a>
-              </div>
-              <!-- /.wide-banner -->
-            </div>
-            <?php } ?>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.wide-banners -->
-
-        <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
-        <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-
-        <!-- ============================================== BEST SELLER ============================================== -->
-
-        <div class="best-deal wow fadeInUp outer-bottom-xs">
-          <h3 class="section-title">Sản phẩm bán chạy</h3>
+        
+        <div class="best-deal wow fadeInUp outer-bottom-xs landing-page sanpham">
+          <h1 style="font-weight: bold;">SẢN PHẨM TIÊU BIỂU</h1>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
               <?php foreach ($hot as $key => $hot_items) { ?>
@@ -508,6 +329,39 @@
         }
       });
     });
+
+    $(".btn-gioithieu").click(function() {
+      console.log('click')
+    $('html,body').animate({
+        scrollTop: $(".gioithieu").offset().top},
+        'slow');
+    });
+
+    $(".btn-linhvuc").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".linhvuc").offset().top},
+        'slow');
+    });
+
+    $(".btn-nangluc").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".nangluc").offset().top},
+        'slow');
+    });
+
+    $(".btn-tamnhin").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".tamnhin").offset().top},
+        'slow');
+    });
+
+    $(".btn-sanpham").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".sanpham").offset().top},
+        'slow');
+    });
+
+
   });
 
 

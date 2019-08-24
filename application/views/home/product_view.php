@@ -1,6 +1,6 @@
 <?php require_once('include/vn_to_str.php') ?>
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="body-content outer-top-xs" id="top-banner-and-menu" ng-controller="HomeCtrl">
+<div class="body-content outer-top-xs" style="margin-top: 15px" id="top-banner-and-menu" ng-controller="HomeCtrl">
   <div class="container">
     <div class="row">
 
