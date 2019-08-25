@@ -18,13 +18,13 @@
 	<p><?php echo $huongdan[0]["content"] ?></p>
   <span class="date-time pull-right"><b>Ngày đăng: <?php echo date('d/m/Y', $huongdan[0]["datetime"]) ?></b></span>
 	<div class="social-media">
-    <div class="fb-like" data-href="http://localhost/shop3tr/Home/gioithieu" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+    <div class="fb-like" data-href="<?php echo base_url() . 'huong-dan-mua-hang.html' ?> data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 	</div>
 </div>
 <br>
 <div style="background-color: white; padding: 10px">
   <h3 class="section-title">Bình luận</h3>
-  <div class="fb-comments" data-href="<?php echo base_url() ?>Home/huongdanmuahang" data-width="100%" data-numposts="5"></div>
+  <div class="fb-comments" data-href="<?php echo base_url() . 'huong-dan-mua-hang.html' ?> data-width="100%" data-numposts="5"></div>
 </div>
 
 			</div>

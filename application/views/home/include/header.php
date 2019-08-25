@@ -42,6 +42,7 @@
   <script src="<?php echo base_url() ?>includehome/js/slideout.min.js"></script>
   <script src="<?php echo base_url() ?>includehome/js/superslide-std.min.js"></script>
   <script src="<?php echo base_url() ?>includehome/js/mobileSelect.min.js"></script>
+  <script src="<?php echo base_url() ?>includehome/js/sticky-sidebar.min.js"></script>
 </head>
 
 <script>

@@ -1,7 +1,7 @@
 <?php require_once('include/vn_to_str.php') ?>
 <!-- ============================================== HEADER : END ============================================== -->
 
-<div class="body-content outer-top-xs">
+<div class="body-content outer-top-vs">
   <div class='container'>
     <div class='row'>
       <?php echo $sidebar ?>

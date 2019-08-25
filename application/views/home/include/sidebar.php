@@ -2,7 +2,7 @@
       <!-- ============================================== SIDEBAR ============================================== -->
       <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
         <!-- ================================== TOP NAVIGATION ================================== -->
-        <div class="side-menu animate-dropdown outer-bottom-xs">
+        <div class="side-menu animate-dropdown outer-bottom-xs" style="z-index:10000">
           <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Danh mục sản phẩm</div>
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
@@ -119,38 +119,6 @@
           </div>
           <!-- /.sidebar-widget-body -->
         </div>
-        <!-- /.sidebar-widget -->
-
-        <!-- <div class="sidebar-widget product-tag wow fadeInUp">
-          <h3 class="section-title">Danh mục HOT</h3>
-          <div class="sidebar-widget-body outer-top-xs">
-            <div class="tag-list">
-              <?php foreach ($danhmuc as $tag) { ?>
-                <a class="item" title="<?php echo $tag['name'] ?>" href="<?php echo base_url() . vn_to_str($tag['name']) . '-' . $tag['id'] ?>.html"><?php echo $tag['name'] ?></a>
-              <?php } ?>
-            </div>
-          </div>
-        </div> -->
-        <!-- /.sidebar-widget -->
-
-        <!-- <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small">
-          <h3 class="section-title">Đăng ký</h3>
-          <div class="sidebar-widget-body outer-top-xs">
-            <p>Để nhận được thông tin sản phẩm và khuyến mãi</p>
-            <form>
-              <div class="form-group">
-                <label class="sr-only" for="exampleInputEmail1">Địa chỉ Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập Email của bạn">
-              </div>
-              <button class="btn btn-primary">Đăng ký</button>
-            </form>
-          </div>
-        </div> -->
-        <!-- /.sidebar-widget -->
-        <!-- ============================================== NEWSLETTER: END ============================================== -->
-
-        <!-- ============================================== Testimonials============================================== -->
-
 
       </div>
       <!-- /.sidemenu-holder -->

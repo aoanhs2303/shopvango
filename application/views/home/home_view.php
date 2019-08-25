@@ -24,7 +24,7 @@
   <div id="hero" class="big-slide">
     <div id="owl-main" class="owl-main-big-slide owl-carousel owl-inner-nav owl-ui-sm">
       <a href="#">
-        <div class="item itemBigSlide" style="background-image: url(https://ancuong.com/pictures/catalog/about/hinh-banner-trang-chu/mfc.jpg);">
+        <div class="item itemBigSlide" style="background-image: url(http://vangoviet.com/files/tc/slide1.jpg);">
           <div class="title-big-slide">
             <h1>Giải pháp hàng đầu cho bạn</h1>
             <h4>Cùng với những sản phẩm của Thành Công</h4>
@@ -32,7 +32,7 @@
         </div>
       </a>
       <a href="#">
-        <div class="item itemBigSlide" style="background-image: url(https://ancuong.com/pictures/catalog/about/hinh-banner-trang-chu/laminate-2.jpg);">
+        <div class="item itemBigSlide" style="background-image: url(http://vangoviet.com/files/tc/slide2.jpg);">
           <div class="title-big-slide">
             <h1>Giải pháp hàng đầu cho bạn</h1>
             <h4>Cùng với những sản phẩm của Thành Công</h4>
@@ -103,8 +103,7 @@
                   </div>
                 </div>
               </div>
-
-
+              
             </div>
             <!-- /.row -->
           </div>
@@ -151,7 +150,7 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <img style="width: 100%" src="https://mocphat.com/wp-content/uploads/2018/11/melamine-1-1024x678.jpg.webp" alt="">
+                    <img style="width: 100%" src="http://vangoviet.com/files/tc/nlct.jpg" alt="">
                   </div>
                 </div>
               </div>
@@ -166,7 +165,7 @@
                 <h1>TẦM NHÌN CHIẾN LƯỢC</h1>
                 <div class="row">
                   <div class="col-md-6">
-                    <img style="width: 100%" src="https://ancuong.com/pictures/catalog/about/banner-nha-phan-phoi/corporate-buildings-m.jpg" alt="">
+                    <img style="width: 100%" src="http://vangoviet.com/files/tc/tncl.jpg" alt="">
                   </div>
                   <div class="col-md-6">
                     <div class="col-inner" style="padding:0px 0 0px 0px;margin:0px 0px 0 0px;">
@@ -183,7 +182,7 @@
 
         <!-- ============================================== INFO BOXES : END ============================================== -->
         <!-- ============================================== SCROLL TABS ============================================== -->
-        
+
         <div class="best-deal wow fadeInUp outer-bottom-xs landing-page sanpham">
           <h1 style="font-weight: bold;">SẢN PHẨM TIÊU BIỂU</h1>
           <div class="sidebar-widget-body outer-top-xs">
@@ -331,36 +330,39 @@
     });
 
     $(".btn-gioithieu").click(function() {
-      console.log('click')
-    $('html,body').animate({
-        scrollTop: $(".gioithieu").offset().top},
+      $('html,body').animate({
+          scrollTop: $(".gioithieu").offset().top
+        },
         'slow');
     });
 
     $(".btn-linhvuc").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".linhvuc").offset().top},
+      $('html,body').animate({
+          scrollTop: $(".linhvuc").offset().top
+        },
         'slow');
     });
 
     $(".btn-nangluc").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".nangluc").offset().top},
+      $('html,body').animate({
+          scrollTop: $(".nangluc").offset().top
+        },
         'slow');
     });
 
     $(".btn-tamnhin").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".tamnhin").offset().top},
+      $('html,body').animate({
+          scrollTop: $(".tamnhin").offset().top
+        },
         'slow');
     });
 
     $(".btn-sanpham").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".sanpham").offset().top},
+      $('html,body').animate({
+          scrollTop: $(".sanpham").offset().top
+        },
         'slow');
     });
-
 
   });
 

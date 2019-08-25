@@ -15,7 +15,7 @@
 <div class="col-xs-12 col-sm-12 col-md-3 sidebar" ng-controller="SidebarCtrl">
     <div class="sidebar-module-container">
         <div class="search-area outer-bottom-small">
-            <form id="formtintuc" action="http://localhost/shop3tr/Home/searchtintuc">
+            <form id="formtintuc" action="<?php echo base_url() . 'Home/searchtintuc' ?>">
                 <div class="control-group">
                     <input placeholder="Tìm kiếm tin tức ..." name="title" class="search-field" style="font-size: 12px;
                     color: #9e9e9e;
