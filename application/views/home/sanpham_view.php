@@ -337,11 +337,7 @@
 							</div><!-- /.products -->
 						</div><!-- /.item -->
 						<?php } ?>
-
-
 				</section><!-- /.section -->
-
-
 				<section class="section featured-product wow fadeInUp">
 					<h3 class="section-title">Bình luận</h3>
 					<?php $idsp = $sanpham[0]['id'] ?>

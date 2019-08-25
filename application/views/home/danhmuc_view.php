@@ -22,7 +22,6 @@
           <!-- /.owl-carousel --> 
         </div>
         
-     
         <div class="clearfix filters-container m-t-10">
           <div class="row">
             <div class="col col-sm-12 col-md-8">
@@ -49,20 +48,6 @@
               </div>
               <!-- /.col --> 
             </div>
-            <!-- /.col -->
-<!--             <div class="col col-sm-6 col-md-4 text-right">
-              <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-
-              </div>
-            </div> -->
             <!-- /.col --> 
           </div>
           <!-- /.row --> 
