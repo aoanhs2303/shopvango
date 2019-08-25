@@ -2020,7 +2020,8 @@ display:none;
   position: relative;
   border: 3px solid #fac463;
   margin: 2px 5px;
-  background-color: #333;
+  background: #0F2027;  /* fallback for old browsers */
+  
   margin-left: 0 3px;
 }
 .info-big-slide .col-md-6.col-sm-2.col-lg-2 h4{
@@ -2028,11 +2029,11 @@ display:none;
 }
 .info-big-slide .col-md-6.col-sm-2.col-lg-2:hover {
   transition: 0.4s;
-  background-color: #FFF;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0F2027, #203A43, #2C5364);   /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0F2027, #203A43, #2C5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   cursor: pointer;
-}
-.info-big-slide .col-md-6.col-sm-2.col-lg-2:hover h4{
-  color: #333;
 }
 
 .info-big-slide .col-md-6.col-sm-2.col-lg-2:first-child { 

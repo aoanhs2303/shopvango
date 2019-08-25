@@ -23,7 +23,7 @@
               <span style="margin-top: 5px;" class="contact-span">217 Lê Văn Quới, Phường Bình Trị Đông, Quận Tân Bình, TP. Hồ Chí Minh</span>
             </div>
             <div class="clearfix phone-no">
-              <span class="contact-i"><i class="fa fa-mobile"></i></span>
+              <span class="contact-i"><i class="fa fa-phone"></i></span>
               <span style="margin-top: 5px;" class="contact-span">0938 690 689 - 0914 412 807 - 01218 687 569</span>
             </div>
             <div class="clearfix email">

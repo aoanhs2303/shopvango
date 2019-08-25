@@ -17,7 +17,7 @@
                 </div>
               </li>
               <li class="media">
-                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inverse"></i> </span> </div>
+                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-phone fa-stack-1x fa-inverse"></i> </span> </div>
                 <div class="media-body">
                   <p><?php foreach ($sdt as $key => $sdt_item) {
                         echo $sdt_item['value'] . '&nbsp;&nbsp;';

@@ -524,6 +524,61 @@ class Home extends CI_Controller {
 
 	}
 
+	public function guitinnhan()
+	{
+		$name    = $this->input->post('ten_dh');
+		$sdt     = $this->input->post('sdt_dh');
+		$email   = $this->input->post('email_dh');
+		$noidung  = $this->input->post('noidung_dh');
+		
+		$content = '
+		Người đặt: '.$name.' .<br>
+		Sđt: '.$sdt.' .<br>
+		Email: '.$email.' .<br>
+		Lời nhắn: '.$noidung.' .<br>
+		';
+        $mail = new PHPMailer;
+        
+        $mail->isSMTP(); // Mở cái này lên là lỗi nữa  
+
+        //Set SMTP host name         
+        $mail->CharSet = 'UTF-8';
+                            
+        $mail->Host = "smtp.gmail.com";
+        //Set this to true if SMTP host requires authentication to send email
+        $mail->SMTPAuth = true;                          
+        //Provide username and password     
+        $mail->Username = "trannhulucs2303@gmail.com";                 
+        $mail->Password = "jwxiksinsogpmzcm";                           
+        //If SMTP requires TLS encryption then set it
+        $mail->SMTPSecure = "tls";                           
+        //Set TCP port to connect to 
+        $mail->Port = 587;                                   
+    
+        $mail->From = "trannhulucs2303@gmail.com";
+        $mail->FromName = "Lời nhắn từ vangoviet.com";
+    
+        $mail->addAddress($email, $name);
+        $mail->addAddress("trannhulucs2303@gmail.com", $name);
+    
+        $mail->isHTML(true);
+    
+        $mail->Subject = 'Lời nhắn từ vangoviet.com';
+        $mail->Body = $content;
+        // $mail->AltBody = "This is the plain text version of the email content";
+    
+        if(!$mail->send()) {
+            $_SESSION["ErrorMessage"] = "Mailer Error: " . $mail->ErrorInfo;
+            echo "Thất bại";
+            echo "<pre>";
+            var_dump($mail->ErrorInfo);
+            echo "</pre>";
+        } else {
+        	$this->guithanhcong();
+        }		
+
+	}
+
 	public function search()
 	{
 		$tukhoa = $this->input->get('search_fill');
@@ -601,6 +656,41 @@ class Home extends CI_Controller {
 		$this->load->view('home/include/header.php', null, FALSE);
 		$this->load->view('home/include/menutop.php', $data_menu, FALSE);
 		$this->load->view('home/thanhcong_view', $data_main);
+		$this->load->view('home/include/footer.php', null, FALSE);
+	}
+
+	public function guithanhcong()
+	{
+		$category     = $this->Admin_model->getCategory();
+		$product_side = $this->Admin_model->getHotProductSide();
+		$data_side    = array(
+			'danhmuc'  => $category,
+			'side_hot' => $product_side
+		);
+		$sidebar       = $this->load->view('home/include/sidebar', $data_side, TRUE);
+
+		$category_van  = $this->Admin_model->getCategory_Van('van');
+		$category_lot  = $this->Admin_model->getCategory_Van('lot');
+		$category_khac = $this->Admin_model->getCategory_Van('khac');
+		$contact_sdt     = $this->Admin_model->getContact('sdt');
+		$contact_email   = $this->Admin_model->getContact('email');
+		$contact_address = $this->Admin_model->getContact('address');
+
+		$data_main = array( 
+			'sidebar' => $sidebar,
+			'sdt'          => $contact_sdt,
+			'email'        => $contact_email,
+			'address'      => $contact_address
+		);
+
+		$data_menu = array(
+			'category_van' => $category_van,
+			'category_lot' => $category_lot,
+			'category_khac' => $category_khac
+		);
+		$this->load->view('home/include/header.php', null, FALSE);
+		$this->load->view('home/include/menutop.php', $data_menu, FALSE);
+		$this->load->view('home/guithanhcong_view', $data_main);
 		$this->load->view('home/include/footer.php', null, FALSE);
 	}
 
