@@ -93,21 +93,6 @@
     </div>
     <!-- /.sidebar-widget -->
 
-    <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small">
-        <h3 class="section-title">Đăng ký</h3>
-        <div class="sidebar-widget-body outer-top-xs">
-            <p>Để nhận được thông tin sản phẩm và khuyến mãi</p>
-            <form>
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail1">Địa chỉ Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập Email của bạn">
-                </div>
-                <button class="btn btn-primary">Đăng ký</button>
-            </form>
-        </div>
-        <!-- /.sidebar-widget-body -->
-    </div>
-    <!-- /.sidebar-widget -->
     <!-- ============================================== NEWSLETTER: END ============================================== -->
 
     <!-- ============================================== Testimonials============================================== -->

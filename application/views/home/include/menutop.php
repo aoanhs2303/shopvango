@@ -18,7 +18,6 @@
             <div class="nav-outer">
               <ul class="nav navbar-nav">
                 <li <?php if ($path == '') echo "class='active'" ?>> <a href="<?php echo base_url() ?>">Trang Chủ</a> </li>
-                <!-- <li class="yamm mega-menu"> <a href="<?php echo base_url() ?>gioi-thieu.html">Giới thiệu</a> -->
                 </li>
                 <li class="dropdown mega-menu">
                   <a href="<?php echo base_url() ?>san-pham.html" data-hover="dropdown" class="dropdown-toggle">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>

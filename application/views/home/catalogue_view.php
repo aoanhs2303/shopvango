@@ -113,7 +113,7 @@ var jssor_1_SlideshowTransitions = [
 <style>
 ul.nav.nav-tabs li.active a{
     color: white;
-    background-color: #157ED2;
+    background-color: #666;
 }
 </style>
 
@@ -154,11 +154,6 @@ ul.nav.nav-tabs li.active a{
                                 <li>
                                     <a ng-click="chooseCategory('NẸP NHỰA PVC')" data-transition-type="backSlide" href="#van-5" data-toggle="tab">
                                         NẸP NHỰA PVC
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ng-click="chooseCategory('PHỤ KIỆN TITUS')" data-transition-type="backSlide" href="#van-6" data-toggle="tab">
-                                        PHỤ KIỆN TITUS
                                     </a>
                                 </li>
                             </ul>
@@ -229,21 +224,7 @@ ul.nav.nav-tabs li.active a{
 
             var NEP_NHUA_PVC = [
                 {"image":"c_nepnhua/c_nepnhua1", "thumb":"c_thumb_nepnhua/c_thumb_nepnhua1"},
-            ];
-            var PHU_KiEN_TITUS = [
-                {"image":"c_titus/c_titus1", "thumb":"c_thumb_titus/c_thumb_titus1"},
-                {"image":"c_titus/c_titus2", "thumb":"c_thumb_titus/c_thumb_titus2"},
-                {"image":"c_titus/c_titus3", "thumb":"c_thumb_titus/c_thumb_titus3"},
-                {"image":"c_titus/c_titus4", "thumb":"c_thumb_titus/c_thumb_titus4"},
-                {"image":"c_titus/c_titus5", "thumb":"c_thumb_titus/c_thumb_titus5"},
-                {"image":"c_titus/c_titus6", "thumb":"c_thumb_titus/c_thumb_titus6"},
-                {"image":"c_titus/c_titus7", "thumb":"c_thumb_titus/c_thumb_titus7"},
-                {"image":"c_titus/c_titus8", "thumb":"c_thumb_titus/c_thumb_titus8"},
-                {"image":"c_titus/c_titus9", "thumb":"c_thumb_titus/c_thumb_titus9"},
-                {"image":"c_titus/c_titus10", "thumb":"c_thumb_titus/c_thumb_titus10"}
-            ];
-
-            
+            ];            
             
             $scope.chooseCategory = function(cate) {
                 var html = `
@@ -312,9 +293,6 @@ ul.nav.nav-tabs li.active a{
                         break;
                     case "NẸP NHỰA PVC":
                         $scope.thuvien = NEP_NHUA_PVC;
-                        break;
-                    case "PHỤ KIỆN TITUS":
-                        $scope.thuvien = PHU_KiEN_TITUS;
                         break;
                     default:
                         break;

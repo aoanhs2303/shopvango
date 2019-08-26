@@ -53,17 +53,13 @@
       content: document.getElementById('content'),
       animation: 'slideLeft',
       duration: 0.5,
-      allowDrag: true,
+      allowDrag: false,
       slideContent: true,
       allowContentInteraction: true,
       closeOnBlur: false,
-      width: '70vw',
+      width: '77vw',
       height: '50vh'
     });
-
-    // var p = superslideMenu.open();
-
-
 
   };
 </script>
@@ -103,10 +99,7 @@
                 </div>
               </form>
             </div>
-            <!-- /.search-area -->
-            <!-- ============================================================= SEARCH AREA : END ============================================================= -->
           </div>
-          <!-- /.top-search-holder -->
 
           <div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row">
             <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
@@ -120,17 +113,10 @@
               </a>
               <!-- /.dropdown-menu-->
             </div>
-            <!-- /.dropdown-cart -->
-
-            <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->
           </div>
           <!-- /.top-cart-row -->
         </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /.container -->
-
     </div>
     <!-- /.main-header -->
     <script>

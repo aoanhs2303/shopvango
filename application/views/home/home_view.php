@@ -11,7 +11,6 @@
   }
 
   .header-style-1 .header-nav {
-
     background-color: rgba(0, 0, 0, .4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
   }
@@ -150,7 +149,7 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <img style="width: 100%" src="http://vangoviet.com/files/tc/nlct.jpg" alt="">
+                    <img style="width: 100%" src="http://vangoviet.com/files/tc/tncl.jpg" alt="">
                   </div>
                 </div>
               </div>
@@ -165,7 +164,7 @@
                 <h1>TẦM NHÌN CHIẾN LƯỢC</h1>
                 <div class="row">
                   <div class="col-md-6">
-                    <img style="width: 100%" src="http://vangoviet.com/files/tc/tncl.jpg" alt="">
+                    <img style="width: 100%" src="http://vangoviet.com/files/tc/nlct.jpg" alt="">
                   </div>
                   <div class="col-md-6">
                     <div class="col-inner" style="padding:0px 0 0px 0px;margin:0px 0px 0 0px;">

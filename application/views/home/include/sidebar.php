@@ -7,42 +7,37 @@
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
               <?php
-              $faicon = array('object-ungroup', 'first-order', 'server', 'delicious' , 'codepen', 'empire', 'ship' , 'gg', 'align-center', 'align-left', 'align-right', 'arrows-alt', 'cube', 'industry', 'gg', 'th-large', 'th-list');
               foreach ($danhmuc as $key => $dm) {
-                if (empty($faicon[$key])) $faicon[$key] = 'cube';
                 if ($dm['main'] == '1') { ?>
               <li class="dropdown menu-item">
 
                 <a href="<?php echo base_url() . vn_to_str($dm['name']) . '-' . $dm['id'] ?>.html">
-                  <i class="icon fa fa-<?php echo $faicon[$key]; ?>"></i> <?php echo $dm['name']; ?>
+                  <?php echo $dm['name']; ?>
                 </a>
               </li>
               <?php }
               } ?>
 
               <?php
-              $faicon2 = array('object-ungroup', 'first-order', 'align-center', 'align-left', 'align-right', 'arrows-alt', 'cube', 'industry', 'gg', 'codiepie', 'th-list', 'gitlab', 'futbol-o');
               foreach ($danhmuc as $key => $dm) {
                 if (empty($faicon2[$key])) $faicon2[$key] = 'cube';
                 if ($dm['main'] == '2') { ?>
               <li class="dropdown menu-item">
                 <a href="<?php echo base_url() . vn_to_str($dm['name']) . '-' . $dm['id'] ?>.html">
-                  <i class="icon fa fa-<?php echo $faicon2[$key]; ?>"></i> BỀ MẶT <?php echo $dm['name']; ?>
+                  BỀ MẶT <?php echo $dm['name']; ?>
                 </a>
               </li>
               <?php }
               } ?>
 
-              <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-cubes"></i>SẢN PHẨM PHỤ</a>
+              <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">SẢN PHẨM PHỤ</a>
                 <ul class="dropdown-menu mega-menu">
                   <li class="yamm-content">
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-lg-3">
                         <ul>
                           <?php
-                          $faicon = array('object-ungroup', 'first-order', 'align-center', 'align-left', 'align-right', 'arrows-alt', 'cube', 'industry', 'square', 'th-large', 'th-list');
                           foreach ($danhmuc as $key => $dm) {
-                            if (empty($faicon[$key])) $faicon[$key] = 'cube';
                             if ($dm['main'] == '#') { ?>
                           <li class="dropdown menu-item">
                             <a href="<?php echo base_url() . vn_to_str($dm['name']) . '-' . $dm['id'] ?>.html">
@@ -58,19 +53,10 @@
                   </li>
                 </ul>
               </li>
-
             </ul>
             <!-- /.nav -->
           </nav>
           <!-- /.megamenu-horizontal -->
-        </div>
-
-        <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
-          <h3 class="section-title">FACEBOOK</h3>
-          <div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-          </div>
-          <!-- /.sidebar-widget -->
         </div>
 
         <div class="sidebar-widget outer-bottom-small wow fadeInUp">
@@ -88,8 +74,6 @@
                             <?php $img = json_decode($sh['image']);
                               $img = $img[0]; ?>
                             <div class="image"> <a href="<?php echo base_url() . vn_to_str($sh['name']) . '-' . $sh['id'] ?>.chn"> <img src="<?php echo $img ?>" alt="<?php echo $img ?>"> </a> </div>
-                            <!-- /.image -->
-
                           </div>
                           <!-- /.product-image -->
                         </div>
@@ -106,20 +90,13 @@
                         </div>
                         <!-- /.col -->
                       </div>
-                      <!-- /.product-micro-row -->
                     </div>
-                    <!-- /.product-micro -->
-
                   </div>
                   <?php } ?>
-
                 </div>
               </div>
             </div>
           </div>
-          <!-- /.sidebar-widget-body -->
         </div>
-
       </div>
-      <!-- /.sidemenu-holder -->
       <!-- ============================================== SIDEBAR : END ============================================== -->

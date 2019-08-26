@@ -82,8 +82,8 @@ $path = explode("/", $url)[2];
 ?>
 <div id='menuContainer' style="z-index:3000; background:#4bc48f">
   <div>
-    <div style='padding: 25px 15px; padding-bottom: 21px; background: #0f6cb2; color: #fff'>
-      <div class="logo"> <a href="<?php echo base_url() ?>"> <img style="margin-top: -7px; margin-left: 45px;" src="<?php echo base_url() ?>includehome/images/logo.png" alt="logo"> </a> </div>
+  <div style='padding: 25px 15px; padding-bottom: 21px; background: #333; color: #fff'>
+      <div class="logo"> <a href="<?php echo base_url() ?>"> <img style="margin-top: -7px; margin-left: 45px; height: 57px;" src="<?php echo base_url() ?>includehome/images/logo.png" alt="logo"> </a> </div>
     </div>
     <div <?php if ($path == '') echo "class='active navlink'";
           else echo "class='navlink'" ?>>
@@ -91,7 +91,7 @@ $path = explode("/", $url)[2];
     </div>
     <div <?php if ($path == 'san-pham.html') echo "class='active navlink'";
           else echo "class='navlink'" ?>>
-      <li><i class='fa fa-cubes' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>">SẢN PHẨM</a> </li>
+      <li><i class='fa fa-cubes' style='width: 1.5em'></i> <a href="<?php echo base_url() ?>san-pham.html">SẢN PHẨM</a> </li>
     </div>
     <div <?php if ($path == 'dich-vu.html') echo "class='active navlink'";
           else echo "class='navlink'" ?>>
