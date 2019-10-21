@@ -19,14 +19,14 @@
               <ul class="nav navbar-nav">
                 <li <?php if ($path == '') echo "class='active'" ?>> <a href="<?php echo base_url() ?>">Trang Chủ</a> </li>
                 </li>
-                <li class="dropdown mega-menu">
-                  <a href="<?php echo base_url() ?>san-pham.html" data-hover="dropdown" class="dropdown-toggle">Sản phẩm <span class="menu-label hot-menu hidden-xs">hot</span> </a>
+                <li <?php if ($path == 'san-pham.html') echo "class='dropdown mega-menu active'"; else echo "class='dropdown mega-menu'" ?>>
+                  <a href="<?php echo base_url() ?>san-pham.html" data-hover="dropdown" class="dropdown-toggle">Sản phẩm</a>
                   <ul class="dropdown-menu container">
                     <li>
                       <div class="yamm-content">
                         <div class="row">
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-menu">
-                            <h2 class="title">Ván ép</h2>
+                          <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
+                            <h2 class="title">VÁN GỖ</h2>
                             <ul class="links">
                               <?php foreach ($category_van as $key => $van) { ?>
                                 <li>
@@ -37,8 +37,8 @@
                               <?php } ?>
                             </ul>
                           </div>
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-menu">
-                            <h2 class="title">Tấm lót sàn</h2>
+                          <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
+                            <h2 class="title">BỀ MẶT</h2>
                             <ul class="links">
                               <?php foreach ($category_lot as $key => $lot) { ?>
                                 <li>
@@ -49,8 +49,18 @@
                               <?php } ?>
                             </ul>
                           </div>
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-menu">
-                            <h2 class="title">Sản phẩm khác</h2>
+                          <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
+                            <h2 class="title">SÀN GỖ</h2>
+                            <ul class="links">
+                              <li>
+                                <a href="<?php echo base_url() . 'san-go-25' ?>.html">
+                                  CÁC LOẠI SẢN GỖ
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
+                            <h2 class="title">SẢN PHẨM KHÁC</h2>
                             <ul class="links">
                               <?php foreach ($category_khac as $key => $khac) { ?>
                                 <li>
@@ -61,19 +71,28 @@
                               <?php } ?>
                             </ul>
                           </div>
+                          <div class="col-xs-12 col-sm-12 col-md-4 Title Hidden">
+                            <div class="menu-widget">
+                              <h2 class="title" style="display: none;">Banner Container</h2>
+                              <ul class="links depth-1" role="menu">
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a><img class="img-responsive" src="<?php echo base_url() ?>files/sanpham/MFC.jpg" alt="Banner Image"></a></li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <!-- /.yamm-content -->
                     </li>
                   </ul>
                 </li>
-                <li <?php if ($path == 'dich-vu.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>dich-vu.html">Dịch vụ<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
+                <li <?php if ($path == 'dich-vu.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>dich-vu.html">Dịch vụ</a> </li>
                 <li <?php if ($path == 'catalogue.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>catalogue.html">catalogue</a>
-                <li <?php if ($path == 'thu-vien-3d.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>thu-vien-3d.html">Thư viện 3D</a>
+                <li <?php if ($path == 'thu-vien-3d.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>thu-vien-3d.html">Thư viện hình</a>
                 <li <?php if ($path == 'tin-tuc.html') echo "class='active'" ?>> <a href="<?php echo base_url() ?>tin-tuc.html">Tin tức</a> </li>
-                <li <?php if ($path == 'huong-dan-mua-hang.html') echo "class='active'" ?>> <a href="<?php echo base_url(); ?>huong-dan-mua-hang.html">Hướng dẫn mua hàng</a> </li>
                 <li <?php if ($path == 'lien-he.html') echo "class='active'" ?>> <a href="<?php echo base_url(); ?>lien-he.html">Liên hệ</a> </li>
                 <li <?php if ($path == 'cart') echo "class='active'" ?>> <a href="<?php echo base_url() ?>cart">Mua ngay</a> </li>
+                <li> <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </li>
+                
               </ul>
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>
@@ -94,5 +113,3 @@
   <!-- ============================================== NAVBAR : END ============================================== -->
 
   </header>
-
-  
