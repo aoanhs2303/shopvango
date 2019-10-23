@@ -1,51 +1,53 @@
-<section class="instagram-feed-wrap">
-<div class="instagram-feed-title"><a href="#"><i class="fab fa-instagram"></i>Follow On Instagram</a></div>
-                <ul class="instagram-feed-figure">
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure1.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure2.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure3.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure4.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure5.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure6.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure7.jpg" alt="Social"></a>
-                    </li>
-                    <li>
-                        <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure8.jpg" alt="Social"></a>
-                    </li>
+    <div style="border-top: 1px solid #dcd9c9;padding-top: 25px;">&nbsp;</div>
+    <section class="instagram-feed-wrap">
+    <div class="instagram-feed-title"><a href="#"><i class="fab fa-instagram"></i>Follow On Instagram</a></div>
+        <ul class="instagram-feed-figure">
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure1.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure2.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure3.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure4.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure5.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure6.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure7.jpg" alt="Social"></a>
+            </li>
+            <li>
+                <a href="single-recipe1.html"><img src="<?php echo base_url() . 'includehome/'?>img/social-figure/social-figure8.jpg" alt="Social"></a>
+            </li>
+        </ul>
+    </section>
+    <!-- Category Area End Here -->
+    <!-- Footer Area Start Here -->
+    <footer class="ranna-bg-dark">
+        <div class="container" style="background-color: unset">
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="#"><i style="padding-right: 4px" class="fab fa-facebook"></i> FACEBOOK</a></li>
+                    <!-- <li><a href="#">TWITTER</a></li> -->
+                    <li><a href="#"><i style="padding-right: 4px" class="fab fa-instagram"></i> INSTAGRAM</a></li>
+                    <li><a href="#"><i style="padding-right: 4px" class="fas fa-at"></i> EMAIL</a></li>
+                    <!-- <li><a href="#">PINTEREST</a></li>
+                    <li><a href="#">GOOGLEPLUS</a></li>
+                    <li><a href="#">YOUTUBE</a></li> -->
                 </ul>
-            </section>
-        <!-- Category Area End Here -->
-        <!-- Footer Area Start Here -->
-        <footer class="ranna-bg-dark">
-            <div class="container" style="background-color: unset">
-                <div class="footer-menu">
-                    <ul>
-                        <li><a href="#"><i style="padding-right: 4px" class="fab fa-facebook"></i> FACEBOOK</a></li>
-                        <!-- <li><a href="#">TWITTER</a></li> -->
-                        <li><a href="#"><i style="padding-right: 4px" class="fab fa-instagram"></i> INSTAGRAM</a></li>
-                        <!-- <li><a href="#">PINTEREST</a></li>
-                        <li><a href="#">GOOGLEPLUS</a></li>
-                        <li><a href="#">YOUTUBE</a></li> -->
-                    </ul>
-                </div>
-                <div class="copyright" style="font-size: 14px">
-                @2019 - PenciDesign. All Right Reserved. Own by Bonbon Baking
-                </div>
             </div>
-        </footer>
+            <div class="copyright" style="font-size: 14px">
+            @2019. All Right Reserved. Own by Bonbon Baking
+            </div>
+        </div>
+    </footer>
         <!-- Footer Area End Here -->
     </div>
     <!-- Search Box Start Here -->

@@ -3,9 +3,9 @@
                 <div class="row gutters-60">
                     <div class="col-lg-8">
                         <div class="single-recipe-layout1">
-                            <div class="ctg-name">PASTA</div>
-                            <h2 class="item-title single-title">Chanterelle and Porcini Mushroom Recipes</h2>
-                            <div class="row mb-4 text-center">
+                            <br>
+                            <h2 class="item-title single-title text-left">Chanterelle and Porcini Mushroom Recipes</h2>
+                            <div class="row mb-4 text-left">
                                 <div class="col-12">
                                     <ul class="entry-meta">
                                         <li class="single-meta"><a href="#"><i class="far fa-calendar-alt"></i>Nov 14,
@@ -34,40 +34,29 @@
                             <div class="wrapper-penci-recipe">
                                 <div class="penci-recipe" id="printrepcipe631" itemscope="" itemtype="http://schema.org/Recipe">
                                     <div class="penci-recipe-heading">
-                            
-                                        <div class="penci-recipe-thumb">
-                                            <img itemprop="image" src="http://max.soledad.pencidesign.com/soledad-food/wp-content/uploads/sites/2/2017/07/banana-150x150.jpg" alt="Orange Banana Smoothie Recipe" title="banana" width="150" height="150">
+                                    <div class="penci-recipe-thumb">
+                                        <img itemprop="image" src="http://max.soledad.pencidesign.com/soledad-food/wp-content/uploads/sites/2/2017/07/banana-150x150.jpg" alt="Orange Banana Smoothie Recipe" title="banana" width="150" height="150">
+                                    </div>
+
+                                    <div class="penci-recipe-metades">
+                                        <h2 itemprop="name" style="width: 400px; float: left; margin-bottom: 10px">Orange Banana Smoothie Recipe</h2>
+
+                                        <a href="#" class="penci-recipe-print" style="float:right;" data-print="http://max.soledad.pencidesign.com/soledad-food/wp-content/plugins/penci-recipe/inc/print.css?ver=2.2"><i class="fas fa-print"></i> Print This</a>
+
+                                        <div class="penci-recipe-meta">
+                                            <span><i class="fas fa-user"></i> Serves: <span class="servings" itemprop="recipeYield">3</span>
+                                            </span>
+                                            &nbsp;
+                                            <span><i class="fas fa-clock"></i> Prep Time: <time datetime="PT15M" itemprop="prepTime">15 minutes</time>
+                                                                                                </span>&nbsp;
+                                            <span><i class="fas fa-clock"></i> Cooking Time: <time datetime="PT5M" itemprop="totalTime">5 minutes</time>
+                                                                                                </span>&nbsp;
                                         </div>
-                            
-                                        <div class="penci-recipe-metades">
-                                            <h2 itemprop="name" style="width: 400px; float: left; margin-bottom: 10px">Orange Banana Smoothie Recipe</h2>
-                            
-                                            
-                            
-                                            <a href="#" class="penci-recipe-print" style="float:right;" data-print="http://max.soledad.pencidesign.com/soledad-food/wp-content/plugins/penci-recipe/inc/print.css?ver=2.2"><i class="fas fa-print"></i> Print This</a>
-                            
-                                            <div class="penci-recipe-meta">
-                                                <span>
-                                                            <i class="fas fa-user"></i> Serves: <span class="servings" itemprop="recipeYield">3</span>
-                                                </span>
-                                                <span>
-                                                            <i class="fab fa-clock-o"></i> Prep Time: <time datetime="PT15M" itemprop="prepTime">15 minutes</time>
-                                                            </span>
-                                                <span>
-                                                            <i class="fas fa-clock-o"></i> Cooking Time: <time datetime="PT5M" itemprop="totalTime">5 minutes</time>
-                                                            <time class="penci-hide-tagupdated" datetime="PT5M" itemprop="cookTime">5 minutes</time>
-                                                            </span>
-                                            </div>
-                            
-                                            <div itemprop="nutrition" itemscope="" itemtype="http://schema.org/NutritionInformation" class="penci-recipe-rating penci-nutrition">
-                                                <span class="nutrition-lable">Nutrition facts:</span>
-                                                <span itemprop="calories" class="nutrition-item">270 calories</span>
-                                                <span itemprop="fatContent" class="nutrition-item">9 fat</span>
-                                            </div>
-                            
-                                            <div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" class="penci-recipe-rating penci-recipe-review">
-                                            </div>
+
+                                        <div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" class="penci-recipe-rating penci-recipe-review">
                                         </div>
+                                    </div>
+                                        
                                     </div>
                             
                                     <div class="penci-recipe-ingredients penci-recipe-not-visual">
@@ -125,13 +114,13 @@
                                     <div class="row">
                                         <div class="col-12 form-group">
                                             <label>Comment :</label>
-                                            <textarea placeholder="" class="textarea form-control" name="message" rows="2" style="background: #efefef;"
+                                            <textarea placeholder="" class="textarea form-control" name="message" rows="2" style="border: 1px solid #efefef;"
                                                 cols="20" data-error="Message field is required" required></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <div class="col-lg-6 form-group">
                                             <label>Name :</label>
-                                            <input type="text" placeholder="" class="form-control" name="name" style="background: #efefef;"
+                                            <input type="text" placeholder="" class="form-control" name="name" style="border: 1px solid #efefef;"
                                                 data-error="Name field is required" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
@@ -147,9 +136,7 @@
                     <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
                     
                     <div class="widget" style="text-align: center; margin-top: 25px">
-                        <div class="section-heading chitiet heading-dark">
-                            <h3 class="item-heading">AUTHOR</h3>
-                        </div>
+                        <div class="post-title-box"><h4 class="post-box-title">AUTHOR</h4></div>
                         <div class="about-widget pc_aligncenter">
                             <img style="width: 45%; border-radius:50%" class="penci-widget-about-image nopin holder-square penci-lazy" nopin="nopin" src="http://max.soledad.pencidesign.com/soledad-food/wp-content/uploads/sites/2/2017/07/avatar.jpg" alt="About Me" style="border-radius: 50%; display: inline;">
 
@@ -159,9 +146,7 @@
                     </div>
 
                     <div class="widget">
-                        <div class="section-heading chitiet heading-dark" style="text-align: center">
-                            <h3 class="item-heading">KEEP IN TOUCH</h3>
-                        </div>
+                        <div class="post-title-box"><h4 class="post-box-title">KEEP IN TOUCH</h4></div>
                         <div class="widget-social">
                             <a href="#"><i class="fab fa-facebook-f"></i><span style="font-size: 13px">Facebook</span></a>
                             <a href="#"><i class="fab fa-instagram" style="font-size: 14px"></i><span style="font-size: 13px">Instagram</span></a>
@@ -170,9 +155,7 @@
                     </div>
 
                     <div class="widget">
-                        <div class="section-heading chitiet heading-dark" style="text-align: center">
-                            <h3 class="item-heading">POPULAR RECIPES</h3>
-                        </div>
+                        <div class="post-title-box"><h4 class="post-box-title">POPULAR RECIPES</h4></div>
                         <ul id="penci-popularwg-3004" class="side-newsfeed penci-feed-2columns penci-2columns-feed display-order-numbers">
 
     <li class="penci-feed">
@@ -275,9 +258,7 @@
                     </div>
 
                     <div class="widget">
-                            <div style="text-align: center;" class="section-heading chitiet heading-dark">
-                                <h3 class="item-heading">INSTAGRAM</h3>
-                            </div>
+                            <div class="post-title-box"><h4 class="post-box-title">INSTAGRAM</h4></div>
                             <div class="widget-instagram">
                                 <ul>
                                     <li>
@@ -339,9 +320,7 @@
                         </div>
 
                     <div class="widget">
-                            <div style="text-align: center;" class="section-heading chitiet heading-dark">
-                                <h3 class="item-heading">LATEST RECIPES</h3>
-                            </div>
+                            <div class="post-title-box"><h4 class="post-box-title">LATEST RECIPES</h4></div>
                             <div class="widget-latest">
                                 <ul class="block-list">
                                     <li class="single-item">

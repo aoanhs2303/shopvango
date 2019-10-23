@@ -14,65 +14,82 @@
         <div class="container">
             <div class="row gutters-60">
                 <div class="col-lg-12">
-                    <form class="submit-recipe-form" name="myForm">
+                    <form class="submit-recipe-form" name="myForm"
+                    action="<?php echo base_url() ?>Admin/putRecipe" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Tiêu đề</label>
-                            <input type="text" placeholder="Nhập tiêu đề ..." class="form-control" name="name"
-                                data-error="Tiêu đề không được để trống" required>
+                            <input type="text" placeholder="Nhập tiêu đề ..." class="form-control" name="title"
+                                data-error="Tiêu đề không được để trống" >
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
                             <label>Chọn danh mục</label>
-                            <select class="select2" name="filter-by">
+                            <select class="select2" name="danhmuc">
                                 <option value="congthucchung">Công thức chung</option>
                                 <option value="banhmi">Bánh Mì</option>
                                 <option value="banhngot">Bánh Ngọt</option>
                                 <option value="banhquy">Bánh Quy</option>
                             </select>
                         </div>
-                        <div>
-                                <fieldset>
-                                    <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
-                                    <i ng-show="myForm.file.$error.required">*Không được để trống</i><br>
-                                    <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-                                    <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
-                                    <button ng-click="picFile = null" ng-show="picFile">Remove</button><br>
-                                    <button ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)">Submit</button>
-                                    <span class="progress" ng-show="picFile.progress >= 0">
-                                        <div style="width:{{picFile.progress}}%" ng-bind="picFile.progress + '%'"></div>
-                                    </span>
-                                    <span ng-show="picFile.result">Upload Successful</span>
-                                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-                                </fieldset>
-                                <br>
+
+                        <div class="additional-input-wrap">
+                            <label>Upload hình đại diện Bài viết</label> <i ng-show="myForm.picRecipe.$error.required">*Không được để trống</i><br>
+                            <div class="form-group">
+                                <ul class="upload-img">
+                                    <li><img ng-show="myForm.picRecipe.$invalid" src="<?php echo base_url() . 'includehome/'?>img/figure/upload-banner1.jpg" alt="Upload Image"></li>
+                                    <li>
+                                        <img ng-show="myForm.picRecipe.$valid" style="height: 130px" ngf-thumbnail="picModelFile" class="thumb">
+                                        <button class="btn btn-danger" style="padding: 8px 11px" ng-click="picModelFile = null" ng-show="picModelFile"><i class="fas fa-times" style="margin: 0 auto; font-size: 19px"></i></button><br>
+                                    </li>
+                                </ul>
+                                <div>
+                                    <fieldset>
+                                        <div class="upload-btn-wrapper">
+                                        <button class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Tải ảnh đại diện</button>
+                                        <input type="file" ngf-select ng-model="picModelFile" name="picRecipe" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFileRecipe">
+                                        </div>
+                                        <i ng-show="myForm.picRecipe.$error.maxSize">File too large {{errorFileRecipe.size / 1000000|number:1}}MB: max 2M</i>
+                                        <span class="progress" ng-show="picModelFile.progress >= 0">
+                                            <div style="width:{{picModelFile.progress}}%" ng-bind="picModelFile.progress + '%'"></div>
+                                        </span>
+                                        <span ng-show="picModelFile.result">Upload Successful</span>
+                                        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Giới thiệu</label>
+                            <div class="sm_desc"></div>
+                            <input id="input_desc" type="hidden" name="description">
                         </div>
 
                         <div class="additional-input-wrap">
-                            <label>Upload hình bài viết</label>
+                            <label>Upload hình Slide</label> <i ng-show="myForm.picSlide.$error.required">*Không được để trống</i><br>
                             <div class="form-group">
                                 <ul class="upload-img">
-                                    <li><img src="<?php echo base_url() . 'includehome/'?>img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                    <li><img src="<?php echo base_url() . 'includehome/'?>img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                    <li><img src="<?php echo base_url() . 'includehome/'?>img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                    <li><img src="<?php echo base_url() . 'includehome/'?>img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                    <li><img src="<?php echo base_url() . 'includehome/'?>img/figure/upload-banner1.jpg" alt="Upload Image"></li>
+                                    <li><img ng-show="myForm.picSlide.$invalid" src="<?php echo base_url() . 'includehome/'?>img/figure/upload-slide.jpg" alt="Upload Image"></li>
+                                    <li>
+                                        <img ng-show="myForm.picSlide.$valid" style="height: 130px" ngf-thumbnail="picFile" class="thumb">
+                                        <button class="btn btn-danger" style="padding: 8px 11px" ng-click="picFile = null" ng-show="picFile"><i class="fas fa-times" style="margin: 0 auto; font-size: 19px"></i></button><br>
+                                    </li>
+                                    
                                 </ul>
-                                <button type="button" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i>UPLOAD</button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Giới thiệu</label>
-                            <textarea placeholder="Nhập lời giới thiệu" class="textarea form-control" name="message" id="form-message"
-                                rows="7" cols="20" data-error="Giới thiệu khong được để trống" required></textarea>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="additional-input-wrap">
-                            <label>Upload hình Slide</label>
-                            <div class="form-group">
-                                <ul class="upload-img">
-                                    <li><img src="<?php echo base_url() . 'includehome/'?>img/figure/upload-slide.jpg" alt="Upload Image"></li>
-                                </ul>
-                                <button type="button" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i>UPLOAD</button>
+                                <div>
+                                    <fieldset>
+                                        <div class="upload-btn-wrapper">
+                                        <button class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Tải ảnh Slide</button>
+                                        <input type="file" ngf-select ng-model="picFile" name="picSlide" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
+                                        </div>
+                                        <i ng-show="myForm.picSlide.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                                        <span class="progress" ng-show="picFile.progress >= 0">
+                                            <div style="width:{{picFile.progress}}%" ng-bind="picFile.progress + '%'"></div>
+                                        </span>
+                                        <span ng-show="picFile.result">Upload Successful</span>
+                                        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                                    </fieldset>
+                                </div>
                             </div>
                         </div>
                         <div class="additional-input-wrap">
@@ -81,7 +98,8 @@
                                 <div class="col-8">
                                     <div class="form-group additional-input-box icon-right">
                                         <i class="fas fa-arrows-alt"></i>
-                                        <input type="text" placeholder="Nhập tên thành phần ..." class="form-control" name="name" value="{{thanhphan.name}}">
+                                        <input type="text" placeholder="Nhập tên thành phần ..." class="form-control" name="name" 
+                                        ng-change="updateListThanhPhan()" ng-model="thanhphan['name']">
                                         <i ng-click="removeThanhPhan($index)" class="fas fa-times"></i>
                                     </div>
                                 </div>
@@ -89,10 +107,12 @@
                             <button type="button" ng-click="addThanhPhan()" class="btn-upload">
                                 <i class="flaticon-add-plus-button"></i>THÊM THÀNH PHẦN
                             </button>
+                            <input id="inputListRecipe" type="hidden" name="listRecipe">
                         </div>
                         <div class="form-group">
                             <label>Hướng dẫn chi tiết</label>
                             <div class="summernote"></div>
+                            <input id="huongdanchitiet" type="hidden" name="content">
                         </div>
                         <button type="submit" class="btn-submit">ĐỒNG Ý</button>
                     </form>
@@ -167,32 +187,21 @@
         $scope.removeThanhPhan = function(index) {
             console.log(index);
             $scope.listThanhPhan.splice(index, 1);
+            $('#inputListRecipe').val(angular.toJson($scope.listThanhPhan));
+        }
+        $scope.updateListThanhPhan = function() {
+            $('#inputListRecipe').val(angular.toJson($scope.listThanhPhan));
         }
 
-        $scope.submit = function() {
-            if ($scope.form.file.$valid && $scope.file) {
-                $scope.upload($scope.file);
-            }
-        };
+        $('.summernote').on('summernote.change', function(we, contents, $editable) {
+            console.log(contents);
+            $('#huongdanchitiet').val(contents);
+        });
 
-        $scope.uploadPic = function(file) {
-            file.upload = Upload.upload({
-                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {file: file},
-            });
-
-            file.upload.then(function (response) {
-                $timeout(function () {
-                    file.result = response.data;
-                });
-            }, function (response) {
-            if (response.status > 0)
-                $scope.errorMsg = response.status + ': ' + response.data;
-            }, function (evt) {
-                // Math.min is to fix IE which reports 200% sometimes
-                file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-            });
-        }
-
+        $('.sm_desc').on('summernote.change', function(we, contents, $editable) {
+            console.log(contents);
+            $('#input_desc').val(contents);
+        });
+        
     })
 </script>

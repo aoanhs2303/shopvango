@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Admin_model');
-		Confirm_Login();
+		// Confirm_Login();
 	}
 
 	public function index()
@@ -47,6 +47,45 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/include/header.php', null, FALSE);
 		$this->load->view('admin/danhmuc_Admin.php', $data);
 		$this->load->view('admin/include/footer.php', null, FALSE);
+	}
+
+	public function putRecipe()
+	{
+		$title = $this->input->post('title');
+		$danhmuc = $this->input->post('danhmuc');
+		$listRecipe = $this->input->post('listRecipe');
+		$desc = $this->input->post('description');
+		$content = $this->input->post('content');
+		var_dump($title);
+		var_dump($danhmuc);
+		var_dump($listRecipe);
+		var_dump($content);
+		var_dump($desc);
+
+		$config['upload_path']   = './files/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']      = '100000';
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('picSlide')){
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else{
+			$data = $this->upload->data();
+			$picSlide = base_url() . 'files/' . $data['file_name'];
+		}
+
+		if ( ! $this->upload->do_upload('picRecipe')) {
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else {
+			$data = $this->upload->data();
+			$picAvatar = base_url() . 'files/' . $data['file_name'];
+		}
+
+		var_dump($picSlide);
+		var_dump($picAvatar);
+		// $this->Admin_model->addCategory($tendanhmuc, $nhomdanhmuc);
 	}
 
 	public function themdanhmuc()

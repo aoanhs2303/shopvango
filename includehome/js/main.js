@@ -334,7 +334,13 @@
         $(document).ready(function () {
             $('.summernote').summernote({
                 height: 300,
+                placeholder: 'Hướng dẫn ...'
             });
+            $('.sm_desc').summernote({
+                height: 300,
+                placeholder: 'Giới thiệu món ăn ...'
+            });
+            
         });
     }
 

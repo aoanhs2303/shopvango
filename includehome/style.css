@@ -2753,6 +2753,7 @@ ul {
 	-ms-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
+	text-transform: uppercase;
 }
 
 .site-menu>li ul.dropdown-menu-col-1>li>a:after {
@@ -2903,8 +2904,9 @@ ul {
 
 .header-bottom {
 	margin-top: 70px;
-	padding: 36px 0;
+	/* padding: 36px 0; */
 	padding-top: 10px;
+	padding-bottom: 15px;
 }
 
 .nav-action-elements-layout1 ul {
@@ -3400,7 +3402,7 @@ ul {
 }
 
 .header-one .header-main-menu {
-	background-color: #FFFFFF;
+	background-color: #eff1f35e;
 	/* background-image: url(https://good-food.cmsmasters.net/demo/wp-content/themes/good-food/theme-vars/theme-style/img/background.jpg); */
 }
 
@@ -3662,6 +3664,7 @@ ul {
 
 	.header-main-menu .site-nav .site-menu>li ul.dropdown-menu-col-1 li a {
 		text-align: left;
+		/* text-transform: uppercase; */
 	}
 
 	.header-main-menu .site-nav .site-menu>li ul.dropdown-menu-col-1 li a:after,
@@ -12425,11 +12428,37 @@ footer.ranna-bg-dark {
 	transform: translateX(26px);
   }
   
-  /* Rounded sliders */
-  .slider.round {
-	border-radius: 34px;
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+.logo-col4 {
+	padding: 20px;
+}
+.upload-btn-wrapper {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
   }
   
-  .slider.round:before {
-	border-radius: 50%;
+  .upload-btn-wrapper .btn {
+	border: 2px solid gray;
+	color: gray;
+	background-color: white;
+	padding: 8px 20px;
+	border-radius: 8px;
+	font-size: 20px;
+	font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+	font-size: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
   }
